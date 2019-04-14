@@ -12,11 +12,11 @@
 <body>
       <div class="login-page">
   <div class="form">
-    <form class="login-form" method='post' action='models/autenticacao.php'>
+    <form class="login-form" method='post' action='../models/autenticacao.php'>
       <input type="text" placeholder="Login" name='login'/>
       <input type="password" placeholder="Senha" name='senha'/>
       <button>login</button>
-      <p class="message">Não possui conta? <a href="../models/cadastrologin.php">Crie sua conta!</a></p>
+      <p class="message">Não possui conta? <a href="http:/easylearning.com.br/cadastro">Crie sua conta!</a></p>
     </form>
   </div>
 </div>

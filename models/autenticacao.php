@@ -13,9 +13,9 @@ $row = $sql->fetchObject();  // devolve um �nico registro
 // Se o usu�rio foi localizado
 if ($row){
     $_SESSION['usuario'] = $row;
-    header("Location: http:/easylearning.com.br/");
+    header("Location: ../");
 }else{
-    header("Location: http:/easylearning.com.br/login");
+    header("Location: ../login");
 }
 ?>
 </body>
