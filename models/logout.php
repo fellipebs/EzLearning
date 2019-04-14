@@ -4,7 +4,7 @@
 <?php
 session_start();
 unset($_SESSION['usuario']);
-header("Location: ./");
+header("Location: http:/easylearning.com.br/");
 ?>
 </body>
 </html>

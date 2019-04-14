@@ -37,5 +37,5 @@ $stmt->execute(array(
 
 <script>alert("Usuario cadastrado! Por favor agora logue!");</script>
 <?php
-header("Location: index.php");
+header("Location: http:/easylearning.com.br/login");
 ?>
