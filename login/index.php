@@ -7,7 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="assets/css/login.css">
+  <link rel="stylesheet" href="../assets/css/login.css">
 </head>
 <body>
       <div class="login-page">
@@ -16,7 +16,7 @@
       <input type="text" placeholder="Login" name='login'/>
       <input type="password" placeholder="Senha" name='senha'/>
       <button>login</button>
-      <p class="message">Não possui conta? <a href="models/cadastrologin.php">Crie sua conta!</a></p>
+      <p class="message">Não possui conta? <a href="../models/cadastrologin.php">Crie sua conta!</a></p>
     </form>
   </div>
 </div>
