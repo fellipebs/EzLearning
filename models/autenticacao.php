@@ -4,7 +4,7 @@
 <?php
 session_start();
 
-$con =  new PDO("mysql:host=localhost; dbname=EasyLearning","root","");
+$con =  new PDO("mysql:host=ezlearning.mysql.dbaas.com.br; dbname=ezlearning","ezlearning","QVLm638qvTJBtL");
 $sql = $con->prepare("SELECT * FROM usuarios WHERE Login=? AND Senha=?");
 $sql->execute( array($_POST['login'], md5($_POST['senha']) ) );
 

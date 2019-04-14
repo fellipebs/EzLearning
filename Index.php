@@ -47,7 +47,7 @@ $foto = $_SESSION['usuario']->foto;
 
 <?php
 
-$con = new PDO("mysql:host=localhost; dbname=EasyLearning;", "root","");
+$con = new PDO("mysql:host=ezlearning.mysql.dbaas.com.br; dbname=ezlearning","ezlearning","QVLm638qvTJBtL");
 $sql = $con->prepare("SELECT p.id, p.assunto, p.mensagem, p.usuario, p.foto_post, u.Usuario, u.Codigo
  FROM post as p INNER JOIN usuarios as u on p.usuario = u.Codigo order by p.id desc");
 $sql->execute();
