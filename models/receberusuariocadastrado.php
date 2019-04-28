@@ -10,7 +10,7 @@ if(isset($_FILES['foto']))
 {
    $ext = strtolower(substr($_FILES['foto']['name'],-4)); //Pegando extensão do arquivo
    $new_name = date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
-   $dir = './img/'; //Diretório para uploads 
+   $dir = '../img/'; //Diretório para uploads 
    move_uploaded_file($_FILES['foto']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
    echo("Imagem enviada com sucesso!");
 } 
@@ -37,5 +37,5 @@ $stmt->execute(array(
 
 <script>alert("Usuario cadastrado! Por favor agora logue!");</script>
 <?php
-header("Location: http:/easylearning.com.br/login");
+header("Location: ../login");
 ?>

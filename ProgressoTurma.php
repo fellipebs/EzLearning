@@ -22,7 +22,7 @@
       <li><span style='color: white;'>
 <?php
 session_start();
-echo $_SESSION['usuario']->Usuario;
+echo $_SESSION['usuario']->usuario;
 $foto = $_SESSION['usuario']->foto;
 
 ?>
@@ -41,7 +41,7 @@ $foto = $_SESSION['usuario']->foto;
         echo"<div class='form-group'>";
         echo"<label>Selecione a turma que deseja ver o progresso:</label>";
         echo"<select class='form-control' name='turma'>";
-        $sql = $con->prepare("SELECT * FROM turma where escola_id_turma = ".$_SESSION['usuario']->Codigo."");
+        $sql = $con->prepare("SELECT * FROM turma where escola_id_turma = ".$_SESSION['usuario']->id."");
         $sql->execute();
 
         $rows = $sql->fetchAll(PDO::FETCH_CLASS);
