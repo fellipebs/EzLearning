@@ -22,7 +22,7 @@
       <li><span style='color: white;'>
 <?php
 session_start();
-echo $_SESSION['usuario']->Usuario;
+echo $_SESSION['usuario']->usuario;
 $foto = $_SESSION['usuario']->foto;
 
 ?>
@@ -38,7 +38,7 @@ $foto = $_SESSION['usuario']->foto;
 <div class="container">
 <?php
 
-        $sql = $con->prepare("select round(avg(nota * 100))as Nota_aluno from atividades where aluno_id = ".$_SESSION['usuario']->Codigo."");
+        $sql = $con->prepare("select round(avg(nota * 100))as Nota_aluno from atividades where aluno_id_atividade = ".$_SESSION['usuario']->id."");
         $sql->execute();
 
         $rows = $sql->fetchAll(PDO::FETCH_CLASS);
@@ -49,7 +49,7 @@ $foto = $_SESSION['usuario']->foto;
                 echo "<h3>Seu aproveitamento até o momento: $row->Nota_aluno%</h3>";
             }
 
-        $sql = $con->prepare("select count(*) as atividades_realizadas from atividades where aluno_id = ".$_SESSION['usuario']->Codigo."");
+        $sql = $con->prepare("select count(*) as atividades_realizadas from atividades where aluno_id_atividade = ".$_SESSION['usuario']->id."");
         $sql->execute();
 
         $rows = $sql->fetchAll(PDO::FETCH_CLASS);

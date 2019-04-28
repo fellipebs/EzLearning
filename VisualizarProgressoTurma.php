@@ -22,7 +22,7 @@
       <li><span style='color: white;'>
 <?php
 session_start();
-echo $_SESSION['usuario']->Usuario;
+echo $_SESSION['usuario']->usuario;
 $foto = $_SESSION['usuario']->foto;
 
 ?>
@@ -39,7 +39,7 @@ $foto = $_SESSION['usuario']->foto;
 <div class="container">
 <?php
 $turma = $_POST['turma'];
-$sql = $con->prepare("select round(avg(nota * 100))as Nota_turma from atividades where turma_id = ".$turma."");
+$sql = $con->prepare("select round(avg(nota * 100))as Nota_turma from atividades where turma_id_atividade = ".$turma."");
      $sql->execute();
 
         $rows = $sql->fetchAll(PDO::FETCH_CLASS);
