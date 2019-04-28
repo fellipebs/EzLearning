@@ -28,7 +28,7 @@
       <li><span style='color: white;'>
 <?php
 session_start();
-echo $_SESSION['usuario']->Usuario;
+echo $_SESSION['usuario']->usuario;
 $foto = $_SESSION['usuario']->foto;
 ?>
       </span></li>

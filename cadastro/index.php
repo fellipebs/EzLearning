@@ -12,7 +12,7 @@
 <body>
       <div class="login-page">
   <div class="form">
-    <form class="login-form" action='receberusuariocadastrado.php' method="post" enctype="multipart/form-data">
+    <form class="login-form" action='../models/receberusuariocadastrado.php' method="post" enctype="multipart/form-data">
       <input type="text" name ="login" placeholder="Digite o login que será usado" required/>
       <input type="text" name="usuario" placeholder="Digite o nome de usuario do site" required/>
       <input type="email" name ="email" placeholder="Digite seu e-mail" required/>
@@ -20,7 +20,7 @@
       <label style='float: left;'>Envie sua foto de perfil</label>
       <input type="file" name ="foto" placeholder="Envie sua foto de perfil" required/>
       <button>Cadastrar!</button>
-      <p class="message" style='float: left;'><a href="http:/easylearning.com.br/login">Voltar</a></p>
+      <p class="message" style='float: left;'><a href="../login">Voltar</a></p>
     </form>
   </div>
 </div>

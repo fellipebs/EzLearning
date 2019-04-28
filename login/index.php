@@ -16,7 +16,7 @@
       <input type="text" placeholder="Login" name='login'/>
       <input type="password" placeholder="Senha" name='senha'/>
       <button>login</button>
-      <p class="message">Não possui conta? <a href="http:/easylearning.com.br/cadastro">Crie sua conta!</a></p>
+      <p class="message">Não possui conta? <a href="../cadastro">Crie sua conta!</a></p>
     </form>
   </div>
 </div>
