@@ -3,33 +3,22 @@
 <head>
   <meta charset="utf-8">
   <title>EasyLearning</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,400i" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/workspace.css">
   <script src="blockly/blockly_compressed.js"></script>
   <script src="blockly/blocks_compressed.js"></script>
   <script src="blockly/msg/js/pt-br.js"></script>
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    #blocklyArea {
-      height: 90%;
-    }
-    #header{
-      height: 10%;
-    }
-    h1{
-      margin: 0;
-      text-align: center;
-    }
-  </style>
 </head>
 <body>
 
   <div id="header">
     <h1>EasyLearning</h1>
+    <button type="submit" name="Button" class="btn-send">
+     Salvar <i class="fas fa-check"></i>
+    </button>
   </div>
-  
+  <a href="#" class="btn-play"><i class="fas fa-play"></i></a>
   <div id="blocklyArea"></div>
 
   <div id="blocklyDiv" style="position: absolute"></div>
