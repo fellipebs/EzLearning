@@ -7,22 +7,31 @@ $id = $_SESSION['usuario']->id;
 // $turma_id = $_SESSION['usuario']->turma_id;
 $codigo = $_POST['resposta'];
 
-$sql = $con->prepare("SELECT * FROM UsuarioView WHERE id = ".$_SESSION['usuario']->id);
-$sql->execute();
-$row = $sql->fetchObject();
-$turma = $row->turma_id;
+$my_file  =  'pqpmeumano.txt' ; 
+$handle  =  fopen ( $my_file ,  'w' )  or  die ( 'Não é possível abrir o arquivo:' . $my_file ) ;  // implicitamente cria arquivo
 
-echo $id;
-echo $turma;
-echo $codigo;   
+$my_file  =  'file.txt' ; 
+$handle  =  fopen ( $my_file ,  'w' )  or  die ( 'Não é possível abrir o arquivo:' . $my_file ) ; 
+$data  =  $codigo ; 
+fwrite ( $handle ,  $data ) ;
 
- $stmt = $pdo->prepare('INSERT INTO atividades (aluno_id_atividade, turma_id_atividade, codigo) 
- VALUES(:aluno_id_atividade, :turma_id_atividade, :codigo)');
- $stmt->execute(array(
-   ':aluno_id_atividade' => $id,
-   ':turma_id_atividade' => $turma,
-   ':codigo' => $codigo
+
+// $sql = $con->prepare("SELECT * FROM UsuarioView WHERE id = ".$_SESSION['usuario']->id);
+// $sql->execute();
+// $row = $sql->fetchObject();
+// $turma = $row->turma_id;
+
+// echo $id;
+// echo $turma;
+// echo $codigo;   
+
+//  $stmt = $pdo->prepare('INSERT INTO atividades (aluno_id_atividade, turma_id_atividade, codigo) 
+//  VALUES(:aluno_id_atividade, :turma_id_atividade, :codigo)');
+//  $stmt->execute(array(
+//    ':aluno_id_atividade' => $id,
+//    ':turma_id_atividade' => $turma,
+//    ':codigo' => $codigo
   
-  ));
-  header("Location: index.php");
+//   ));
+//   header("Location: index.php");
 ?>
