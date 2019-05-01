@@ -19,12 +19,19 @@
 </head>
 
 <body>
+    <input type='hidden' id='resposta' name='resposta'>
+    <button onclick="runCode()">Testar seu Código!</button>
+    <button onclick="showCode()">Testar seu Código!</button>
     <div class="container-fluid">
-    <div id="blocklyDiv" style="height: 400px; width: 1000px;"></div>
+    <div id="blocklyDiv" style="height: 400px; width: 900px;"></div>
     <xml id="toolbox" style="display: none">
             <block type="andar_pra_frente"></block>
-            <block type="virar"></block>
-            <block type="virar"></block>
+            <block type="virar">
+                <field name="Esquerda">virarDireita</field>
+            </block>
+            <block type="virar">
+                <field name="Direita">virarDireita</field>
+            </block>
     </xml>
     </div>
         <div class="row">
@@ -68,4 +75,26 @@
 var code = Blockly.JavaScript.workspaceToCode(workspace);
 var myInterpreter = new Interpreter(code);
 myInterpreter.run();
+function runCode() {
+      // Generate JavaScript code and run it.
+      window.LoopTrap = 1000;
+      Blockly.JavaScript.INFINITE_LOOP_TRAP =
+          'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+      var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+      Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+      
+      try {
+       eval(code);
+      } catch (e) {
+        alert(e);
+        
+      }
+      document.getElementById("resposta").value = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+    }
+    function showCode() {
+      // Generate JavaScript code and display it.
+      Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+      var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+      alert(code);
+    }
 </script>
