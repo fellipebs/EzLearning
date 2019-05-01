@@ -4,49 +4,56 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Easy Learning</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="http:/www.easylearning.com.br/assets/images/alphabet-bright-conceptual-256502-min.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="600"> 
+    <meta name="description" content="Easy Learning é a plataforma que está revolucionando o mundo, com o ensino de progamação.">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/normalize.css">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/grid.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/animate.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,400i" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/querys.css">
 </head>
-
 <body>
-    <header>
+    <header id="header">
         <nav>
             <div class="row">
                 <div class="logo">Easy Learning</div>
-                <ul class="main-nav">
+                <ul class="main-nav js--main-nav">
                     <li>
-                        <a href="#">Home</a>
+                        <a href="#header">Home</a>
                     </li>
                     <li>
-                        <a href="#">Quem Somos</a>
+                        <a href="#features">Quem Somos</a>
                     </li>
                     <li>
                         <a href="#">Produtos</a>
                     </li>
                     <li>
-                        <a href="#">Contato</a>
+                        <a href="#contact">Contato</a>
                     </li>
                     <li>
                         <a href="#">Login</a>
                     </li>
                 </ul>
+                <a class="mobile-nav-icon js--nav-icon"><i class="fas fa-bars"></i></a>
             </div>
         </nav>
         <div class="hero-text-box">
             <h1 class="title">Chegou a hora! <br> Do mundo crescer progamando.</h1>
-            <a href="#" class="btn btn-full">Quero conhecer</a>
-            <a href="#" class="btn btn-ghost">Saiba mais</a>
+            <a href="#" class="btn btn-full js--scroll-to-start">Quero conhecer</a>
+            <a href="#" class="btn btn-ghost js--scroll-to-contact">Saiba mais</a>
         </div>
     </header>
 
-    <section id="features">
-        <div class="row">
+    <section id="features" class="js--section-features">
+        <div class="row js--wp-1">
             <h2>Não existe futuro sem progamação</h2>
             <p class="long-copy">
                 Hey! somos a Easy Learning, estamos aqui para ajudar a criaar um mundo em que todos dominam logica de
@@ -146,7 +153,7 @@
         </div>
         <div class="row">
             <div class="col span-1-of-2 step-box">
-                <img class="app-screan" src="assets/images/mac.png" alt="imagem">
+                <img class="app-screan js--wp-2" src="assets/images/mac.png" alt="\easy Learning">
             </div>
             <div class="col span-1-of-2 step-box">
                 <div class="work-step">
@@ -179,7 +186,7 @@
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa excepturi nobis, repudiandae debitis
                     nisi sed accusantium itaque vitae magni id? Cumque id quibusdam sunt laudantium doloremque iusto
                     aliquid quidem magnam?
-                    <cite><img src="assets/images/ebook.png" alt="">Steve Jobs</cite>
+                    <cite><img src="assets/images/ebook.png" alt="Custumer">Steve Jobs</cite>
                 </blockquote>
             </div>
             <div class="col span-1-of-3">
@@ -187,7 +194,7 @@
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa excepturi nobis, repudiandae debitis
                     nisi sed accusantium itaque vitae magni id? Cumque id quibusdam sunt laudantium doloremque iusto
                     aliquid quidem magnam?
-                    <cite><img src="assets/images/ebook.png" alt="">Steve Jobs</cite>
+                    <cite><img src="assets/images/ebook.png" alt="Custumer">Steve Jobs</cite>
                 </blockquote>
             </div>
             <div class="col span-1-of-3">
@@ -195,12 +202,12 @@
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa excepturi nobis, repudiandae debitis
                     nisi sed accusantium itaque vitae magni id? Cumque id quibusdam sunt laudantium doloremque iusto
                     aliquid quidem magnam?
-                    <cite><img src="assets/images/ebook.png" alt="">Steve Jobs</cite>
+                    <cite><img src="assets/images/ebook.png" alt="Custumer">Steve Jobs</cite>
                 </blockquote>
             </div>
         </div>
     </section>
-    <section id="contact">
+    <section id="contact" class="js--section-contact">
         <div class="row">
             <h2>Hora de Conhecer a Easy Learning</h2>
         </div>
@@ -257,7 +264,7 @@
                         <label for="submit">&nbsp;</label>
                     </div>
                     <div class="col span-2-of-3">
-                        <input class="btn btn-full" type="submit" name="submit" id="submit" placeholder="Enviar">
+                        <input class="btn btn-full" type="submit" name="submit" id="submit" value="Enviar">
                     </div>
                 </div>
 
@@ -299,13 +306,13 @@
             <div class="col span-1-of-9">
                 <ul class="social-links">
                     <li>
-                        <a href=""><i class="fab fa-linkedin-in"></i></i></a>
+                        <a href=""><i class="fab fa-linkedin-in"></i></a>
                     </li>
                     <li>
                         <a href=""><i class="fab fa-facebook-f"></i></a>
                     </li>
                     <li>
-                        <a href=""><i class="fab fa-instagram"></i></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
                     </li>
                 </ul>
             </div>
@@ -317,13 +324,13 @@
         </div>
     </footer>
 
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+    <script src="assets/js/jquery.waypoints.min.js"></script>
+    <script src="assets/js/main.js"></script>
 
+
+</body>
 </html>
-<!--
-<li>
-    <i class="far fa-envelope"></i>contato@easylearning.com.br
-</li>
-<li>
-    <i class="fas fa-phone"></i>(31)97359-1233
-</li>
