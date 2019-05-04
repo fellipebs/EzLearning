@@ -20,7 +20,7 @@
       <label style='float: left;'>Envie sua foto de perfil</label>
       <input type="file" name ="foto" placeholder="Envie sua foto de perfil" required/>
       <button>Cadastrar!</button>
-      <p class="message" style='float: left;'><a href="../login">Voltar</a></p>
+      <p class="message" style='float: left;'><a href="index.php">Voltar</a></p>
     </form>
   </div>
 </div>
