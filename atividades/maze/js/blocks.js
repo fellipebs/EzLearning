@@ -1,36 +1,26 @@
-// Blockly.Blocks['andar_pra_frente'] = {
-//   init: function() {
-//     this.appendDummyInput()
-//         .appendField("Andar pra frente");
-//     this.setPreviousStatement(true, null);
-//     this.setNextStatement(true, null);
-//     this.setColour(230);
-//  this.setTooltip("");
-//  this.setHelpUrl("");
-//   }
-// };
+/**
+ * Blockly Games: Maze Blocks
+ *
+ * Copyright 2012 Google Inc.
+ * https://github.com/google/blockly-games
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
-// Blockly.Blocks['virar'] = {
-//   init: function() {
-//     this.appendDummyInput()
-//         .appendField("Virar para")
-//         .appendField(new Blockly.FieldDropdown([["Esquerda","ESQUERDA"], ["Direita","DIRETA"]]), "NAME");
-//     this.setColour(230);
-//  this.setTooltip("");
-//  this.setHelpUrl("");
-//   }
-// };
-//   Blockly.JavaScript['andar_pra_frente'] = function(block) {
-//     // TODO: Assemble JavaScript into code variable.
-//     var code = Blockly.JavaScript.workspaceToCode(workspace);
-//     return code;
-//   };
-//   Blockly.JavaScript['virar'] = function(block) {
-//     var dropdown_name = block.getFieldValue('NAME');
-//     // TODO: Assemble JavaScript into code variable.
-//     var code = 'a;\n';
-//     return code;
-//   };
+/**
+ * @fileoverview Blocks for Blockly's Maze application.
+ * @author fraser@google.com (Neil Fraser)
+ */
 'use strict';
 
 goog.provide('Maze.Blocks');
