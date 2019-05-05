@@ -91,10 +91,6 @@
 }
 body {
   background: #DB7C26; /* fallback for old browsers */
-  background: -webkit-linear-gradient(right, #DB7C26, #DB7C26);
-  background: -moz-linear-gradient(right, #DB7C26, #DB7C26);
-  background: -o-linear-gradient(right, #DB7C26, #DB7C26);
-  background: linear-gradient(to left, #DB7C26, #DB7C26);
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      

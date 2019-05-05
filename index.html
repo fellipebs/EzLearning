@@ -215,58 +215,21 @@
         <div class="row">
             <form action="#" method="POST" class="contact-form">
                 <div class="row">
-                    <div class="col span-1-of-3">
-                        <label for="nome">Nome</label>
-                    </div>
-                    <div class="col span-2-of-3">
-                        <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
-                    </div>
+                    <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
                 </div>
                 <div class="row">
-                    <div class="col span-1-of-3">
-                        <label for="email">Email</label>
-                    </div>
-                    <div class="col span-2-of-3">
-                        <input type="email" name="email" id="email" placeholder="Seu email" required>
-                    </div>
+                    <input type="email" name="email" id="email" placeholder="Seu email" required>
+                </div>
+                
+                <div class="row">
+                    <textarea name="mensagem" id="mensagem" placeholder="Deixe sua mensagem"></textarea>
                 </div>
                 <div class="row">
-                    <div class="col span-1-of-3">
-                        <label for="conheceu">Como nos conheceu</label>
-                    </div>
-                    <div class="col span-2-of-3">
-                        <select name="conheceu" id="conheceu">
-                            <option value="amigos" selected>Indicação de amigos</option>
-                            <option value="palestras">Palestras</option>
-                            <option value="publicidade">Propaganda</option>
-                            <option value="redes">Redes sociais</option>
-                            <option value="outros">Outros</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col span-1-of-3">
-                        <label for="mensagem">Mensagem</label>
-                    </div>
-                    <div class="col span-2-of-3">
-                        <textarea name="mensagem" id="mensagem" placeholder="Deixe sua mensagem"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col span-1-of-3">
-                        <label for="pacoca">Gosta de paçoca?</label>
-                    </div>
-                    <div class="col span-2-of-3">
+                        <label for="pacoca">Gosta de paçoca de amendoim? </label>
                         <input type="checkbox" name="pacoca" id="pacoca"> Sim, eu amo paçoca
-                    </div>
                 </div>
-                <div class="row">
-                    <div class="col span-1-of-3">
-                        <label for="submit">&nbsp;</label>
-                    </div>
-                    <div class="col span-2-of-3">
+                <div class="row">     
                         <input class="btn btn-green" type="submit" name="submit" id="submit" value="Enviar">
-                    </div>
                 </div>
 
             </form>
