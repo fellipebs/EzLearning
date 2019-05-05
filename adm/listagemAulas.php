@@ -33,7 +33,7 @@
         <table>
             <thead>
                 <tr>
-                <th scope="col">Materia</th>
+                <th scope="col">Matéria</th>
                 <th scope="col">Data</th>
                 <th scope="col">Professor</th>
                 </tr>
@@ -48,7 +48,7 @@
                     <?php echo $row->data; ?>
                 </td>
                 <td>
-                    <?php echo $row->professor_id_aula; ?>
+                    <?php echo $row->nome; ?>
                 </td>
                 </tr>
                 <?php endforeach; ?>
