@@ -7,6 +7,7 @@
                                 ON aula.professor_id_aula = professor.id;");
     $sql->execute();
     $rows = $sql->fetchAll(PDO::FETCH_CLASS);
+    require("../models/restrito.php");
 ?>
 <!DOCTYPE html>
 <html>

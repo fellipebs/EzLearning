@@ -12,6 +12,7 @@
     $result = $sql->fetchAll(PDO::FETCH_ASSOC);
     $visualizar = true;
   }
+  require("../models/restrito.php");
 ?>
 <html>
 <head>

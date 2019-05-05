@@ -5,7 +5,7 @@
     $sql= $con->prepare("SELECT T.nome_turma, T.escola_id_turma, E.nome FROM turma as T JOIN escola as E on T.escola_id_turma = E.id;");
     $sql->execute();
     $rows = $sql->fetchAll(PDO::FETCH_CLASS);
-
+    require("../models/restrito.php");
 ?>
 <!DOCTYPE html>
 <html>

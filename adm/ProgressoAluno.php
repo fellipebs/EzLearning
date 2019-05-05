@@ -8,6 +8,7 @@ $nota = $sql->fetchAll(PDO::FETCH_ASSOC);
 $sql = $con->prepare("select count(*) as atividades_realizadas from atividades where aluno_id_atividade = ".$_SESSION['usuario']->id."");
 $sql->execute();
 $atividades = $sql->fetchAll(PDO::FETCH_ASSOC);
+require("../models/restrito.php");
 ?>
 <html>
 
