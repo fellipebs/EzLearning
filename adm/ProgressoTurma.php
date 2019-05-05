@@ -1,62 +1,54 @@
+<?php
+  session_start();
+  require_once ('../models/conexao/conexao.php');  
+  $sql = $con->prepare("SELECT * FROM turma where escola_id_turma = ".$_SESSION['usuario']->id."");
+  $sql->execute();
+  $rows = $sql->fetchAll(PDO::FETCH_CLASS);
+  $visualizar = false;
+  if(isset($_POST['turma'])){
+    $turma = $_POST['turma'];
+    $sql = $con->prepare("select round(avg(nota * 100)) as Nota_turma from atividades where turma_id_atividade = ".$turma."");
+    $sql->execute();
+    $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+    $visualizar = true;
+  }
+?>
 <html>
 <head>
-<?php  require_once ('../models/conexao/conexao.php');  ?>
+    <title>Easy Learning - Progresso</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-  <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" type="text/css" src="../assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/normalize.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/grid.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,400i" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/main.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Easy Learning (Trocar!)</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
- 
-  <ul class="nav navbar-nav navbar-right">
-      <li><span style='color: white;'>
-<?php
-session_start();
-echo $_SESSION['usuario']->usuario;
-$foto = $_SESSION['usuario']->foto;
 
-?>
-      </span></li>
-      <li>
-      <?php
-     echo" <img src='img/$foto' class='rounded-circle' width='50px' height='50px'>";
-      ?>
-      </li>
-     
-    </ul>
-</nav>
-<div class="container">
-<form method="post" action="VisualizarProgressoTurma.php" enctype="multipart/form-data">
-<?php 
-        echo"<div class='form-group'>";
-        echo"<label>Selecione a turma que deseja ver o progresso:</label>";
-        echo"<select class='form-control' name='turma'>";
-        $sql = $con->prepare("SELECT * FROM turma where escola_id_turma = ".$_SESSION['usuario']->id."");
-        $sql->execute();
-
-        $rows = $sql->fetchAll(PDO::FETCH_CLASS);
-        //fetchAll - recupera todos os registros da tabela
-        //PDO::FETCH_CLASS - resultado é armazenado em um objeto
-
-            foreach ($rows as $row){
-                echo "<option value='$row->id'>$row->nome_turma</option>";
-            }
-       echo" </select>";
-       echo "</div>";
-    ?>
-    <button type="submit" class="btn btn-primary">Visualizar</button>
-    </form>
-    </div>
+<div class="row">
+  <form method="post" action="ProgressoTurma.php" enctype="multipart/form-data">
+    <label>Selecione a turma que deseja ver o progresso:</label>
+    <select name="turma">
+      <?php foreach ($rows as $row): ?>
+        <option value="<?php echo $row->id;?>"><?php echo$row->nome_turma;?></option>
+      <?php endforeach ?>
+    </select>
+    <button type="submit" class="btn btn-full">Visualizar</button>
+  </form>
 </div>
+
+<div class="row">
+  <?php if($visualizar): ?>
+
+    <h3>Aproveitamento da turma até o momento: <?php echo $result[0]['Nota_turma'] ?>%</h3>
+
+  <?php endif ?>
+
+  
+</div>
+
 </body>
 </html>
