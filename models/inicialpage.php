@@ -3,10 +3,10 @@ session_start();
 $tipo = $_SESSION['usuario']->tipo;
 
 if ($tipo == 1){
-    echo "HTML AQUI - > PARA PROFESSOR";
+    header("Location: ../professor");
 }else if($tipo == 0){
-    echo "HTML AQUI - > PARA ALUNOS:";
+    header("Location: ../aluno");
 }else{
-    echo "HTML AQUI - > PARA ESCOLA:";
+    header("Location: ../adm");
 }
 ?>
