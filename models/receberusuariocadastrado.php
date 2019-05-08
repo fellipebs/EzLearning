@@ -19,7 +19,7 @@ $senha = $_POST['senha'];
 
 
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$stmt = $pdo->prepare('INSERT INTO usuarios (Usuario, email, Login, Senha) VALUES(:Usuario, :email, :Login, md5(:Senha))');
+$stmt = $pdo->prepare('INSERT INTO usuarios (id, usuario,email,login,senha,foto,tipo) VALUES(null,:Usuario, :email,:Login,md5(:Senha),"default.png",0)');
 $stmt->execute(array(
   ':Usuario' => $usuario,
   ':email' => $email,

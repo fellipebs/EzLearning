@@ -11,6 +11,7 @@ $row = $sql->fetchObject();  // devolve um �nico registro
 // Se o usu�rio foi localizado
 if ($row){
     $_SESSION['usuario'] = $row;
+    $_SESSION['foto'] = $row->foto;
     header("Location: inicialpage.php");
 }else{
     header("Location: ../login");
