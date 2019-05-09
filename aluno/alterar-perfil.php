@@ -133,25 +133,6 @@ if(isset($_POST['mudar'])){
   </div>
 </div>
 <hr>
-<form method="post" enctype="multipart/form-data" action="alterar.php">
-    <div class="container-fluid">
-
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                          <h1>Alterar Perfil</h1>
-                          <img class="mx-auto rounded-circle imgperfil" src="../assets/images/user/<?php echo $_SESSION['foto'];?>" alt="juan">
-                          <br><br>
-                          <input class="btn btn-dark" type="file" name="escolher" value="Alterar Foto" accept="image/*">
-                        </div>
-                    </div>
-
-                    <div class="row">
-                    <div class="col-sm-12 text-center">
-                          
-                    </div>
-                </div>
-
-            </div>
         </div>
     </body>
 </html>
