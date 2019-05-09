@@ -104,36 +104,9 @@ if(isset($_POST['mudar'])){
       </div>
     </div>
   </nav>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-
-<script>
-
-var $doc = $('html, body');
-$('a').click(function() {
-    $doc.animate({
-        scrollTop: $( $.attr(this, 'href') ).offset().top
-    }, 500);
-    return false;
-});
-
-</script>
-
-<script>
-
-    $(function () {
-                    $('[data-toggle="popover"]').popover()
-        })
-</script>
-
-<script>
-  $('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
-</script>
   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-
-
 </body>
     
 
