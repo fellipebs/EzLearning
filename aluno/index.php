@@ -21,6 +21,7 @@ $rows = $sql->fetchAll(PDO::FETCH_CLASS);
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,400i" rel="stylesheet">
   <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/main.css">
+
   
 </head>
 

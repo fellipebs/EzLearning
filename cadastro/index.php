@@ -1,4 +1,7 @@
-﻿<html>
+﻿<?php 
+session_start();
+?>
+<html>
 
 <head>
     <title>Easy Learning - Cadastro</title>
@@ -11,10 +14,21 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,400i" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/main.css">
+<script>
+</script>
 </head>
 
 <body>
+</div>
     <div class="login-page">
+    <div style="color:black; background-color: #ff3333; font-weight: bold; text-align: center;">
+        <?php 
+            if(isset($_SESSION['msg'])){
+                echo $_SESSION['msg'];
+                unset($_SESSION['msg']);
+            }
+        ?>
+    </div>
         <div class="form">
             <form class="login-form" action='../models/receberusuariocadastrado.php' method="post"
                 enctype="multipart/form-data">

@@ -1,4 +1,5 @@
 ﻿<?php
+session_start();
 require_once ('conexao/conexao.php');
 $login = $_POST['login'];
 $usuario = $_POST['usuario'];
@@ -17,10 +18,12 @@ $senha = $_POST['senha'];
 
 // Codigo para Resgatar a mensagem da página
 
-
+$smtp = $pdo->prepare('SELECT * FROM usuarios WHERE login = ?');
+$smtp->execute(array($_POST['login']));
+if($smtp->rowCount() == 0){
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$stmt = $pdo->prepare('INSERT INTO usuarios (id, usuario,email,login,senha,foto,tipo) VALUES(null,:Usuario, :email,:Login,md5(:Senha),"default.png",0)');
-$stmt->execute(array(
+$smtp = $pdo->prepare('INSERT INTO usuarios (id, usuario,email,login,senha,foto,tipo) VALUES(null,:Usuario, :email,:Login,md5(:Senha),"default.png",0)');
+$smtp->execute(array(
   ':Usuario' => $usuario,
   ':email' => $email,
   ':Login' => $login,
@@ -28,12 +31,13 @@ $stmt->execute(array(
 
   
 ));
-
+header("Location: ../login");
+}else{
+  $_SESSION['msg'] = "Usuário já existente";
+  header("Location: ../cadastro");
+}
 
  
 ?>
 
 <script>alert("Usuario cadastrado! Por favor agora logue!");</script>
-<?php
-header("Location: ../login");
-?>
