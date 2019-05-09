@@ -2,17 +2,6 @@
 echo "Aluno"; 
 header("Content-type:text/html; charset=utf8");
 session_start();
-if(isset($_POST['mudar'])){
-
-      $ext = strtolower(substr($_FILES['escolher']['name'],-4)); //Pegando extensão do arquivo
-      $dir = '../assets/images/user/'; //Diretório para uploads 
-      $new_name = date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
-      move_uploaded_file($_FILES['escolher']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
-      $_SESSION['foto'] = $new_name;
-      require_once("../models/alterarfoto.php");
-      require_once("../models/atualizarfoto.php");
-      unset($_POST['mudar']);
-      }
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,61 +11,17 @@ if(isset($_POST['mudar'])){
 
   <title>Easy Learning</title>
 
-    <meta name="description" content="Aprenda tudo sobre a história da música e seus estilos"/>
+  <meta name="description" content="Aprenda tudo sobre a história da música e seus estilos"/>
 	<meta name="keywords" content="Música, Eletrônica, Lo-Fi, Blog, Sertanejo, Historia, Rock, Estilos Musicas, Informação"/>
-    <meta name="author" content="Davi Cecílio"> <!-- FRONT-END -->
-    
+  <meta name="author" content="Davi Cecílio"> <!-- FRONT-END -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-
   <link rel="stylesheet" type="text/css" href="css/csshome.css"> 
-
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
   <link rel="shortcut icon" href="Imagens/iconesite" />
   
-
-    <style>
-
-    html, body {
-      background-image: url("imagens/backgroundloginblur.png");
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      background-size: cover;  
-      }
-
-    
-    .team{
-      background-color: #2f2f2f;
-      color: #ffffff;
-    }
-
-    .imgperfil{
-        width: 200px;
-        height: 200px;
-        background: transparent;
-        border: 2px solid #2f2f2f;
-        }
-      
-        .borda1{
-      border-top-width: thin;
-      border-top-style: solid;
-      border-top-color: #ffffff;
-      }
-
-        .borda2{
-      border-bottom-width: thin ;
-      border-bottom-style: solid;
-      border-bottom-color: #ffffff;
-      }
-      
-        
-
-    </style>
 </head>
 
 <body>
@@ -98,13 +43,12 @@ if(isset($_POST['mudar'])){
               Alterar Perfil
           </a>
           </li>
-
         </ul>
 
       </div>
     </div>
   </nav>
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </body>
