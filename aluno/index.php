@@ -11,10 +11,6 @@ session_start();
 
   <title>Easy Learning</title>
 
-  <meta name="description" content="Aprenda tudo sobre a história da música e seus estilos"/>
-	<meta name="keywords" content="Música, Eletrônica, Lo-Fi, Blog, Sertanejo, Historia, Rock, Estilos Musicas, Informação"/>
-  <meta name="author" content="Davi Cecílio"> <!-- FRONT-END -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
