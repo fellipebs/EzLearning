@@ -101,7 +101,7 @@ $rows = $sql->fetchAll(PDO::FETCH_CLASS);
           <div class="form-group">
             <label class="col-md-3 control-label">Senha:</label>
             <div class="col-md-8">
-              <input class="form-control" type="password" value="<?php echo $row->senha; ?>" name="senha">
+              <input class="form-control" type="password"  name="senha" placeholder="Digite a nova senha">
             </div>
           </div>
           <div class="form-group">

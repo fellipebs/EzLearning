@@ -28,25 +28,6 @@
     <div class="row">
         <h3>alunos</h3>
     </div>
-    <form action="">
-        <div class="row">
-            <div class="col span-1-of-5">
-                <input type="text" name="nome" placeholder="Nome">
-            </div>
-            <div class="col span-1-of-5">
-                <input type="text" name="sobrenome" placeholder="Sobrenome">
-            </div>
-            <div class="col span-1-of-5">
-                <input type="text" name="nascimento" placeholder="Data de Nascimento">
-            </div>
-            <div class="col span-1-of-5">
-                <input type="text" name="responsavel" placeholder="Nome do Responsavel">
-            </div>
-            <div class="col span-1-of-5">
-                <input type="submit" value="cadastrar" class="btn btn-full">
-            </div>
-        </div>
-    </form>
     
     <div class="row">
         <table>
