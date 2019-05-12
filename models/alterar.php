@@ -2,7 +2,6 @@
 session_start();
 require_once ('conexao/conexao.php');
 if(isset($_FILES["escolher"])){
-    header("location: atsdvsvfseljfjb");
     $ext = strtolower(substr($_FILES['escolher']['name'],-4)); //Pegando extensão do arquivo
     $dir = '../assets/images/user/'; //Diretório para uploads 
     $new_name = date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
@@ -21,8 +20,8 @@ if(isset($_POST["senhaAntiga"]) && isset($_POST["novaSenha"]) && isset($_POST["c
 
 }
 if(isset($_POST["usuario"])){
-    $sql = $con->prepare("UPDATE usuarios SET usuario  = ? WHERE id = ?");
-    $sql->execute( array($_POST['usuario'],$_SESSION['usuario']->id) );  
+    $sql = $con->prepare("UPDATE usuarios SET login  = ? WHERE id = ?");
+    $sql->execute( array($_POST['usuario'],$_SESSION['usuario']->id) );
 }
 header("location: ../aluno");
 ?>

@@ -1,8 +1,15 @@
 <?php
-    session_start();
+session_start();
     require_once ('../models/conexao/conexao.php'); 
 
     require_once("../componets/head.php");
+
+    $sql = $con->prepare("SELECT * FROM aluno WHERE usuario_id_aluno = ?");
+    $sql->execute( array($_SESSION['usuario']->id) );
+    $row = $sql->fetchObject();
+    if($row){
+        $_SESSION['aluno'] = $row; 
+    }
 ?>
 
 <body>
@@ -52,33 +59,74 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <div class="review-content-section">
                                             <div id="dropzone1" class="pro-ad">
-                                                <form action="#"
+                                                <form action=""
                                                     class="dropzone dropzone-custom needsclick add-professors"
                                                     id="demo1-upload">
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                             <div class="form-group">
                                                                 <input name="number" type="text" class="form-control"
-                                                                    placeholder="Fly Zend" value="Fly Zend">
+                                                                    placeholder="Fly Zend" value="<?php echo $_SESSION['aluno']->nome ?>" disabled>
                                                             </div>
                                                             <div class="form-group">
                                                                 <input type="text" class="form-control"
                                                                     placeholder="E104, catn-2, UK."
-                                                                    value="E104, catn-2, UK.">
+                                                                    value="<?php echo $_SESSION['aluno']->sobrenome ?>" disabled>
                                                             </div>
                                                             <div class="form-group">
                                                                 <input type="text" class="form-control"
-                                                                    placeholder="12/10/1993" value="12/10/1993">
+                                                                    placeholder="12/10/1993" value="<?php echo date("m-d-Y", strtotime($_SESSION['aluno']->dt_nascimento)); ?>" disabled>
                                                             </div>
                                                             <div class="form-group">
-                                                                <input type="number" class="form-control"
-                                                                    placeholder="1213" value="1213">
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="1213" value="<?php echo $_SESSION['aluno']->responsavel ?>" disabled>
                                                             </div>
                                                             <div class="form-group">
                                                                 <input type="number" class="form-control"
                                                                     placeholder="01962067309" value="01962067309">
                                                             </div>
-                                                            <div class="form-group alert-up-pd">
+                                                           
+                                                        </div>
+                                                    </div>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary waves-effect waves-light">Submit</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-tab-list tab-pane fade" id="reviews">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="review-content-section">
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="devit-card-custom">
+                                                    <form  method="post" action="../models/alterar.php"
+                                                    class="dropzone dropzone-custom needsclick add-professors"
+                                                    id="demo1-upload">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" placeholder="Email"
+                                                                value="<?php echo $_SESSION['usuario']->email ?>">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Login" value="<?php echo $_SESSION['usuario']->login ?>" name="usuario">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="password" class="form-control"
+                                                                placeholder="Senha Antiga" name="senhaAntiga">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="password" class="form-control"
+                                                                placeholder="Senha Atual" name="novaSenha">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="password" class="form-control"
+                                                                placeholder="Confirmar Senha" name="comfirmarSenha">
+                                                        </div>
+                                                        <div class="form-group alert-up-pd">
                                                                 <div class="dz-message needsclick download-custom">
                                                                     <i class="fa fa-download edudropnone"
                                                                         aria-hidden="true"></i>
@@ -93,102 +141,9 @@
                                                                     <input name="imageico" class="hd-pro-img"
                                                                         type="text" />
                                                                 </div>
-                                                            </div>
+                                                        <button type="submit"  class="btn btn-primary waves-effect waves-light">Submit</button>
+                                                        </form>                                                   
                                                         </div>
-                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                            <div class="form-group">
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="CSE" value="CSE">
-                                                            </div>
-                                                            <div class="form-group edit-ta-resize res-mg-t-15">
-                                                                <textarea
-                                                                    name="description">Lorem ipsum dolor sit amet of, consectetur adipiscing elitable. Vestibulum tincidunt est vitae ultrices accumsan.</textarea>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <select class="form-control">
-                                                                    <option>Male</option>
-                                                                    <option>Male</option>
-                                                                    <option>Female</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <select class="form-control">
-                                                                    <option>Nepal</option>
-                                                                    <option>India</option>
-                                                                    <option>Pakistan</option>
-                                                                    <option>Amerika</option>
-                                                                    <option>China</option>
-                                                                    <option>Dubai</option>
-                                                                    <option>Nepal</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <select class="form-control">
-                                                                    <option>Maharastra</option>
-                                                                    <option>Gujarat</option>
-                                                                    <option>Maharastra</option>
-                                                                    <option>Rajastan</option>
-                                                                    <option>Maharastra</option>
-                                                                    <option>Rajastan</option>
-                                                                    <option>Gujarat</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <select class="form-control">
-                                                                    <option>Baroda</option>
-                                                                    <option>Surat</option>
-                                                                    <option>Baroda</option>
-                                                                    <option>Navsari</option>
-                                                                    <option>Baroda</option>
-                                                                    <option>Surat</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="www.uttara.com" value="www.uttara.com">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <div class="payment-adress">
-                                                                <button type="submit"
-                                                                    class="btn btn-primary waves-effect waves-light">Submit</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-tab-list tab-pane fade" id="reviews">
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div class="review-content-section">
-                                            <div class="row">
-                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                    <div class="devit-card-custom">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder="Email"
-                                                                value="Admin@gmail.com">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="number" class="form-control"
-                                                                placeholder="Phone" value="01962067309">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="password" class="form-control"
-                                                                placeholder="Password" value="#123#123">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="password" class="form-control"
-                                                                placeholder="Confirm Password" value="#123#123">
-                                                        </div>
-                                                        <a href="#!"
-                                                            class="btn btn-primary waves-effect waves-light">Submit</a>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
