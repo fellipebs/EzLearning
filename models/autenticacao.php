@@ -12,7 +12,17 @@ $row = $sql->fetchObject();  // devolve um �nico registro
 if ($row){
     $_SESSION['usuario'] = $row;
     $_SESSION['foto'] = $row->foto;
-    header("Location: ../aluno");
+    switch($_SESSION['usuario']->tipo){
+        case 0:
+            header("Location: ../aluno");
+            break;
+        case 1:
+            header("Location: ../professor");
+            break;
+        case 2:
+            header("Location: ../educacional");
+            break;
+    }
 }else{
     header("Location: ../login");
 }
