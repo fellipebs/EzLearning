@@ -12,7 +12,7 @@ $row = $sql->fetchObject();  // devolve um �nico registro
 if ($row){
     $_SESSION['usuario'] = $row;
     $_SESSION['foto'] = $row->foto;
-    header("Location: inicialpage.php");
+    header("Location: ../aluno");
 }else{
     header("Location: ../login");
 }
