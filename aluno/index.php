@@ -1,70 +1,66 @@
 <?php 
-header("Content-type:text/html; charset=utf8");
-require_once ('../models/conexao/conexao.php');
-session_start();
-$sql= $con->prepare("SELECT id,nota,codigo FROM atividades; ");
-$sql->execute();
-$rows = $sql->fetchAll(PDO::FETCH_CLASS);
+  session_start();
 
+  require_once ('../models/conexao/conexao.php');
+  $sql= $con->prepare("SELECT id,nota,codigo FROM atividades; ");
+  $sql->execute();
+  $rows = $sql->fetchAll(PDO::FETCH_CLASS);
+
+  require_once("../componets/head.php");
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-
-  <title>Easy Learning - Alunos</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/normalize.css">
-  <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/grid.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,400i" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/main.css">
-
-  
-</head>
 
 <body>
-   <nav class="padding-nav">
-   <div class="logo-black">Easy Learning</div>
-    <ul class="main-nav nav-black">
-      <li>
-        <img  class="rounded-circle" height="50px" src="../assets/images/user/<?php  echo $_SESSION['foto'];?>" alt="">
-        <a href="#" class="navbar-brand"><?php echo $_SESSION['usuario']->usuario;?></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="alterar-perfil.php">Alterar Perfil</a>
-      </li>
-    </ul>
-  </nav>
-  <div class="clearfix"></div>
-  <div class="row fluid-row">
-    <?php foreach ($rows as $row): ?>
-        <a href="">
-            <div class="card">
-                <img src="../assets/images/algorithm.png" alt="Avatar">
-                <div class="card-content">
-                    <h4>Atividade</h4> 
-                    <p>Nome da Atividade</p> 
+    <?php require_once("../componets/menus.php");?>
+    <div class="breadcome-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcome-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="breadcome-heading">
+                                    <form role="search" class="sr-input-func">
+                                        <input type="text" placeholder="PEsquisar..." class="search-int form-control">
+                                        <a href="../#"><i class="fa fa-search"></i></a>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <ul class="breadcome-menu">
+                                    <li><a href="../#">Home</a> <span class="bread-slash">/</span>
+                                    </li>
+                                    <li><span class="bread-blod">Aluno</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-         </a>
-        <a href="">
-            <div class="card">
-                <img src="../assets/images/algorithm.png" alt="Avatar">
-                <div class="card-content">
-                    <h4>Atividade</h4> 
-                    <p>Nome da Atividade</p> 
-                </div>
+        </div>
+    </div>
+    </div>
+    <div class="contacts-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <?php foreach ($rows as $row): ?>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="student-inner-std res-mg-b-30">
+                            <div class="student-img">
+                                <img src="../img/student/1.jpg" alt="" />
+                            </div>
+                            <div class="student-dtl">
+                                <h2>Atividade</h2>
+                                <p class="dp">Descricao da atividade</p>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
-         </a>
-        
-    <?php endforeach; ?>
-    
-</div>
-
+        </div>
+    </div>
+    <?php require_once("../componets/footer.php");?>
+    <?php require_once("../componets/js.php");?>
 </body>
-    
 
 </html>

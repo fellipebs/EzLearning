@@ -1,27 +1,41 @@
-﻿<html>
-<head>
-<title>Easy Learning - Login</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/normalize.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/grid.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,400i" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/main.css">
-</head>
+<?php require_once("../componets/head.php"); ?>
 <body>
-      <div class="login-page">
-  <div class="form">
-    <form class="login-form" method='post' action='../models/autenticacao.php'>
-      <h2>Login</h2>
-      <input type="text" placeholder="Login" name='login'/>
-      <input type="password" placeholder="Senha" name='senha'/>
-      <input type="submit" value="Entrar" class="btn btn-full">
-    </form>
-  </div>
-</div>
-
+	<div class="error-pagewrap">
+		<div class="error-page-int">
+			<div class="text-center m-b-md custom-login">
+				<h3>HORA DE FAZER LOGIN</h3>
+				<p>A educação vai mudar o mundo</p>
+			</div>
+			<div class="content-error">
+				<div class="hpanel">
+                    <div class="panel-body">
+                        <form action="../models/autenticacao.php" id="loginForm" method="post">
+                            <div class="form-group">
+                                <label class="control-label" for="username">Login</label>
+                                <input type="text" placeholder="examplo@gmail.com" title="Digite seu login" required="" value="" name="login" id="login" class="form-control">
+                                <span class="help-block small">Seu login da Easy Learning</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="senha">Senha</label>
+                                <input type="password" title="Digite sua senha" placeholder="******" required="" value="" name="senha" id="senha" class="form-control">
+                                <span class="help-block small">Sua senha forte</span>
+                            </div>
+                            <div class="checkbox login-checkbox">
+                                <label>
+										<input type="checkbox" class="i-checks"> Lembrar minha conta </label>
+                                <p class="help-block small">(apenas em computadores seguros)</p>
+                            </div>
+                            <button class="btn btn-success btn-block loginbtn">Entrar</button>
+                        </form>
+                    </div>
+                </div>
+			</div>
+			<div class="text-center login-footer">
+				<p>Copyrigth © 2019 by Easy Learning. Todos os direitos reservados.</p>
+			</div>
+		</div>   
+    </div>
+    <?php require_once("../componets/js.php"); ?>
 </body>
+
 </html>
