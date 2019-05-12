@@ -47,7 +47,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div class="student-inner-std res-mg-b-30">
                             <div class="student-img">
-                                <img src="../img/student/1.jpg" alt="" />
+                                <img src="../assets/img/student/1.jpg" alt="" />
                             </div>
                             <div class="student-dtl">
                                 <h2>Atividade</h2>

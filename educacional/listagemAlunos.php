@@ -76,7 +76,7 @@
                                 <?php foreach ($rows as $row): ?>
                                     <tr>
                                         <td><?= $row->id ?></td>
-                                        <td><img src="../img/product/book-1.jpg" alt="" /></td>
+                                        <td><img src="../assets/img/product/book-1.jpg" alt="" /></td>
                                         <td><?= $row->nome ?></td>
                                         <td>
                                             <button class="pd-setting">Active</button>
