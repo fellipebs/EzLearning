@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once('../models/restrito.php');
     require_once ('../models/conexao/conexao.php'); 
 
     require_once("../componets/head.php");

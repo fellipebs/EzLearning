@@ -1,6 +1,6 @@
 <?php 
   session_start();
-
+  require_once('../models/restrito.php');
   require_once ('../models/conexao/conexao.php');
   $sql= $con->prepare("SELECT id,nota,codigo FROM atividades; ");
   $sql->execute();
