@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Salvar Blocagem</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="../google-blockly-9c4f9d6/blockly_compressed.js"></script>
+    <script src="../google-blockly-9c4f9d6/javascript_compressed.js"></script>
+    <script src="../google-blockly-9c4f9d6/blocks_compressed.js"></script>
+    <script src="../google-blockly-9c4f9d6/msg/js/pt-br.js"></script>
+</head>
+<body>
+    <xml id="toolbox" style="display: none">
+        <block type="controls_if"></block>
+        <block type="logic_compare"></block>
+        <block type="controls_repeat_ext"></block>
+        <block type="math_number">
+          <field name="NUM">123</field>
+        </block>
+        <block type="math_arithmetic"></block>
+        <block type="text"></block>
+        <block type="text_print"></block>
+        <block type="variables_get"><field name="VAR">i</field></block>
+        <block type="variables_get"><field name="VAR">j</field></block>
+        <block type="variables_get"><field name="VAR">k</field></block>
+      </xml>
+      <div class="container-fluid">
+            <button onclick="salvar()" class="btn btn-primary">Salvar</button>
+            <button onclick="atividade_salva()" class="btn btn-primary">Atividade salva</button>
+            <div id="blocosDiv" style="height: 480px; width: 600px;"></div>
+      </div>
+      <script>
+        // Inject primary workspace.
+        var workspace = Blockly.inject('blocosDiv',
+            {media: '../google-blockly-9c4f9d6/media/',
+             toolbox: document.getElementById('toolbox'),
+             trashcan: true});
+
+        function salvar(){
+            var xml = Blockly.Xml.workspaceToDom(workspace);
+            xml_text = Blockly.Xml.domToText(xml);
+            return xml_text; 
+        }
+        function atividade_salva(){
+            var xml = Blockly.Xml.textToDom(xml_text);
+            Blockly.Xml.domToWorkspace(xml, workspace);
+        }
+        </script>
+</body>
+</html>
