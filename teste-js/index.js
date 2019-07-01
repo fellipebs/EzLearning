@@ -14,7 +14,7 @@ function teste(){
        document.getElementById('continuar').style='display: block;'
        alert('Eba! Sua planta chegou ao estágio final!');
     }else if(contador == '3'){
-        alert('Ai você matou a planta afogada...');
+        alert('Ai você matou a planta afogadaaa...');
         document.getElementById('continuar').style='display: none;'
         document.getElementById('refresh').style='display: block;'
         document.getElementById('contador').value='4';
