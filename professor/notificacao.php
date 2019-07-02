@@ -9,18 +9,14 @@
 if(isset($_POST['msg'])){
 	$msg = $_POST['msg'];
 	$aluno = $_POST['aluno'];
-	
-	
-	/*$pdo = new PDO("mysql:host=localhost; dbname=ezlearning;", "root", "");
 
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-   
 $stmt = $pdo->prepare('INSERT INTO notificacao (descricao, aluno_id) VALUES(:descricao, :aluno_id)');
 $stmt->execute(array(
   ':descricao' => $msg,
   ':aluno_id' => $aluno
 ));
-	*/
+	
 
 }
 
@@ -73,23 +69,21 @@ if(isset($_POST['check'])){
                                 <table>
                                    Utilize esta página para enviar notificações aos alunos!
                                    <br><br>
+                                   <form method='post'>
                                    <input type="checkbox" name="check" value="" class=''>Selecione este check box para enviar a mensagem para todos da sala.<br>
                                    
                                    <br> Ou selecione o nome do aluno que você deseja notificar:
                                    <select name='aluno' class='form-control'>
                                     <option value='0'></option>
                                     <?php
-// $con = new PDO("mysql:host=localhost; dbname=ezlearning;", "root","");
-// $sql = $con->prepare("SELECT * from aluno");
-// $sql->execute();
+                                        
+                                        $sql = $con->prepare("SELECT * from aluno");
+                                        $sql->execute();
 
-// $rows = $sql->fetchAll(PDO::FETCH_CLASS);
-// //fetchAll - recupera todos os registros da tabela
-// //PDO::FETCH_CLASS - resultado � armazenado em um objeto
-
-// foreach ($rows as $row){
-// 	echo "<option value=".$row->id.">".$row->nome."</option>";
-                                // }
+                                        $rows = $sql->fetchAll(PDO::FETCH_CLASS);
+                                        foreach ($rows as $row){
+                                        	echo "<option value=".$row->usuario_id_aluno.">".$row->nome."</option>";
+                                        }
                                     ?>
   
   
