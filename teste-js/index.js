@@ -3,7 +3,7 @@ function teste(){
     if(contador == '0'){
         document.getElementById('planta').src='2.jpg';
         document.getElementById('contador').value='1';
-        alert('Parabéns, sua planta está crescendo corretamente!');
+        alert('Parabéns, sua planta está morrendoolllll corretamente!');
     }else if(contador == '1'){
        document.getElementById('planta').src='3.jpg';
        document.getElementById('contador').value='2';
