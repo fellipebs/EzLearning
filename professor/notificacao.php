@@ -5,26 +5,7 @@
     require("../models/restrito.php");
     require_once("../componets/head.php");
 ?>
-<?php
-if(isset($_POST['msg'])){
-	$msg = $_POST['msg'];
-	$aluno = $_POST['aluno'];
 
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$stmt = $pdo->prepare('INSERT INTO notificacao (descricao, aluno_id) VALUES(:descricao, :aluno_id)');
-$stmt->execute(array(
-  ':descricao' => $msg,
-  ':aluno_id' => $aluno
-));
-	
-
-}
-
-if(isset($_POST['check'])){
-	$teste = $_POST['check'];
-	echo $teste;
-}
-?>
 
 
 <body>
@@ -69,12 +50,12 @@ if(isset($_POST['check'])){
                                 <table>
                                    Utilize esta página para enviar notificações aos alunos!
                                    <br><br>
-                                   <form method='post'>
+                                   <form  action='rbnoti.php' method='post'>
                                    <input type="checkbox" name="check" value="" class=''>Selecione este check box para enviar a mensagem para todos da sala.<br>
                                    
                                    <br> Ou selecione o nome do aluno que você deseja notificar:
                                    <select name='aluno' class='form-control'>
-                                    <option value='0'></option>
+                                    <option value=''></option>
                                     <?php
                                         
                                         $sql = $con->prepare("SELECT * from aluno");
@@ -91,9 +72,9 @@ if(isset($_POST['check'])){
                                 </select>
                                     Escreva aqui a mensagem que estara na notificação:
                                         <br>
-                                  <textarea name="msg" class='form-control'> </textarea>
+                                  <textarea name="msg" class='form-control' required> </textarea>
                                   <br>
-                                   <button>Cadastrar!</button>
+                                   <input type='submit'>
      
                                  </form>
                                 </table>
