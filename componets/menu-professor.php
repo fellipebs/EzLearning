@@ -238,7 +238,7 @@
                                                 <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-bell" aria-hidden="true"></i><span class="indicator-nt"></span></a>
                                                     <div role="menu" class="notification-author dropdown-menu animated zoomIn">
                                                         <div class="notification-single-top">
-                                                            <h1>Notifications</h1>
+                                                            <h1>Notificações</h1>
                                                         </div>
                                                         <ul class="notification-menu">
                                                             <li>
@@ -297,7 +297,7 @@
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-															<img src="../assets/img/product/pro4.jpg" alt="" />
+															<img src="../assets/images/default.png" alt="" />
 															<?php echo "<span class='admin-name'>".$_SESSION['usuario']->usuario."</span>" ?>
 															<i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
 														</a>
