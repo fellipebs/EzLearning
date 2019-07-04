@@ -245,7 +245,7 @@ require_once ('../models/conexao/conexao.php'); ?>
                                                     where aluno_id = ".$_SESSION['usuario']->id."");
                                                      $sql->execute();
 
-                                                    $rows = $sql->fetchAll(PDO::FETCH_CLASS);
+                                                    $linha = $sql->fetchAll(PDO::FETCH_CLASS);
                                                     ?>
   
                                                      
@@ -255,7 +255,7 @@ require_once ('../models/conexao/conexao.php'); ?>
                                                         <ul class="notification-menu">
                                                         <?php 
                                                         
-                                                    foreach ($rows as $row){
+                                                    foreach ($linha as $row){
                                                         
                                                         
                                                         echo "

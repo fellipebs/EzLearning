@@ -9,6 +9,7 @@
 
 
 <body>
+<script src="js/notificacao.js" type="text/javascript"></script>
     <?php require_once("../componets/menus.php");?>
             <div class="breadcome-area">
                 <div class="container-fluid">
@@ -53,9 +54,10 @@
                                    <br><br>
                                    <form  action='rbnoti.php' method='post'>
                                    <?php echo "<input type='hidden' id='usu' name='usu' value=".$_SESSION['usuario']->id.">"  ?>
-                                   <input type="checkbox" name="check" value="" class=''>Selecione este check box para enviar a mensagem para todos da sala.<br>
-                                   
+                                   <input type="checkbox" name="check" id='check' value="" class='' onclick='esconde()'>Selecione este check box para enviar a mensagem para todos da sala.<br>
+                                   <div id='teste'>
                                    <br> Ou selecione o nome do aluno que você deseja notificar:
+                                   
                                    <select name='aluno' class='form-control'>
                                     <option value=''></option>
                                     <?php
@@ -72,6 +74,7 @@
   
   
                                 </select>
+                                </div>
                                     Escreva aqui a mensagem que estara na notificação:
                                         <br>
                                   <textarea name="msg" class='form-control' required> </textarea>
