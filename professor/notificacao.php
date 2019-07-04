@@ -48,9 +48,11 @@
                           
                             <div class="asset-inner">
                                 <table>
+                                
                                    Utilize esta página para enviar notificações aos alunos!
                                    <br><br>
                                    <form  action='rbnoti.php' method='post'>
+                                   <?php echo "<input type='hidden' id='usu' name='usu' value=".$_SESSION['usuario']->id.">"  ?>
                                    <input type="checkbox" name="check" value="" class=''>Selecione este check box para enviar a mensagem para todos da sala.<br>
                                    
                                    <br> Ou selecione o nome do aluno que você deseja notificar:

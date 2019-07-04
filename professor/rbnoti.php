@@ -1,16 +1,19 @@
 <?php
+session_start();
 require_once ('../models/conexao/conexao.php'); 
 if(isset($_POST['aluno'])){
 	$msg = $_POST['msg'];
     $aluno = $_POST['aluno'];
+    $usu = $_POST['usu'];
     if(empty($aluno)){
         header("Location: notificacao.php");
     }else{
          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-         $stmt = $pdo->prepare('INSERT INTO notificacao (descricao, aluno_id) VALUES(:descricao, :aluno_id)');
+         $stmt = $pdo->prepare('INSERT INTO notificacao (descricao, aluno_id, data, id_enviou) VALUES(:descricao, :aluno_id, NOW(), :id_enviou)');
          $stmt->execute(array(
            ':descricao' => $msg,
-           ':aluno_id' => $aluno
+           ':aluno_id' => $aluno,
+           ':id_enviou' => $usu
         ));
     }
     header("Location: notificacao.php");
@@ -19,6 +22,7 @@ if(isset($_POST['aluno'])){
 if(isset($_POST['check'])){
     $teste = $_POST['check'];
     $msg = $_POST['msg'];
+    $usu = $_POST['usu'];
     
     $sql = $con->prepare("SELECT * from aluno");
     $sql->execute();
@@ -27,10 +31,11 @@ if(isset($_POST['check'])){
     foreach ($rows as $row){
         $aluno = $row->usuario_id_aluno;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $stmt = $pdo->prepare('INSERT INTO notificacao (descricao, aluno_id) VALUES(:descricao, :aluno_id)');
+        $stmt = $pdo->prepare('INSERT INTO notificacao (descricao, aluno_id, data, id_enviou) VALUES(:descricao, :aluno_id, NOW(), :id_enviou)');
         $stmt->execute(array(
           ':descricao' => $msg,
-          ':aluno_id' => $aluno
+          ':aluno_id' => $aluno,
+          ':id_enviou' => $usu
        ));
     }
     header("Location: notificacao.php");

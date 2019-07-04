@@ -1,4 +1,5 @@
-<? session_start(); ?>
+<? session_start(); 
+require_once ('../models/conexao/conexao.php'); ?>
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
@@ -63,7 +64,7 @@
                             </ul>
                         </li> -->
                         <li>
-                            <a title="Landing Page" href="../events.html" aria-expanded="false"><span class="educate-icon educate-interface icon-wrap"></span> <span class="mini-click-non">Notificações</span></a>
+                            <a title="Landing Page" href="../professor/notificacao.php" aria-expanded="false"><span class="educate-icon educate-interface icon-wrap"></span> <span class="mini-click-non">Notificações</span></a>
                         </li>
                         <!-- <li>
                             <a class="has-arrow" href="../mailbox.html" aria-expanded="false"><span class="educate-icon educate-charts icon-wrap"></span> <span class="mini-click-non">Charts</span></a>
@@ -237,61 +238,45 @@
                                                 </li>
                                                 <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-bell" aria-hidden="true"></i><span class="indicator-nt"></span></a>
                                                     <div role="menu" class="notification-author dropdown-menu animated zoomIn">
+                                                    <?php
+                                        
+                                                    $sql = $con->prepare("SELECT a.id, a.descricao, a.aluno_id, DATE_FORMAT(a.data,'%d/%m') as data, u.usuario from notificacao a 
+                                                    inner join usuario u on a.aluno_id = u.id
+                                                    where aluno_id = ".$_SESSION['usuario']->id."");
+                                                     $sql->execute();
+
+                                                    $rows = $sql->fetchAll(PDO::FETCH_CLASS);
+                                                    ?>
+  
+                                                     
                                                         <div class="notification-single-top">
                                                             <h1>Notificações</h1>
                                                         </div>
                                                         <ul class="notification-menu">
+                                                        <?php 
+                                                        
+                                                    foreach ($rows as $row){
+                                                        
+                                                        
+                                                        echo "
                                                             <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="educate-icon educate-checked edu-checked-pro admin-check-pro" aria-hidden="true"></i>
+                                                                <a href='#'>
+                                                                    <div class='notification-icon'>
+                                                                        <i class='educate-icon educate-checked edu-checked-pro admin-check-pro' aria-hidden='true'></i>
                                                                     </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Advanda Cro</h2>
-                                                                        <p>Please done this project as soon possible.</p>
+                                                                    <div class='notification-content'>
+                                                                    <span class='notification-date'>".$row->data."</span>
+                                                                        <h2>".$row->usuario."</h2>
+                                                                        <p>".$row->descricao."</p>
                                                                     </div>
                                                                 </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="fa fa-cloud edu-cloud-computing-down" aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Sulaiman din</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="fa fa-eraser edu-shield" aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="fa fa-line-chart edu-analytics-arrow" aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
+                                                            </li>";
+                                                        }
+                                                            ?>
+                                                            
                                                         </ul>
                                                         <div class="notification-view">
-                                                            <a href="#">View All Notification</a>
+                                                            <a href="#">Veja todas suas notificações!</a>
                                                         </div>
                                                     </div>
                                                 </li>
