@@ -1,5 +1,4 @@
-<? session_start(); 
-require_once ('../models/conexao/conexao.php'); ?>
+
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
@@ -10,12 +9,22 @@ require_once ('../models/conexao/conexao.php'); ?>
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
                         <li>
-                                <a title="Landing Page" href="../index.html" aria-expanded="false"><span class="educate-icon educate-home icon-wrap"></span> <span class="mini-click-non">Home</span></a>
+                            <a class="has-arrow" href="../index.html">
+								   <span class="educate-icon educate-home icon-wrap"></span>
+								   <span class="mini-click-non">Education</span>
+								</a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                                <li><a title="Dashboard v.1" href="../index.html"><span class="mini-sub-pro">Dashboard v.1</span></a></li>
+                                <li><a title="Dashboard v.2" href="../index-1.html"><span class="mini-sub-pro">Dashboard v.2</span></a></li>
+                                <li><a title="Dashboard v.3" href="../index-2.html"><span class="mini-sub-pro">Dashboard v.3</span></a></li>
+                                <li><a title="Analytics" href="../analytics.html"><span class="mini-sub-pro">Analytics</span></a></li>
+                                <li><a title="Widgets" href="../widgets.html"><span class="mini-sub-pro">Widgets</span></a></li>
+                            </ul>
                         </li>
-                        <!-- <li>
+                        <li>
                             <a title="Landing Page" href="../events.html" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Event</span></a>
-                        </li> -->
-                        <!-- <li>
+                        </li>
+                        <li>
                             <a class="has-arrow" href="../all-professors.html" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap"></span> <span class="mini-click-non">Professors</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="All Professors" href="../all-professors.html"><span class="mini-sub-pro">All Professors</span></a></li>
@@ -23,8 +32,8 @@ require_once ('../models/conexao/conexao.php'); ?>
                                 <li><a title="Edit Professor" href="../edit-professor.html"><span class="mini-sub-pro">Edit Professor</span></a></li>
                                 <li><a title="Professor Profile" href="../professor-profile.html"><span class="mini-sub-pro">Professor Profile</span></a></li>
                             </ul>
-                        </li> -->
-                        <!-- <li>
+                        </li>
+                        <li>
                             <a class="has-arrow" href="../all-students.html" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Students</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="All Students" href="../all-students.html"><span class="mini-sub-pro">All Students</span></a></li>
@@ -32,8 +41,8 @@ require_once ('../models/conexao/conexao.php'); ?>
                                 <li><a title="Edit Students" href="../edit-student.html"><span class="mini-sub-pro">Edit Student</span></a></li>
                                 <li><a title="Students Profile" href="../student-profile.html"><span class="mini-sub-pro">Student Profile</span></a></li>
                             </ul>
-                        </li> -->
-                        <!-- <li>
+                        </li>
+                        <li>
                             <a class="has-arrow" href="../all-courses.html" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Courses</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="All Courses" href="../all-courses.html"><span class="mini-sub-pro">All Courses</span></a></li>
@@ -42,31 +51,45 @@ require_once ('../models/conexao/conexao.php'); ?>
                                 <li><a title="Courses Profile" href="../course-info.html"><span class="mini-sub-pro">Courses Info</span></a></li>
                                 <li><a title="course Payment" href="../course-payment.html"><span class="mini-sub-pro">Courses Payment</span></a></li>
                             </ul>
-                        </li> -->
-                        <!-- <li>
+                        </li>
+                        <li>
                             <a class="has-arrow" href="../all-courses.html" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Library</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="All Library" href="../library-assets.html"><span class="mini-sub-pro">Library Assets</span></a></li>
                                 <li><a title="Add Library" href="../add-library-assets.html"><span class="mini-sub-pro">Add Library Asset</span></a></li>
                                 <li><a title="Edit Library" href="../edit-library-assets.html"><span class="mini-sub-pro">Edit Library Asset</span></a></li>
-                            </ul> -->
+                            </ul>
                         </li>
                         <li>
-                            <!-- <a class="has-arrow" href="../all-courses.html" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Medalhas</span></a> -->
-                            <a title="Landing Page" href="../events.html" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Medalhas</span></a>
+                            <a class="has-arrow" href="../all-courses.html" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Departments</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Departments List" href="../departments.html"><span class="mini-sub-pro">Departments List</span></a></li>
+                                <li><a title="Add Departments" href="../add-department.html"><span class="mini-sub-pro">Add Departments</span></a></li>
+                                <li><a title="Edit Departments" href="../edit-department.html"><span class="mini-sub-pro">Edit Departments</span></a></li>
+                            </ul>
                         </li>
-                        <!-- <li>
+                        <li>
                             <a class="has-arrow" href="../mailbox.html" aria-expanded="false"><span class="educate-icon educate-message icon-wrap"></span> <span class="mini-click-non">Mailbox</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Inbox" href="../mailbox.html"><span class="mini-sub-pro">Inbox</span></a></li>
                                 <li><a title="View Mail" href="../mailbox-view.html"><span class="mini-sub-pro">View Mail</span></a></li>
                                 <li><a title="Compose Mail" href="../mailbox-compose.html"><span class="mini-sub-pro">Compose Mail</span></a></li>
                             </ul>
-                        </li> -->
-                        <li>
-                            <a title="Landing Page" href="../professor/notificacao.php" aria-expanded="false"><span class="educate-icon educate-interface icon-wrap"></span> <span class="mini-click-non">Notificações</span></a>
                         </li>
-                        <!-- <li>
+                        <li>
+                            <a class="has-arrow" href="../mailbox.html" aria-expanded="false"><span class="educate-icon educate-interface icon-wrap"></span> <span class="mini-click-non">Interface</span></a>
+                            <ul class="submenu-angle interface-mini-nb-dp" aria-expanded="false">
+                                <li><a title="Google Map" href="../google-map.html"><span class="mini-sub-pro">Google Map</span></a></li>
+                                <li><a title="Data Maps" href="../data-maps.html"><span class="mini-sub-pro">Data Maps</span></a></li>
+                                <li><a title="Pdf Viewer" href="../pdf-viewer.html"><span class="mini-sub-pro">Pdf Viewer</span></a></li>
+                                <li><a title="X-Editable" href="../x-editable.html"><span class="mini-sub-pro">X-Editable</span></a></li>
+                                <li><a title="Code Editor" href="../code-editor.html"><span class="mini-sub-pro">Code Editor</span></a></li>
+                                <li><a title="Tree View" href="../tree-view.html"><span class="mini-sub-pro">Tree View</span></a></li>
+                                <li><a title="Preloader" href="../preloader.html"><span class="mini-sub-pro">Preloader</span></a></li>
+                                <li><a title="Images Cropper" href="../images-cropper.html"><span class="mini-sub-pro">Images Cropper</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
                             <a class="has-arrow" href="../mailbox.html" aria-expanded="false"><span class="educate-icon educate-charts icon-wrap"></span> <span class="mini-click-non">Charts</span></a>
                             <ul class="submenu-angle chart-mini-nb-dp" aria-expanded="false">
                                 <li><a title="Bar Charts" href="../bar-charts.html"><span class="mini-sub-pro">Bar Charts</span></a></li>
@@ -77,8 +100,8 @@ require_once ('../models/conexao/conexao.php'); ?>
                                 <li><a title="Sparkline Charts" href="../sparkline.html"><span class="mini-sub-pro">Sparkline Charts</span></a></li>
                                 <li><a title="Peity Charts" href="../peity.html"><span class="mini-sub-pro">Peity Charts</span></a></li>
                             </ul>
-                        </li> -->
-                        <!-- <li>
+                        </li>
+                        <li>
                             <a class="has-arrow" href="../mailbox.html" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap"></span> <span class="mini-click-non">Data Tables</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Peity Charts" href="../static-table.html"><span class="mini-sub-pro">Static Table</span></a></li>
@@ -117,7 +140,7 @@ require_once ('../models/conexao/conexao.php'); ?>
                                 <li><a title="404 Page" href="../404.html"><span class="mini-sub-pro">404 Page</span></a></li>
                                 <li><a title="500 Page" href="../500.html"><span class="mini-sub-pro">500 Page</span></a></li>
                             </ul>
-                        </li> -->
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -238,52 +261,68 @@ require_once ('../models/conexao/conexao.php'); ?>
                                                 </li>
                                                 <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-bell" aria-hidden="true"></i><span class="indicator-nt"></span></a>
                                                     <div role="menu" class="notification-author dropdown-menu animated zoomIn">
-                                                    <?php
-                                        
-                                                    $sql = $con->prepare("SELECT a.id, a.descricao, a.aluno_id, DATE_FORMAT(a.data,'%d/%m') as data, u.usuario from notificacao a 
-                                                    inner join usuario u on a.aluno_id = u.id
-                                                    where aluno_id = ".$_SESSION['usuario']->id."");
-                                                     $sql->execute();
-
-                                                    $linha = $sql->fetchAll(PDO::FETCH_CLASS);
-                                                    ?>
-  
-                                                     
                                                         <div class="notification-single-top">
-                                                            <h1>Notificações</h1>
+                                                            <h1>Notifications</h1>
                                                         </div>
                                                         <ul class="notification-menu">
-                                                        <?php 
-                                                        
-                                                    foreach ($linha as $row){
-                                                        
-                                                        
-                                                        echo "
                                                             <li>
-                                                                <a href='#'>
-                                                                    <div class='notification-icon'>
-                                                                        <i class='educate-icon educate-checked edu-checked-pro admin-check-pro' aria-hidden='true'></i>
+                                                                <a href="#">
+                                                                    <div class="notification-icon">
+                                                                        <i class="educate-icon educate-checked edu-checked-pro admin-check-pro" aria-hidden="true"></i>
                                                                     </div>
-                                                                    <div class='notification-content'>
-                                                                    <span class='notification-date'>".$row->data."</span>
-                                                                        <h2>".$row->usuario."</h2>
-                                                                        <p>".$row->descricao."</p>
+                                                                    <div class="notification-content">
+                                                                        <span class="notification-date">16 Sept</span>
+                                                                        <h2>Advanda Cro</h2>
+                                                                        <p>Please done this project as soon possible.</p>
                                                                     </div>
                                                                 </a>
-                                                            </li>";
-                                                        }
-                                                            ?>
-                                                            
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="notification-icon">
+                                                                        <i class="fa fa-cloud edu-cloud-computing-down" aria-hidden="true"></i>
+                                                                    </div>
+                                                                    <div class="notification-content">
+                                                                        <span class="notification-date">16 Sept</span>
+                                                                        <h2>Sulaiman din</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="notification-icon">
+                                                                        <i class="fa fa-eraser edu-shield" aria-hidden="true"></i>
+                                                                    </div>
+                                                                    <div class="notification-content">
+                                                                        <span class="notification-date">16 Sept</span>
+                                                                        <h2>Victor Jara</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="notification-icon">
+                                                                        <i class="fa fa-line-chart edu-analytics-arrow" aria-hidden="true"></i>
+                                                                    </div>
+                                                                    <div class="notification-content">
+                                                                        <span class="notification-date">16 Sept</span>
+                                                                        <h2>Victor Jara</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
                                                         </ul>
                                                         <div class="notification-view">
-                                                            <a href="#">Veja todas suas notificações!</a>
+                                                            <a href="#">View All Notification</a>
                                                         </div>
                                                     </div>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-															<img src="../assets/images/default.png" alt="" />
-															<?php echo "<span class='admin-name'>".$_SESSION['usuario']->usuario."</span>" ?>
+															<img src="../assets/img/product/pro4.jpg" alt="" />
+															<span class="admin-name">Prof.Anderson</span>
 															<i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
 														</a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">

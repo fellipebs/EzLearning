@@ -45,15 +45,17 @@
             <div class="row">
                 <?php foreach ($rows as $row): ?>
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <a href="../teste.html">
                         <div class="student-inner-std res-mg-b-30">
                             <div class="student-img">
-                                <img src="../assets/img/student/1.jpg" alt="" />
+                                <img src="../assets/images/algorithm.png" alt="" />
                             </div>
                             <div class="student-dtl">
                                 <h2>Atividade</h2>
                                 <p class="dp">Descricao da atividade</p>
                             </div>
                         </div>
+                    </a>
                     </div>
                 <?php endforeach; ?>
             </div>
