@@ -30,7 +30,7 @@
                                         <ul class="breadcome-menu">
                                             <li><a href="../#">Home</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Enviar notificações</span>
+                                            <li><span class="bread-blod">Notas</span>
                                             
                                             </li>
                                         </ul>
@@ -56,33 +56,43 @@
                                 </h2>   
 
                                     <div class="tab">
-                                      <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen"> <h3>Média geral dos alunos</h3></button>
-                                      <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+                                      <button class="tablinks" onclick="openCity(event, 'Turma')" id="defaultOpen"> <h3>Média geral dos alunos</h3></button>
+                                      <button class="tablinks" onclick="openCity(event, 'Aluno')"><h3>Média por aluno</h3></button>
                                       <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
                                     </div>
 
-                                    <div id="London" class="tabcontent">
+                                    <div id="Turma" class="tabcontent">
                                      
                                       <?php
                                         
                                         $sql = $con->prepare("SELECT * from nota");
                                         $sql->execute();
                                         $total = 0;
+                                        $notas = 0;
                                         echo "<h2> Notas de todos alunos somadas: </h2>";
                                         $rows = $sql->fetchAll(PDO::FETCH_CLASS);
                                         foreach ($rows as $row){
                                             
-                                            $total += $row->nota;
+                                            $total += $row->valor_atividade;
+                                            $notas += $row->nota;
                                             
                                         }
-                                        echo $total;
+
+                                        
+                                      
                                     ?>
-                                    <div id="donut_single" style="width: 600px; height: 300px;"></div>
+                                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                                     <div id="chart_div"></div>
+                                     <br><h4>Percentual de aproveitamento: <?php echo ($notas/$total*100)."%" ?></h4>
+      
                                     </div>
 
-                                    <div id="Paris" class="tabcontent">
-                                      <h3>Paris</h3>
-                                      <p>Paris is the capital of France.</p> 
+                                    <div id="Aluno" class="tabcontent">
+                                      <h2>Percentual de aproveitamento por aluno:</h2>
+                                      
+
+
+
                                     </div>
 
                                     <div id="Tokyo" class="tabcontent">
@@ -111,28 +121,49 @@
                             
                             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawAxisTickColors);
 
-      function drawChart() {
+function drawAxisTickColors() {
+      var data = google.visualization.arrayToDataTable([
+        ['Notas', 'Total de pontos distribuidos', 'Total conseguido pela sala'],
+        ['Pontos', <?php echo $total ?>,<?php echo $notas ?>],
+      ]);
 
-        var data = google.visualization.arrayToDataTable([
-          ['Effort', 'Amount given'],
-          ['Pontuação da sala',     <?php echo '90' ?>],
-          ['Total', <?php ?>],
-        ]);
-
-        var options = {
-          pieHole: 0.5,
-          pieSliceTextStyle: {
-            color: 'black',
+      var options = {
+        title: 'Notas',
+        chartArea: {width: '50%'},
+        hAxis: {
+          title: '',
+          minValue: 0,
+          textStyle: {
+            bold: true,
+            fontSize: 12,
+            color: '#4d4d4d'
           },
-          legend: 'none'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donut_single'));
-        chart.draw(data, options);
-      }
+          titleTextStyle: {
+            bold: true,
+            fontSize: 18,
+            color: '#4d4d4d'
+          }
+        },
+        vAxis: {
+          title: '',
+          textStyle: {
+            fontSize: 14,
+            bold: true,
+            color: '#848484'
+          },
+          titleTextStyle: {
+            fontSize: 14,
+            bold: true,
+            color: '#848484'
+          }
+        }
+      };
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
     </script>
 
                                    
