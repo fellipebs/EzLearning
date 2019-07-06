@@ -15,7 +15,7 @@
 								</a>
                         </li>
                         <li>
-                            <a class="" href="../all-courses.html" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Medalhas</span></a>
+                            <a class="" href="medalhas.php" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Medalhas</span></a>
                             
                         </li>
                         <li>
@@ -28,7 +28,7 @@
                             <a class="" href="../mailbox.html" aria-expanded="false"><span class="educate-icon educate-charts icon-wrap"></span> <span class="mini-click-non">Notas</span></a>
                         </li>
                         <li>
-                            <a class="" href="../mailbox.html" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap"></span> <span class="mini-click-non">Atividades</span></a>
+                            <a class="" href="index.php" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap"></span> <span class="mini-click-non">Atividades</span></a>
                             
                         </li>
                         

@@ -1,61 +1,57 @@
-<?php
-//Comando para conexão com o banco de dados.
-$pdo = new PDO("mysql:host=ezlearning.mysql.dbaas.com.br; dbname=ezlearning","ezlearning","QVLm638qvTJBtL");
-$con =  new PDO("mysql:host=ezlearning.mysql.dbaas.com.br; dbname=ezlearning","ezlearning","QVLm638qvTJBtL");
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Medalhas</title>
+	<meta charset="utf8">
 
-$smtp = $pdo->prepare("SELECT * FROM medalha_aluno ma INNER JOIN aluno a on ma.aluno_id = a.id");
-$smtp->execute();
-$rows = $smtp->fetchAll(PDO::FETCH_CLASS);
-$RankingMedalhas = array();
+    <?php 
+  session_start();
+  require_once('../models/restrito.php');
+  require_once ('../models/conexao/conexao.php');
+  $sql= $con->prepare("SELECT id,nota,codigo FROM atividades; ");
+  $sql->execute();
+  $rows = $sql->fetchAll(PDO::FETCH_CLASS);
 
-foreach ($rows as $row):
-    array_push($RankingMedalhas, array(
-        'nome'=>$row->nome,
-        'ouro'=>$row->quantidade_ouro,
-        'prata'=>$row->quantidade_prata,
-        'bronze'=>$row->quantidade_bronze,
-        'total'=>$row->quantidade_ouro*3 + $row->quantidade_prata*2 + $row->quantidade_bronze*1
-    ));
-endforeach;
-
-foreach($RankingMedalhas as $RankingMedalha){ 
-    foreach($RankingMedalha as $key=>$value){ 
-        if(!isset($sortArray[$key])){ 
-            $sortArray[$key] = array(); 
-        } 
-        $sortArray[$key][] = $value; 
-    } 
-} 
-
-$orderby = "total";
-
-array_multisort($sortArray[$orderby],SORT_DESC,$RankingMedalhas); 
+  require_once("../componets/head.php");
 ?>
-<table>
-    <tr>
-        <th>Posição</th>
-        <th>Nome</th>
-        <th>Ouro</th>
-        <th>Prata</th>
-        <th>Bronze</th>
-        <th>Total</th>
-    </tr>
-    <?php $LinhaArray = 0;
-          $PosicaoRanking = 1;
-    foreach ($RankingMedalhas as $RankingMedalha): 
-        
-        ?>
-    <tr>
-        <td><?= $PosicaoRanking++; ?></td>
-        <td><?= $RankingMedalhas[$LinhaArray]['nome']?></td>
-        <td><?= $RankingMedalhas[$LinhaArray]['ouro']?></td>
-        <td><?= $RankingMedalhas[$LinhaArray]['prata'] ?></td>
-        <td><?= $RankingMedalhas[$LinhaArray]['bronze'] ?></td>
-        <td><?= $RankingMedalhas[$LinhaArray]['total']?></td>
-    </tr>
-        <?php $LinhaArray++;
-                            endforeach; ?>
 
-
-                            </table>
+<?php require_once("../componets/menus.php");?>
+    <div class="breadcome-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcome-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="breadcome-heading">
+                                    <form role="search" class="sr-input-func">
+                                        <input type="text" placeholder="PEsquisar..." class="search-int form-control">
+                                        <a href="../#"><i class="fa fa-search"></i></a>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <ul class="breadcome-menu">
+                                    <li><a href="../#">Home</a> <span class="bread-slash">/</span>
+                                    </li>
+                                    <li><span class="bread-blod">Aluno</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+   
+  
+<body>
+<?php require_once("inc/pontuacao-medalha.php");?>
+<?php require_once("inc/ranking-geral.php");?>
+</body>
+<?php require_once("../componets/footer.php");?>
+    <?php require_once("../componets/js.php");?>
+</html>
 
