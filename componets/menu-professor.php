@@ -166,10 +166,10 @@ require_once ('../models/conexao/conexao.php'); ?>
                                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
-                                                <li class="nav-item dropdown">
-                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-message edu-chat-pro" aria-hidden="true"></i><span class="indicator-ms"></span></a>
-                                                    <div role="menu" class="author-message-top dropdown-menu animated zoomIn">
-                                                        <div class="message-single-top">
+                                                <!-- <li class="nav-item dropdown"> -->
+                                                    <!-- <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-message edu-chat-pro" aria-hidden="true"></i><span class="indicator-ms"></span></a> -->
+                                                    <!-- <div role="menu" class="author-message-top dropdown-menu animated zoomIn"> -->
+                                                        <!-- <div class="message-single-top">
                                                             <h1>Message</h1>
                                                         </div>
                                                         <ul class="message-menu">
@@ -226,7 +226,7 @@ require_once ('../models/conexao/conexao.php'); ?>
                                                             <a href="#">View All Messages</a>
                                                         </div>
                                                     </div>
-                                                </li>
+                                                </li> -->
                                                 <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-bell" aria-hidden="true"></i><span class="indicator-nt"></span></a>
                                                     <div role="menu" class="notification-author dropdown-menu animated zoomIn">
                                                     <?php
@@ -285,7 +285,7 @@ require_once ('../models/conexao/conexao.php'); ?>
                                                         </li>
                                                         <li><a href="#"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
                                                         </li>
-                                                        <li><a href="#"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a>
+                                                        <li><a href="../models/logout.php"><span class="edu-icon edu-locked author-log-ic"></span>Sair</a>
                                                         </li>
                                                     </ul>
                                                 </li>
