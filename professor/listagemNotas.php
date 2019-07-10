@@ -88,11 +88,23 @@
                                     </div>
 
                                     <div id="Aluno" class="tabcontent">
-                                      <h2>Percentual de aproveitamento por aluno:</h2>
-                                      
-
-
-
+                                    <h2>Percentual de aproveitamento por aluno:</h2>
+                                    <?php
+                                        
+                                        $sql = $con->prepare("select a.nome, sum(n.nota) as notas from aluno a
+                                        inner join nota n on n.aluno_id = a.id;");
+                                        $sql->execute();
+                                        echo "<h2> Notas de todos alunos somadas: </h2>";
+                                        $rows = $sql->fetchAll(PDO::FETCH_CLASS);
+                                        foreach ($rows as $notatotal){
+                                            echo "Nome do aluno: ".$notatotal->nome;
+                                            echo "<br>";
+                                            echo "Nota total: ".$notatotal->notas;
+                                            echo "<br>";
+                                            echo "Média do aluno: ".($notatotal->notas/$total*100)."%";
+                                            echo "<br>";
+                                        }                                  
+                                    ?>
                                     </div>
 
                                     <div id="Tokyo" class="tabcontent">
