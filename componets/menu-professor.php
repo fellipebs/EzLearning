@@ -66,18 +66,9 @@ require_once ('../models/conexao/conexao.php'); ?>
                         <li>
                             <a title="Landing Page" href="../professor/notificacao.php" aria-expanded="false"><span class="educate-icon educate-interface icon-wrap"></span> <span class="mini-click-non">Notificações</span></a>
                         </li>
-                        <!-- <li>
-                            <a class="has-arrow" href="../mailbox.html" aria-expanded="false"><span class="educate-icon educate-charts icon-wrap"></span> <span class="mini-click-non">Charts</span></a>
-                            <ul class="submenu-angle chart-mini-nb-dp" aria-expanded="false">
-                                <li><a title="Bar Charts" href="../bar-charts.html"><span class="mini-sub-pro">Bar Charts</span></a></li>
-                                <li><a title="Line Charts" href="../line-charts.html"><span class="mini-sub-pro">Line Charts</span></a></li>
-                                <li><a title="Area Charts" href="../area-charts.html"><span class="mini-sub-pro">Area Charts</span></a></li>
-                                <li><a title="Rounded Charts" href="../rounded-chart.html"><span class="mini-sub-pro">Rounded Charts</span></a></li>
-                                <li><a title="C3 Charts" href="../c3.html"><span class="mini-sub-pro">C3 Charts</span></a></li>
-                                <li><a title="Sparkline Charts" href="../sparkline.html"><span class="mini-sub-pro">Sparkline Charts</span></a></li>
-                                <li><a title="Peity Charts" href="../peity.html"><span class="mini-sub-pro">Peity Charts</span></a></li>
-                            </ul>
-                        </li> -->
+                        <li>
+                        <a title="Landing Page" href="../professor/listagemNotas.php" aria-expanded="false"><span class="educate-icon educate-charts icon-wrap"></span> <span class="mini-click-non">Notas</span></a>
+                        </li> 
                         <!-- <li>
                             <a class="has-arrow" href="../mailbox.html" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap"></span> <span class="mini-click-non">Data Tables</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
@@ -175,10 +166,10 @@ require_once ('../models/conexao/conexao.php'); ?>
                                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
-                                                <li class="nav-item dropdown">
-                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-message edu-chat-pro" aria-hidden="true"></i><span class="indicator-ms"></span></a>
-                                                    <div role="menu" class="author-message-top dropdown-menu animated zoomIn">
-                                                        <div class="message-single-top">
+                                                <!-- <li class="nav-item dropdown"> -->
+                                                    <!-- <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-message edu-chat-pro" aria-hidden="true"></i><span class="indicator-ms"></span></a> -->
+                                                    <!-- <div role="menu" class="author-message-top dropdown-menu animated zoomIn"> -->
+                                                        <!-- <div class="message-single-top">
                                                             <h1>Message</h1>
                                                         </div>
                                                         <ul class="message-menu">
@@ -235,7 +226,7 @@ require_once ('../models/conexao/conexao.php'); ?>
                                                             <a href="#">View All Messages</a>
                                                         </div>
                                                     </div>
-                                                </li>
+                                                </li> -->
                                                 <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-bell" aria-hidden="true"></i><span class="indicator-nt"></span></a>
                                                     <div role="menu" class="notification-author dropdown-menu animated zoomIn">
                                                     <?php
@@ -294,7 +285,7 @@ require_once ('../models/conexao/conexao.php'); ?>
                                                         </li>
                                                         <li><a href="#"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
                                                         </li>
-                                                        <li><a href="#"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a>
+                                                        <li><a href="../models/logout.php"><span class="edu-icon edu-locked author-log-ic"></span>Sair</a>
                                                         </li>
                                                     </ul>
                                                 </li>
