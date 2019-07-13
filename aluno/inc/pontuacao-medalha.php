@@ -16,7 +16,7 @@ echo "<table class='table table-dark'>";
 
 foreach ($rows as $row){
 
-    echo "<td>Bronze<td>$row->quantidade_bronze</td><td>Prata<td>$row->quantidade_prata</td><td>Ouro<td>$row->quantidade_ouro</td></tr>";
+    echo "<td>Ouro<td>$row->quantidade_ouro</td><td>Prata<td>$row->quantidade_prata</td><td>Bronze<td>$row->quantidade_bronze</td></tr>";
 }
 
 echo "</table>";
