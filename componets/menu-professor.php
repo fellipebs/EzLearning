@@ -10,7 +10,7 @@ require_once ('../models/conexao/conexao.php'); ?>
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
                         <li>
-                                <a title="Landing Page" href="../index.html" aria-expanded="false"><span class="educate-icon educate-home icon-wrap"></span> <span class="mini-click-non">Home</span></a>
+                                <a title="Landing Page" href="home.php"" aria-expanded="false"><span class="educate-icon educate-home icon-wrap"></span> <span class="mini-click-non">Home</span></a>
                         </li>
                         <!-- <li>
                             <a title="Landing Page" href="../events.html" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Event</span></a>

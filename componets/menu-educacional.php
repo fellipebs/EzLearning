@@ -9,7 +9,7 @@
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
                         <li>
-                            <a class="has-arrow" href="../index.html">
+                            <a class="has-arrow" href="home.php">
 								   <span class="educate-icon educate-home icon-wrap"></span>
 								   <span class="mini-click-non">Education</span>
 								</a>

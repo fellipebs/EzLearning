@@ -1,3 +1,7 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
 <?php 
   session_start();
   require_once('../models/restrito.php');
@@ -8,7 +12,7 @@
 
   require_once("../componets/head.php");
 ?>
-
+</head>
 <body>
     <?php require_once("../componets/menus.php");?>
     <div class="breadcome-area">
@@ -20,7 +24,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="breadcome-heading">
                                     <form role="search" class="sr-input-func">
-                                        <input type="text" placeholder="PEsquisar..." class="search-int form-control">
+                                        <input type="text" placeholder="Pesquisar..." class="search-int form-control">
                                         <a href="../#"><i class="fa fa-search"></i></a>
                                     </form>
                                 </div>

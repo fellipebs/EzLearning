@@ -1,0 +1,8 @@
+.margem{
+    margin-top: 1rem;
+}
+.centro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
