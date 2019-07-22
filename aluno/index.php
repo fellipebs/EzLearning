@@ -4,12 +4,13 @@
 <head>
 <?php 
   session_start();
+  header ('Content-type: text/html; charset=ISO-8859-1');
   require_once('../models/restrito.php');
   require_once ('../models/conexao/conexao.php');
-  $sql= $con->prepare("SELECT id,nota,codigo FROM atividades; ");
+  $sql= $con->prepare("SELECT * FROM atividade; ");
   $sql->execute();
   $rows = $sql->fetchAll(PDO::FETCH_CLASS);
-
+  require_once("../models/VerificarSeLogado.php");
   require_once("../componets/head.php");
 ?>
 </head>
@@ -49,14 +50,14 @@
             <div class="row">
                 <?php foreach ($rows as $row): ?>
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <a href="../teste.html">
+                    <a href="<?php echo $row->arquivo?>">
                         <div class="student-inner-std res-mg-b-30">
                             <div class="student-img">
-                                <img src="../assets/images/algorithm.png" alt="" />
+                                <img src="<?php echo $row->imagem?>" alt="" />
                             </div>
                             <div class="student-dtl">
-                                <h2>Atividade</h2>
-                                <p class="dp">Descricao da atividade</p>
+                                <h2><?php echo $row->nome?></h2>
+                                <p class="dp"><?php echo $row->descricao?></p>
                             </div>
                         </div>
                     </a>

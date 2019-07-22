@@ -1,0 +1,18 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="text_print" id="+}clp0e1J.(nf*eb==Hn" x="162" y="147">
+    <value name="TEXT">
+      <block type="math_number" id="4:3aF9E:J6;lW4Zb5iEr">
+        <field name="NUM">123</field>
+      </block>
+    </value>
+    <next>
+      <block type="text_print" id="dtP}J`zIo$2ps~in-mR-">
+        <value name="TEXT">
+          <block type="math_number" id="a8#[KmVzfxYoz)e/i!Qk">
+            <field name="NUM">123</field>
+          </block>
+        </value>
+      </block>
+    </next>
+  </block>
+</xml>

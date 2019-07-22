@@ -1,0 +1,2 @@
+window.alert(123);
+window.alert(123);
