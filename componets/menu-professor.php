@@ -109,7 +109,10 @@ require_once ('../models/conexao/conexao.php'); ?>
                                 <li><a title="500 Page" href="../500.html"><span class="mini-sub-pro">500 Page</span></a></li>
                             </ul>
                         </li> -->
-                    </ul>
+                        <li>
+                            <a class="" href="../models/logout.php" aria-expanded="false"><span class="educate-icon educate-pages icon-wrap"></span> <span class="mini-click-non">Sair</span></a>
+                        </li>
+                   </ul>
                 </nav>
             </div>
         </nav>
