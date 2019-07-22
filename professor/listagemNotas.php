@@ -58,7 +58,7 @@
                                     <div class="tab">
                                       <button class="tablinks" onclick="openCity(event, 'Turma')" id="defaultOpen"> <h3>Média geral dos alunos</h3></button>
                                       <button class="tablinks" onclick="openCity(event, 'Aluno')"><h3>Média por aluno</h3></button>
-                                      <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                                     
                                     </div>
 
                                     <div id="Turma" class="tabcontent">
@@ -76,9 +76,7 @@
                                             $total += $row->valor_atividade;
                                             $notas += $row->nota;
                                             
-                                        }
-
-                                        
+                                        }           
                                       
                                     ?>
                                     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -89,7 +87,22 @@
 
                                     <div id="Aluno" class="tabcontent">
                                       <h2>Percentual de aproveitamento por aluno:</h2>
-                                      
+                                      <?php
+                                        
+                                        $sql = $con->prepare("select a.nome, sum(n.nota) as notas from aluno a
+                                        inner join nota n on n.aluno_id = a.id;");
+                                        $sql->execute();
+                                        echo "<h2> Notas de todos alunos somadas: </h2>";
+                                        $rows = $sql->fetchAll(PDO::FETCH_CLASS);
+                                        foreach ($rows as $notatotal){
+                                            echo "Nome do aluno: ".$notatotal->nome;
+                                            echo "<br>";
+                                            echo "Nota total: ".$notatotal->notas;
+                                            echo "<br>";
+                                            echo "Média do aluno: ".($notatotal->notas/$total*100)."%";
+                                            echo "<br>";
+                                        }                                  
+                                    ?>
 
 
 
