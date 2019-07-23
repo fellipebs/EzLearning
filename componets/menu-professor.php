@@ -109,7 +109,10 @@ require_once ('../models/conexao/conexao.php'); ?>
                                 <li><a title="500 Page" href="../500.html"><span class="mini-sub-pro">500 Page</span></a></li>
                             </ul>
                         </li> -->
-                    </ul>
+                        <li>
+                            <a class="" href="../models/logout.php" aria-expanded="false"><span class="educate-icon educate-pages icon-wrap"></span> <span class="mini-click-non">Sair</span></a>
+                        </li>
+                   </ul>
                 </nav>
             </div>
         </nav>
@@ -272,19 +275,19 @@ require_once ('../models/conexao/conexao.php'); ?>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-															<img src="../assets/images/default.png" alt="" />
+                                                            <?php echo "<img src='../assets/images/".$_SESSION['usuario']->foto."' alt='' />"; ?>
 															<?php echo "<span class='admin-name'>".$_SESSION['usuario']->usuario."</span>" ?>
 															<i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
 														</a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a>
+                                                        <li><a href="../aluno/editar.php"><span class="edu-icon edu-home-admin author-log-ic"></span>Configurações</a>
                                                         </li>
-                                                        <li><a href="#"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a>
+                                                        <!-- <li><a href="#"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a>
                                                         </li>
                                                         <li><a href="#"><span class="edu-icon edu-money author-log-ic"></span>User Billing</a>
                                                         </li>
                                                         <li><a href="#"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
-                                                        </li>
+                                                        </li> -->
                                                         <li><a href="../models/logout.php"><span class="edu-icon edu-locked author-log-ic"></span>Sair</a>
                                                         </li>
                                                     </ul>
