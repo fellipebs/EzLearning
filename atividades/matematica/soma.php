@@ -37,8 +37,9 @@
             
             <div id="blocosDiv" style="height: 480px; width: 600px;"></div>
         </div>
-        <textarea name="codigo_xml" id="xml" cols="30" rows="10"></textarea>
-        <textarea name="codigo_js" id="js" cols="30" rows="10"></textarea>
+        <input id="nome" style="display: none;"  value="<?php session_start(); echo $_SESSION['usuario']->usuario;?>">
+        <textarea style="display: none;" name="codigo_xml" id="xml" cols="30" rows="10"></textarea>
+        <textarea style="display: none;" name="codigo_js" id="js" cols="30" rows="10"></textarea>
     </form>
       <script>
         // Inject primary workspace.
@@ -61,7 +62,8 @@
             
         }
         atividade_salva = function(){
-            readTextFile("juan_xml.txt");
+            var nome = document.getElementById('nome').value;
+            readTextFile(nome+"_xml.txt");
             var xml = Blockly.Xml.textToDom(allText);
             Blockly.Xml.domToWorkspace(xml, workspace);
         };
