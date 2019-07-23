@@ -54,18 +54,17 @@
             document.getElementById('xml').innerHTML = xml_text;
             document.getElementById('js').innerHTML = code;
             //Tentativa de formatar o cookie
-            // document.cookie = "xml="+xml_text;
+            document.cookie = "xml="+xml_text;
             // var cookie = document.cookie;
             // cookie_formatado = cookie.substring(90,-14);
-            // alert(cookie_formatado);
+            alert(cookie_formatado);
             
         }
         atividade_salva = function(){
-            var xml = Blockly.Xml.textToDom(xml_text/*Aqui dentro vai o cookie formatado*/);
+            readTextFile("juan_xml.txt");
+            var xml = Blockly.Xml.textToDom(allText);
             Blockly.Xml.domToWorkspace(xml, workspace);
         };
-
-
 
         executar = function() {
             Blockly.JavaScript.INFINITE_LOOP_TRAP = '  checkTimeout();\n';
@@ -83,6 +82,22 @@
             alert(MSG['badCode'].replace('%1', e));
             }
             };
+        function readTextFile(file)
+        {
+            var rawFile = new XMLHttpRequest();
+            rawFile.open("GET", file, false);
+            rawFile.onreadystatechange = function ()
+            {
+                if(rawFile.readyState === 4)
+                {
+                    if(rawFile.status === 200 || rawFile.status == 0)
+                    {
+                        allText = rawFile.responseText;
+                    }
+                }
+            }
+            rawFile.send(null);
+        }
         </script>
 </body>
 </html>
