@@ -1,0 +1,13 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="oOziF-^+JQVd,3P|Ioas">soma</variable>
+  </variables>
+  <block type="variables_set" id="9/^h~VoQR(|?KLeU@d@P" x="40" y="108">
+    <field name="VAR" id="oOziF-^+JQVd,3P|Ioas" variabletype="">soma</field>
+    <value name="VALUE">
+      <block type="variables_get" id="AY5QwL77L1G34G`O2=bt">
+        <field name="VAR" id="oOziF-^+JQVd,3P|Ioas" variabletype="">soma</field>
+      </block>
+    </value>
+  </block>
+</xml>

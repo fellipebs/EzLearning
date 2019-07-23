@@ -1,0 +1,9 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="text_print" id="m.l`:c62-I6p7lW,]GIZ" x="98" y="134">
+    <value name="TEXT">
+      <block type="math_number" id="#p;O}#Wdi0km7=pZ?U:?">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+  </block>
+</xml>

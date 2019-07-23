@@ -10,16 +10,21 @@
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <script src="../../google-blockly/blockly_compressed.js"></script>
-    <script src="../../google-blockly/javascript_compressed.js"></script>
-    <script src="../../google-blockly/blocks_compressed.js"></script>
-    <script src="../../google-blockly/msg/js/pt-br.js"></script>
+    <script src="../../../google-blockly/blockly_compressed.js"></script>
+    <script src="../../../google-blockly/javascript_compressed.js"></script>
+    <script src="../../../google-blockly/blocks_compressed.js"></script>
+    <script src="../../../google-blockly/msg/js/pt-br.js"></script>
+<?php
+header("Content-type: text/html; charset=utf-8");
+session_start();
+$_SESSION['atividade_id'] = 1;
+?>
 </head>
 <body>
     <h1>Atividade 1 de matemática Soma</h1>
     <xml id="toolbox" style="display: none">
         <block type="math_number">
-          <field name="NUM">123</field>
+          <field name="NUM">1</field>
         </block>
         <block type="math_arithmetic"></block>
         <block type="text"></block>
@@ -33,18 +38,17 @@
             <button onclick="salvar()" class="btn btn-primary">Salvar</button>
             <span onclick="atividade_salva()" class="btn btn-primary">Atividade salva</span>
             <span onclick="executar()"id="runButton" class="btn btn-primary" >Executar</span>
-            <span onclick="executar()"id="runButton" class="btn btn-primary">Enviar para correção</span>
+            <input type="submit" value="Enviar" name="Enviar" class="btn btn-primary">
             
-            <div id="blocosDiv" style="height: 480px; width: 600px;"></div>
+            <div id="blocosDiv" style="height: 480px; width: 800px;"></div>
         </div>
-        <input id="nome" style="display: none;"  value="<?php session_start(); echo $_SESSION['usuario']->usuario;?>">
+        <input id="nome" style="display: none;"  value="<?php echo $_SESSION['usuario']->usuario;?>">
         <textarea style="display: none;" name="codigo_xml" id="xml" cols="30" rows="10"></textarea>
         <textarea style="display: none;" name="codigo_js" id="js" cols="30" rows="10"></textarea>
     </form>
       <script>
-        // Inject primary workspace.
         var workspace = Blockly.inject('blocosDiv',
-            {media: '../../google-blockly/media/',
+            {media: '../../../google-blockly/media/',
              toolbox: document.getElementById('toolbox'),
              trashcan: true});
 
@@ -54,10 +58,7 @@
             xml_text = Blockly.Xml.domToPrettyText(xml);
             document.getElementById('xml').innerHTML = xml_text;
             document.getElementById('js').innerHTML = code;
-            //Tentativa de formatar o cookie
             document.cookie = "xml="+xml_text;
-            // var cookie = document.cookie;
-            // cookie_formatado = cookie.substring(90,-14);
             alert(cookie_formatado);
             
         }
