@@ -30,7 +30,7 @@
                                         <ul class="breadcome-menu">
                                             <li><a href="../#">Home</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Notas</span>
+                                            <li><a href="lancarnotas.php">Lançar Notas</a> <span class="bread-slash">/</span>
                                             
                                             </li>
                                         </ul>
