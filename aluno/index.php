@@ -2,9 +2,10 @@
 <html class="no-js" lang="zxx">
 
 <head>
+    <meta charset="UTF-8">
 <?php 
   session_start();
-  header ('Content-type: text/html; charset=ISO-8859-1');
+  header ('Content-type: text/html; charset=utf-8');
   require_once('../models/restrito.php');
   require_once ('../models/conexao/conexao.php');
   $sql= $con->prepare("SELECT * FROM atividade; ");
