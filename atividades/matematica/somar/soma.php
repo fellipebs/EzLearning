@@ -1,3 +1,9 @@
+<?php
+header("Content-type: text/html; charset=utf-8");
+session_start();
+$_SESSION['atividade_id'] = 1;
+$_SESSION['titulo'] = "Atividade 1 de matemática Soma";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,43 +65,32 @@
     <!-- modernizr JS
 		============================================ -->
     <script src="../../../assets/js/vendor/modernizr-2.8.3.min.js"></script>
-    <title>Multiplicação</title>
+    <title>Soma</title>
 
     <script src="../../../google-blockly/blockly_compressed.js"></script>
     <script src="../../../google-blockly/javascript_compressed.js"></script>
     <script src="../../../google-blockly/blocks_compressed.js"></script>
     <script src="../../../google-blockly/msg/js/pt-br.js"></script>
-<?php
-header("Content-type: text/html; charset=utf-8");
-session_start();
-$_SESSION['atividade_id'] = 3;
-$_SESSION['titulo'] = "Atividade 2 de matemática Multiplicação";
-?>
+    <style>
+    </style>
+
 </head>
 <body>
-    <?php
-    require_once("../../../componets/menu-atividade.php");?>
+    <?php require_once('../../../componets/menu-atividade.php')?>
+            <br><br><br><br><br>
     <xml id="toolbox" style="display: none">
         <block type="math_number">
-          <field name="NUM">1</field>
+          <field name="NUM">123</field>
         </block>
-        <block type="math_arithmetic">
-            <field name="OP">MULTIPLY</field>
-        </block>
+        <block type="math_arithmetic"></block>
         <block type="text"></block>
         <block type="text_print"></block>
-        <block type="variables_set"><field name="VAR">Multiplicação</field></block>
-        <block type="variables_get"><field name="VAR">Multiplicação</field></block>
+        <block type="variables_set"><field name="VAR">soma</field></block>
+        <block type="variables_get"><field name="VAR">soma</field></block>
       </xml>
-      <br><br><br><br><br>
-        <div class="container-fluid">
-            
+      <br>
             <div id="blocosDiv" class="area-bloco"></div>
-        </div>
-        <input id="nome" style="display: none;"  value="<?php echo $_SESSION['usuario']->usuario;?>">
-        <textarea style="display: none;" name="codigo_xml" id="xml" cols="30" rows="10"></textarea>
-        <textarea style="display: none;" name="codigo_js" id="js" cols="30" rows="10"></textarea>
-    </form>
+      
       <script>
         var workspace = Blockly.inject('blocosDiv',
             {media: '../../../google-blockly/media/',

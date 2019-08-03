@@ -1,0 +1,9 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="text_print" id=".#BTC0b-CD7-xWUyk3EH" x="100" y="159">
+    <value name="TEXT">
+      <block type="math_number" id="GiBY~Qk8-Z39/;ExLO^%">
+        <field name="NUM">123</field>
+      </block>
+    </value>
+  </block>
+</xml>

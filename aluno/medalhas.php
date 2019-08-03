@@ -23,6 +23,7 @@
 <?php require_once("../componets/menus.php");?>
     <div class="container-fluid ">
         </div>
+        <br><br><br>
             <h1><strong>Medalhas</strong> Como ganhar?</h1>
             <h4>Tenha grandes de quantidades de medalhas de ouro, prata ou bronze! - Quanto melhor for sua classificação nas atividades, maior a chance de entrar!</h4>            
         </header>
@@ -33,18 +34,18 @@
                     <figure class="legenda-imagem borda-imagem">
                     <p>Medalha de Ouro</p>
                     <img src= "../assets/images/medals/Medalha_Ouro.png" width="90" height="100" title="">
-                    <p>Faça as atividades dentro do prazo. - Faça a atividade corretamente. - Atividade entregue com antecedência!</p>
+                    <p>Faça as atividades dentro do prazo. - Encontre a sulução simples. - Atividade entregue com antecedência!</p>
                     </figure>
                 </div>
                 <div class="col-md-4 mx-auto">
                     <p>Medalha de Prata</p>
                     <img src= "../assets/images/medals/Medalha_Prata.png" width="90" height="100" title="">
-                    <p>Faça as atividades dentro do prazo. - Atividade enviada com poucos erros. - Atividade entregue com antecedência!</p>
+                    <p>Faça as atividades dentro do prazo. - Atividade enviada sem erros. - Atividade entregue com antecedência!</p>
                 </div>
                 <div class="col-md-4 mx-auto">
                 <p>Medalha de Bronze</p>
               <img src= "../assets/images/medals/Medalha_Bronze.png" width="90" height="100" title="">
-              <p>Faça as atividades dentro do prazo - Atividade enviada com muitos erros. - Atividade entregue com antecedência!</p>
+              <p>Faça as atividades dentro do prazo - Atividade enviada poucos erros. - Atividade entregue com antecedência!</p>
                 </div>
             </div>
         </div>
