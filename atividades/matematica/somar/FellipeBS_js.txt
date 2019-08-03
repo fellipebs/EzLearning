@@ -1,0 +1,5 @@
+var soma;
+
+
+soma = 123 + 123;
+window.alert(soma);
