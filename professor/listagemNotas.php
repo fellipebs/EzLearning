@@ -49,7 +49,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
                           
-                            <div class="asset-inner">
+                            <div class="asset-inner" >
                                 <table>
                                 <h2>
                                    Listagem de notas dos alunos
@@ -81,27 +81,40 @@
                                     ?>
                                     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                                      <div id="chart_div"></div>
-                                     <br><h4>Percentual de aproveitamento: <?php echo ($notas/$total*100)."%" ?></h4>
+                                     <br><h4>Percentual de aproveitamento: <?php echo round(($notas/$total*100), 2)."%" ?></h4>
       
                                     </div>
 
-                                    <div id="Aluno" class="tabcontent">
+                                    <div id="Aluno" class="tabcontent" style='overflow: auto;'>
                                       <h2>Percentual de aproveitamento por aluno:</h2>
                                       <?php
-                                        
-                                        $sql = $con->prepare("select a.nome, sum(n.nota) as notas from aluno a
-                                        inner join nota n on n.aluno_id = a.id;");
+
+                                      $sql = $con->prepare("select id from aluno;");
                                         $sql->execute();
-                                        echo "<h2> Notas de todos alunos somadas: </h2>";
                                         $rows = $sql->fetchAll(PDO::FETCH_CLASS);
-                                        foreach ($rows as $notatotal){
-                                            echo "Nome do aluno: ".$notatotal->nome;
-                                            echo "<br>";
-                                            echo "Nota total: ".$notatotal->notas;
-                                            echo "<br>";
-                                            echo "Média do aluno: ".($notatotal->notas/$total*100)."%";
-                                            echo "<br>";
-                                        }                                  
+                                        foreach ($rows as $id){
+                                          $sql = $con->prepare("select a.nome, sum(n.nota) as nota, sum(n.valor_atividade) as valor from aluno a
+                                          inner join nota n on n.aluno_id = a.id where a.id=".$id->id);
+                                          $sql->execute();
+                                          echo "<h2> Notas de todos alunos somadas: </h2>";
+                                          $rows = $sql->fetchAll(PDO::FETCH_CLASS);
+                                          foreach ($rows as $notatotal){
+                                              echo "Nome do aluno: ".$notatotal->nome;
+                                              echo "<br>";
+                                              echo "Nota total: ".$notatotal->nota;
+                                              echo "<br>";
+                                              if($notatotal->nota == 0 || $notatotal->valor == 0){
+                                                echo "Aluno ainda sem média.";
+                                              }
+                                              else{
+                                                echo "Média do aluno: ".round((($notatotal->nota/$notatotal->valor)*100),2)."%";
+                                              }
+                                              echo "<br>";
+                                          }   
+                                          
+                                        }     
+                                        
+                                                                       
                                     ?>
 
 
