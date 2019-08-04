@@ -31,7 +31,8 @@
                                             <li><a href="../#">Home</a> <span class="bread-slash">/</span>
                                             </li>
                                             <li><a href="lancarnotas.php">Lançar Notas</a> <span class="bread-slash">/</span>
-                                            
+                                            </li>
+                                            <li><a href="lancarnotas.php">Editar Notas</a> <span class="bread-slash">/</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -50,7 +51,6 @@
                           
                             <div class="asset-inner">
                                 <table>
-                            
                                 <h2>
                                    Listagem de notas dos alunos
                                 </h2>   
