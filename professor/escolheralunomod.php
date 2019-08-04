@@ -1,11 +1,16 @@
 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
 <?php
     session_start();
     require_once ('../models/conexao/conexao.php'); 
     require("../models/restrito.php");
     require_once("../componets/head.php");
 ?>
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 <meta charset="UTF-8">
+</head>
 <body>
 <script src="js/notificacao.js" type="text/javascript"></script>
 <link rel="stylesheet" href="css/listagemNotas.css">
@@ -45,58 +50,45 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
-                          
+                         
                             <div class="asset-inner">
-                        
-
-                            <center><h2>Lançamento de notas</h2></center>
+                            <form action='editarnota.php' method='post'>
+                                <?php if(isset($_SESSION['msg'])){ echo $_SESSION['msg']; unset($_SESSION['msg']);}?>
+                            <h2>Escolha o aluno para qual você modificará a nota:</h2>
                             <br>
-                            <form action='escolheraluno.php' method='post'>
-                            <center><div style='width: 1200px;'>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Escolha a atividade que você quer dar nota:</label>
                             <select  class="form-control" name="atividade" id="atividade" aria-describedby="emailHelp" placeholder="Enter email">
-                            <?php
-                            $sql = $con->prepare("SELECT * from atividade");
-                            $sql->execute();
-                            $rows = $sql->fetchAll(PDO::FETCH_CLASS);
-                            foreach ($rows as $row){
-                                echo "<option value='".$row->id."'>".$row->nome."</option>";
-                            }
-                            ?>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Continuar</button>
-                        </form>
-                            </div>
-                                </div>
-                                </table>
-                                <br><br>
-                        <center><h2>Edição de notas</h2></center>
-                        <br>
-                        <form action='escolheralunomod.php' method='post'>
-                        <center><div style='width: 1200px;'>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Escolha a atividade que você quer modificar a nota:</label>
-                        <select  class="form-control" name="atividademod" id="atividademod" aria-describedby="emailHelp" placeholder="Enter email">
-                        <?php
-                        $sql = $con->prepare("SELECT * from atividade");
-                        $sql->execute();
-                        $rows = $sql->fetchAll(PDO::FETCH_CLASS);
-                        foreach ($rows as $row){
-                            echo "<option value='".$row->id."'>".$row->nome."</option>";
-                        }
-                        ?>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Continuar</button>
-                    </form>
-                        </div>
-                            </div>
-                            </table>
-                        </div>
+                                <?php
+                                 
+                                
 
-                            <br>
+                                 $sql = $con->prepare("select a.nome, atv.status, al.nome as alnome,  al.id from atividade a
+                                 inner join atividade_aluno atv inner join aluno al 
+                                 on atv.atividade_id = a.id and al.id = atv.aluno_id where a.id=? and atv.status != 'Aguardando Correcao'");
+                                 $sql->execute(array($_POST['atividademod']));
+                                 $rows = $sql->fetchAll(PDO::FETCH_CLASS);
+                                 if($rows){
+                                 foreach ($rows as $row){
+                                  echo "<option value='$row->id'> $row->alnome - $row->nome - $row->status</option>";
+                                 }
+                                }else{
+                                    // $_SESSION['msg'] = '<div class="alert alert-success" role="alert">
+                                    // Todos os alunos já receberam notas!
+                                 echo '</div>';
+                                }
+                                 
+                                 echo "<input type='hidden' value=".$_POST['atividademod']." name='atividadeID'>"; //atividade ID
+                                ?>
+                          </select>
+                          <br>
+                          <label>Escreva o valor da atividade</label>
+                          <input class="form-control" name='valor' required>
+                          <br>
+                          <label>Escreva a nova nota do aluno</label>
+                          <input class="form-control" name='nota' required>
+                          <br>
+                          <button type="submit" class="btn btn-primary">Enviar</button>
+                          </form>
+                            </div>
                             <div class="custom-pagination">
 								<ul class="pagination">
 									<!-- <li class="page-item"><a class="page-link" href="../#">Previous</a></li>
@@ -114,5 +106,4 @@
         <?php require_once("../componets/footer.php");?>
         <?php require_once("../componets/js.php");?>
 </body>
-
 </html>
