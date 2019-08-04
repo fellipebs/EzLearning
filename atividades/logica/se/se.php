@@ -76,16 +76,15 @@ $_SESSION['titulo'] = "Atividade 2 de matemática Multiplicação";
     <?php
     require_once("../../../componets/menu-atividade.php");?>
     <xml id="toolbox" style="display: none">
+        <block type="logic_compare">
+        <field name="OP">EQ</field>
+        </block>
+        <block type="controls_if"/></block>
+        <block type="text"></block>
+        <block type="text_print"></block>
         <block type="math_number">
           <field name="NUM">1</field>
         </block>
-        <block type="math_arithmetic">
-            <field name="OP">MULTIPLY</field>
-        </block>
-        <block type="text"></block>
-        <block type="text_print"></block>
-        <block type="variables_set"><field name="VAR">Multiplicação</field></block>
-        <block type="variables_get"><field name="VAR">Multiplicação</field></block>
       </xml>
       <br><br><br><br><br>
         <div class="container-fluid">

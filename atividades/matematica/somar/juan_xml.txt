@@ -1,9 +1,32 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="text_print" id=".#BTC0b-CD7-xWUyk3EH" x="100" y="159">
-    <value name="TEXT">
-      <block type="math_number" id="GiBY~Qk8-Z39/;ExLO^%">
-        <field name="NUM">123</field>
+  <variables>
+    <variable type="" id="5DG-NNxv{]Mv))G+]05~">soma</variable>
+  </variables>
+  <block type="variables_set" id="qpNs1=P:PPjU$xI65U_D" x="116" y="71">
+    <field name="VAR" id="5DG-NNxv{]Mv))G+]05~" variabletype="">soma</field>
+    <value name="VALUE">
+      <block type="math_arithmetic" id="W*7rUh_-_(4!pWL.q8dL">
+        <field name="OP">ADD</field>
+        <value name="A">
+          <block type="math_number" id=")zrZz~[5IvJUV?;3pcmJ">
+            <field name="NUM">123</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="math_number" id="+Z%9fQOhuTljt-b=KCw0">
+            <field name="NUM">123</field>
+          </block>
+        </value>
       </block>
     </value>
+    <next>
+      <block type="text_print" id="?:EBcXbo7sgY*p2jFNFz">
+        <value name="TEXT">
+          <block type="variables_get" id="8C57^PTKU{Z?yt$o$m!5">
+            <field name="VAR" id="5DG-NNxv{]Mv))G+]05~" variabletype="">soma</field>
+          </block>
+        </value>
+      </block>
+    </next>
   </block>
 </xml>

@@ -53,7 +53,7 @@ require_once ('../models/conexao/conexao.php'); ?>
                         </li>
                         <li>
                             <!-- <a class="has-arrow" href="../all-courses.html" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Medalhas</span></a> -->
-                            <a title="Landing Page" href="../events.html" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Medalhas</span></a>
+                            <a title="Landing Page" href="lancar_atividade.php" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap"></span> <span class="mini-click-non">Lançar Atividade</span></a>
                         </li>
                         <!-- <li>
                             <a class="has-arrow" href="../mailbox.html" aria-expanded="false"><span class="educate-icon educate-message icon-wrap"></span> <span class="mini-click-non">Mailbox</span></a>

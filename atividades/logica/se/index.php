@@ -23,33 +23,33 @@
             <h1>Atividade de Lógica uso do se</h1>
             <p>Esta atividade tem como objetivo te ensinar a usar o se para testar se a condição é verdadeira</p>
             <a href="se.php" class="btn btn-success">Iniciar a atividade</a>
-            <xml id="startblock" style="display: none">
-            <block type="controls_if" id="]*BnIQz+JfcUq!94Z$WQ" x="238" y="138">
-    <value name="IF0">
-      <block type="logic_compare" id="_n%5Hvz%63iNJ#0QS$+q">
-        <field name="OP">EQ</field>
-        <value name="A">
-          <block type="math_number" id="*M-@-Q!#;v,8_TGa,r`-">
-            <field name="NUM">123</field>
-          </block>
-        </value>
-        <value name="B">
-          <block type="math_number" id="SDkYCNo{ZEv^D2n+1vL5">
-            <field name="NUM">123</field>
-          </block>
-        </value>
-      </block>
-    </value>
-    <statement name="DO0">
-      <block type="text_print" id="3eT8xqx6oZ9#Z:4aSt_+">
-        <value name="TEXT">
-          <shadow type="text" id="FrQKX/[2^pF9[*JTeWv|">
-            <field name="TEXT">Verdadeiro</field>
-          </shadow>
-        </value>
-      </block>
-    </statement>
-  </block>
+            <xml xmlns="https://developers.google.com/blockly/xml">
+              <block type="controls_if" id="4Dy|ddb?[v#B2tHW`ntD" x="-613" y="113">
+                <value name="IF0">
+                  <block type="logic_compare" id="PX(t*XFV]G)wNftH|R;;">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="math_number" id="jeJwqfr}qa*,M[@0a5be">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="@?1|}]z^26ySx6my.aaO">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="text_print" id="!YxI0|xDkO4y_poDWMFN">
+                    <value name="TEXT">
+                      <shadow type="text" id="gSTL92e{-l=2%;RPo#*$">
+                        <field name="TEXT">verdadeiro</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </statement>
+              </block>
             </xml>
             <div id="blocosDiv" class="area-bloco" class="demo"></div>
             
