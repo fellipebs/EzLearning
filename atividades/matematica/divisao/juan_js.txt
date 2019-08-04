@@ -1,0 +1,5 @@
+var Divis_C3_A3o;
+
+
+Divis_C3_A3o = 4 / 2;
+window.alert(Divis_C3_A3o);

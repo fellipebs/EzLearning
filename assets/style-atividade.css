@@ -4730,3 +4730,8 @@ div#sparklinehome canvas {
     height: 480px; 
     width: 90%;
 }
+.area-demo{
+    margin: 0 auto;
+    height: 180px; 
+    width: 380px;
+}

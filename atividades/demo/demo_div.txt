@@ -1,0 +1,32 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="O;m_Y~$04}p6`y+$-se%">Divisão</variable>
+  </variables>
+  <block type="variables_set" id="^N[X[W1?1B}5IGA4a/.X" x="10" y="50">
+    <field name="VAR" id="O;m_Y~$04}p6`y+$-se%" variabletype="">Divisão</field>
+    <value name="VALUE">
+      <block type="math_arithmetic" id="mFjFV_nGjAFABRyt47!6">
+        <field name="OP">DIVIDE</field>
+        <value name="A">
+          <block type="math_number" id="t*JjuPNI?P/T=8XF4.|A">
+            <field name="NUM">4</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="math_number" id="cb46%4FvG]elaaj{])$B">
+            <field name="NUM">2</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="text_print" id="p{$%1BI+3hrp`r.M[;03">
+        <value name="TEXT">
+          <block type="variables_get" id="@A{rZOmgZu{^UpEnpVse">
+            <field name="VAR" id="O;m_Y~$04}p6`y+$-se%" variabletype="">Divisão</field>
+          </block>
+        </value>
+      </block>
+    </next>
+  </block>
+</xml>

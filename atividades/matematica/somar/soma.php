@@ -80,7 +80,10 @@ $_SESSION['titulo'] = "Atividade 1 de matemática Soma";
             <br><br><br><br><br>
     <xml id="toolbox" style="display: none">
         <block type="math_number">
-          <field name="NUM">123</field>
+          <field name="NUM">3</field>
+        </block>
+        <block type="math_number">
+          <field name="NUM">2</field>
         </block>
         <block type="math_arithmetic"></block>
         <block type="text"></block>
@@ -90,7 +93,7 @@ $_SESSION['titulo'] = "Atividade 1 de matemática Soma";
       </xml>
       <br>
             <div id="blocosDiv" class="area-bloco"></div>
-      
+      <script type="text/javascript" src="../../js/ler_xml_blockly"></script>
       <script>
         var workspace = Blockly.inject('blocosDiv',
             {media: '../../../google-blockly/media/',
@@ -130,22 +133,6 @@ $_SESSION['titulo'] = "Atividade 1 de matemática Soma";
             alert(MSG['badCode'].replace('%1', e));
             }
             };
-        function readTextFile(file)
-        {
-            var rawFile = new XMLHttpRequest();
-            rawFile.open("GET", file, false);
-            rawFile.onreadystatechange = function ()
-            {
-                if(rawFile.readyState === 4)
-                {
-                    if(rawFile.status === 200 || rawFile.status == 0)
-                    {
-                        allText = rawFile.responseText;
-                    }
-                }
-            }
-            rawFile.send(null);
-        }
         </script>
 </body>
 </html>

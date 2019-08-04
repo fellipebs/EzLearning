@@ -2,7 +2,7 @@
   <variables>
     <variable type="" id="e~TibTZ8lCz${;2:iu*p">soma</variable>
   </variables>
-  <block type="variables_set" id="az6UxF7@;ug6ET^5L-OW" x="10" y="104">
+  <block type="variables_set" id="az6UxF7@;ug6ET^5L-OW" x="10" y="50">
     <field name="VAR" id="e~TibTZ8lCz${;2:iu*p" variabletype="">soma</field>
     <value name="VALUE">
       <block type="math_arithmetic" id="V?!,4;8j;n`:@n^D-|YO">

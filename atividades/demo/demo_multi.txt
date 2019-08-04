@@ -2,7 +2,7 @@
   <variables>
     <variable type="" id="Plb/@h$D4v}H(r/2LuH$">Multiplicação</variable>
   </variables>
-  <block type="variables_set" id="$ckF^QXMXZZecD}w*1vK" x="64" y="85">
+  <block type="variables_set" id="$ckF^QXMXZZecD}w*1vK" x="10" y="50">
     <field name="VAR" id="Plb/@h$D4v}H(r/2LuH$" variabletype="">Multiplicação</field>
     <value name="VALUE">
       <block type="math_arithmetic" id="@tNF,F*WSr^U%X;Y9et^">

@@ -1,1 +1,5 @@
-window.alert(1);
+var Multiplica_C3_A7_C3_A3o;
+
+
+Multiplica_C3_A7_C3_A3o = 2 * 1;
+window.alert(Multiplica_C3_A7_C3_A3o);

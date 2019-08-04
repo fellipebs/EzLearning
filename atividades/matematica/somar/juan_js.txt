@@ -1,5 +1,5 @@
 var soma;
 
 
-soma = 123 + 123;
+soma = 3 + 2;
 window.alert(soma);
