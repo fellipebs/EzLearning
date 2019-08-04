@@ -10,7 +10,7 @@
 	<script type="text/javascript" src="../assets/js/medals/modernizr.custom.79639.js"></script> 
     <?php 
   session_start();
-  require_once('../models/restrito.php');
+  require_once('../models/restrito/VerificarSeLogadoAluno1.php');
   require_once ('../models/conexao/conexao.php');
   $sql= $con->prepare("SELECT id,nota,codigo FROM atividades; ");
   $sql->execute();

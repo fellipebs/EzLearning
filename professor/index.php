@@ -7,7 +7,7 @@
     $sql->execute();
     $rows = $sql->fetchAll(PDO::FETCH_CLASS);
 
-    require("../models/restrito.php");
+    require_once('../models/restrito/VerificarSeLogadoProfessor1.php');
 
     require_once("../componets/head.php");
 ?>

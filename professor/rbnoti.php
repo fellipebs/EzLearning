@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once('../models/restrito/VerificarSeLogadoProfessor1.php');
 require_once ('../models/conexao/conexao.php'); 
 if(isset($_POST['aluno'])){
 	$msg = $_POST['msg'];

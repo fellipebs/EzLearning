@@ -5,7 +5,7 @@
 <?php
     session_start();
     require_once ('../models/conexao/conexao.php'); 
-    require("../models/restrito.php");
+    require_once('../models/restrito/VerificarSeLogadoProfessor1.php');
     require_once("../componets/head.php");
 ?>
 <link rel="stylesheet" href="../assets/css/bootstrap.min.css">

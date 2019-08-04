@@ -5,12 +5,11 @@
 <?php 
   session_start();
   header ('Content-type: text/html; charset=utf-8');
-  require_once('../models/restrito.php');
   require_once ('../models/conexao/conexao.php');
   $sql= $con->prepare("SELECT * FROM nota; ");
   $sql->execute();
   $rows = $sql->fetchAll(PDO::FETCH_CLASS);
-  require_once("../models/VerificarSeLogado.php");
+  require_once('../models/restrito/VerificarSeLogadoAluno1.php');
   require_once("../componets/head.php");
 ?>
 </head>

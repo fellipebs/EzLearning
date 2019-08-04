@@ -7,6 +7,7 @@
     session_start();
     require_once ('../models/conexao/conexao.php');
     require_once("../componets/head.php");
+    require_once('../models/restrito/VerificarSeLogadoProfessor1.php');
     $sql = $con->prepare("SELECT * FROM professor WHERE usuario_id_professor = ?");
     $sql->execute(array($_SESSION['usuario']->id) );
     $row = $sql->fetchObject();

@@ -8,6 +8,7 @@
     header('Content-Type: text/html; charset=iso-8859-1');
     header("Content-type: text/html; charset=utf-8");
     session_start();
+    require_once('../models/restrito/VerificarSeLogadoAluno1.php');
     require_once ('../models/conexao/conexao.php');
     require_once("../componets/head.php");
     $sql = $con->prepare("SELECT * FROM aluno WHERE usuario_id_aluno = ?");

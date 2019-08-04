@@ -1,8 +1,8 @@
 <?php
   session_start();
   header ('Content-type: text/html; charset=utf-8');
-  require_once ('../models/conexao/conexao.php');
-
+  require_once('../models/conexao/conexao.php');
+  require_once('../models/restrito/VerificarSeLogadoProfessor1.php');
 $alunoId = $_POST['atividade'];
 echo "<br>";
 $atividadeId =  $_POST['atividadeID'];
