@@ -48,7 +48,7 @@
                           
                             <div class="asset-inner">
                         
-                            <?php if($_SESSION['msg']){
+                            <?php if(isset($_SESSION['msg'])){
                                         echo $_SESSION['msg'];
                                         unset($_SESSION['msg']);
                                     }

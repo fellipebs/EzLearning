@@ -8,8 +8,8 @@
   header ('Content-type: text/html; charset=utf-8');
   require_once('../models/restrito/VerificarSeLogadoAluno1.php');
   require_once ('../models/conexao/conexao.php');
-  $sql= $con->prepare("SELECT * FROM atividade; ");
-  $sql->execute();
+  $sql= $con->prepare("SELECT * FROM atividade a INNER JOIN atividade_aluno atv ON atividade_id = a.id WHERE status = 'pendente' and atv.aluno_id = ?");
+  $sql->execute(array($_SESSION['usuario']->id));
   $rows = $sql->fetchAll(PDO::FETCH_CLASS);
   require_once("../componets/head.php");
 ?>
@@ -47,6 +47,7 @@
     </div>
     <div class="contacts-area mg-b-15">
         <div class="container-fluid">
+           <center><h1>Atividades a serem realizadas</h1></center>
             <div class="row">
                 <?php foreach ($rows as $row): ?>
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">

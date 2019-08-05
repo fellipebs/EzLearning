@@ -4723,7 +4723,8 @@ div#sparklinehome canvas {
 /*  24. blocks
 /*----------------------------------------*/
 .titulo{
-    margin-left: 25%;
+    font-size: 30px;
+    color: white!important;
 }
 .area-bloco{
     margin: 0 auto;

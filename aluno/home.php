@@ -21,8 +21,8 @@
     $sql->execute(array($_SESSION['aluno']->id) );
     $id_atividade = $sql->fetchObject();
     
-    $sql = $con->prepare("SELECT * FROM atividade inner join atividade_aluno on atividade.id = atividade_aluno.atividade_id");
-    $sql->execute();
+    $sql = $con->prepare("SELECT * FROM atividade inner join atividade_aluno on atividade.id = atividade_aluno.atividade_id WHERE atividade_aluno.aluno_id = ?");
+    $sql->execute(array($_SESSION['aluno']->id));
     $atividades = $sql->fetchAll(PDO::FETCH_CLASS);
 
 
@@ -30,7 +30,7 @@
 </head>
 <body>
     <?php require_once("../componets/menus.php");?>
-    <div class="container-fluid margem">
+    <div class="container-fluid" style="margin-left: 80px; margin-top: 100px;">
         <h1 class="centro">Seja bem vindo <?php echo $_SESSION['aluno']->nome;?></h1>
         <br> <br>
         <h3>Atividades Corrigidas</h3>
@@ -76,7 +76,7 @@
         <h3>Atividades Pendentes</h3>
         <div class="row">
                 <?php foreach ($atividades as $atividade): 
-                        if($atividade->status == 'Pendente'):
+                        if($atividade->status == 'pendente'):
                     ?>
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <a href="<?php echo $atividade->arquivo?>">

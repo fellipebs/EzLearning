@@ -23,16 +23,13 @@
                                     <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                                         <div class="header-top-menu tabl-d-n">
                                             <ul class="nav navbar-nav mai-top-nav">
-                                                
+                                            <span class="titulo" ><?php echo $_SESSION['titulo']; ?></span>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
-                                            <li class="nav-item" style="float: left;">
-                                                <span class="titulo" ><?php echo $_SESSION['titulo']; ?></span>
-                                            </li>
                                             <li class="nav-item">
                                                 <form action="salvar.php" method="POST">
                                                     <button onclick="salvar()" class="btn btn-primary">Salvar</button>
@@ -43,40 +40,6 @@
                                                     <textarea style="display: none;" name="codigo_xml" id="xml" cols="30" rows="10"></textarea>
                                                     <textarea style="display: none;" name="codigo_js" id="js" cols="30" rows="10"></textarea>
                                                 </form>
-                                                </li>
-                                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-bell" aria-hidden="true"></i><span class="indicator-nt"></span></a>
-                                                    <div role="menu" class="notification-author dropdown-menu animated zoomIn">
-  
-                                                     
-                                                        <div class="notification-single-top">
-                                                            <h1>Notificações</h1>
-                                                        </div>
-                                                        <ul class="notification-menu">
-                                                            
-                                                        </ul>
-                                                        <div class="notification-view">
-                                                            <a href="#">Veja todas suas notificações!</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-															<img src="../assets/img/product/pro4.jpg" alt="" />
-															<span class="admin-name"><?= $_SESSION['usuario']->usuario?></span>
-															<i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
-														</a>
-                                                    <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a>
-                                                        </li>
-                                                        <li><a href="#"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a>
-                                                        </li>
-                                                        <li><a href="#"><span class="edu-icon edu-money author-log-ic"></span>User Billing</a>
-                                                        </li>
-                                                        <li><a href="#"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
-                                                        </li>
-                                                        <li><a href="../models/logout.php"><span class="edu-icon edu-locked author-log-ic"></span>Sair</a>
-                                                        </li>
-                                                    </ul>
                                                 </li>
                                                 
 
