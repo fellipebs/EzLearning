@@ -1,4 +1,5 @@
-
+<? session_start(); 
+require_once ('../models/conexao/conexao.php'); ?>
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
@@ -81,7 +82,7 @@
                                                     <?php
                                         
                                                     $sql = $con->prepare("SELECT a.id, a.descricao, a.aluno_id, DATE_FORMAT(a.data,'%d/%m') as data, u.usuario from notificacao a 
-                                                    inner join usuario u on a.aluno_id = u.id
+                                                    inner join usuarios u on a.aluno_id = u.id
                                                     where aluno_id = ".$_SESSION['usuario']->id."");
                                                      $sql->execute();
                                                     $linhas = $sql->fetchAll(PDO::FETCH_CLASS);
