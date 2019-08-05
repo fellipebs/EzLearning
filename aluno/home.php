@@ -32,11 +32,11 @@
     <?php require_once("../componets/menus.php");?>
     <div class="container-fluid" style="margin-left: 80px; margin-top: 100px;">
         <h1 class="centro">Seja bem vindo <?php echo $_SESSION['aluno']->nome;?></h1>
-        <br> <br>
+        <br> <br><br>
         <h3>Atividades Corrigidas</h3>
         <div class="row">
                 <?php foreach ($atividades as $atividade): 
-                        if($atividade->status == 'Corrigida'):
+                        if($atividade->status == 'Corrigida - Com nota'):
                     ?>
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <a href="<?php echo $atividade->arquivo?>">
@@ -52,11 +52,11 @@
                     </a>
                     </div>
                         <?php endif; endforeach; ?>
-        <br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <h3>Atividades Aguardando Correção</h3>
         <div class="row">
                 <?php foreach ($atividades as $atividade): 
-                        if($atividade->status == 'Aguardando Correção'):
+                        if($atividade->status == 'Aguardando Correcao'):
                     ?>
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <a href="<?php echo $atividade->arquivo?>">
@@ -72,7 +72,7 @@
                     </a>
                     </div>
                         <?php endif; endforeach; ?>
-        <br>
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <h3>Atividades Pendentes</h3>
         <div class="row">
                 <?php foreach ($atividades as $atividade): 

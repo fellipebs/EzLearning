@@ -40,8 +40,9 @@
                 <td><?php echo $row->nota;?></td>
                 </tr>
             </tbody>
-            </table>
+            
 <?php endforeach;?>
+</table>
             </div>
             </div>
         </div>
