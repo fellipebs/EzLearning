@@ -1424,7 +1424,8 @@ ul.tab-custon-design, ul.tab-review-design {
 	padding:20px;
 }
 .student-img img{
-	width:100%;
+    width:100%;
+    padding: 1em;
 }
 /*----------------------------------------*/
 /*  13. Courses
