@@ -69,7 +69,7 @@
 header("Content-type: text/html; charset=utf-8");
 session_start();
 $_SESSION['atividade_id'] = 2;
-$_SESSION['titulo'] = "Atividade 2 de matemática Multiplicação";
+$_SESSION['titulo'] = "Atividade 2 de lógica";
 ?>
 </head>
 <body>
