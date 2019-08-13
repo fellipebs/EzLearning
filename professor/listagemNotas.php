@@ -58,7 +58,7 @@
                                     <div class="tab">
                                       <button class="tablinks" onclick="openCity(event, 'Turma')" id="defaultOpen"> <h3>Média geral dos alunos</h3></button>
                                       <button class="tablinks" onclick="openCity(event, 'Aluno')"><h3>Média por aluno</h3></button>
-                                     
+                                      <button class="tablinks" onclick="openCity(event, 'MediaTurma')"><h3>Média do aluno em relação a turma</h3></button>
                                     </div>
 
                                     <div id="Turma" class="tabcontent">
@@ -117,9 +117,42 @@
                                                                        
                                     ?>
 
-
-
                                     </div>
+
+                                    <div id="MediaTurma" class="tabcontent" style='overflow: auto;'>
+                                        <br>
+                                        <form action="graficoMedia.php" method="post">
+                                        <h3>Selecione a turma e a atividade para ver este gráfico</h3>
+                                        <label>Turma:</label>
+                                        <select class='form-control' name='turmaMedia'>
+                                    <?php 
+                                      $sql = $con->prepare("select * from turma;");
+                                      $sql->execute();
+                                      $rows = $sql->fetchAll(PDO::FETCH_CLASS);
+                                      foreach ($rows as $atv){
+                                        echo "<option value=".$atv->id.">".$atv->nome_turma."</option>";  
+                                      }
+                                    ?>
+                                    
+                                    
+                                    </select>
+
+                                    <label>Atividade:</label>
+
+                                    <select class='form-control' name='atividadeMedia'>
+                                    <?php 
+                                      $sql = $con->prepare("select * from atividade;");
+                                      $sql->execute();
+                                      $rows = $sql->fetchAll(PDO::FETCH_CLASS);
+                                      foreach ($rows as $atv){
+                                        echo "<option value=".$atv->id.">".$atv->nome."</option>";  
+                                      }
+                                    ?>
+                                    </select>
+                                    <br>
+                                    <button class='btn btn-primary'>Continuar</button>
+                                    </form>
+                                        </div>
                                     <script>
                                     function openCity(evt, cityName) {
                                       var i, tabcontent, tablinks;
