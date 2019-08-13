@@ -280,7 +280,7 @@ require_once ('../models/conexao/conexao.php'); ?>
 															<i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
 														</a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="../aluno/editar.php"><span class="edu-icon edu-home-admin author-log-ic"></span>Configurações</a>
+                                                        <li><a href="editar.php"><span class="edu-icon edu-home-admin author-log-ic"></span>Configurações</a>
                                                         </li>
                                                         <!-- <li><a href="#"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a>
                                                         </li>
