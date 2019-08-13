@@ -81,7 +81,7 @@
                                     ?>
                                     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                                      <div id="chart_div"></div>
-                                     <br><h4>Percentual de aproveitamento: <?php echo round(($notas/$total*100), 2)."%" ?></h4>
+                                     <br><h4>Percentual de aproveitamento: <?php if($notas>0){ echo round(($notas/$total*100), 2)."%"; }?></h4>
       
                                     </div>
 
