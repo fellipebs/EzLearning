@@ -4,10 +4,10 @@
     <!-- <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Blockly -->
-    <script src="../../../google-blockly/blockly_compressed.js"></script>
-    <script src="../../../google-blockly/javascript_compressed.js"></script>
-    <script src="../../../google-blockly/blocks_compressed.js"></script>
-    <script src="../../../google-blockly/msg/js/pt-br.js"></script>
+    <script src="../../google-blockly/blockly_compressed.js"></script>
+    <script src="../../google-blockly/javascript_compressed.js"></script>
+    <script src="../../google-blockly/blocks_compressed.js"></script>
+    <script src="../../google-blockly/msg/js/pt-br.js"></script>
     
     <!-- CSS -->
-    <link rel="stylesheet" href="../../../assets/style-atividade.css">
+    <link rel="stylesheet" href="../../assets/style-atividade.css">

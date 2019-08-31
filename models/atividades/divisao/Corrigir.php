@@ -1,39 +1,39 @@
 <?php
-$termo = "+";
-$termo2 = "soma =";
-$termo3 = "window.alert(soma)";
+$termo = "/";
+$termo2 = "Divis_C3_A3o =";
+$termo3 = "window.alert(Divis_C3_A3o)";
 $_SESSION['valorAtividade'] = 10;
-$_SESSION['atividadeId'] = 1;
+$_SESSION['atividadeId'] = 4;
 //procura determinado termo no arquivo
 if( strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo2) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo3) !== false) {
     $_SESSION['resposta'] = "Parabéns Atividade Feita corretamente, Você Ganhou uma medalha de Ouro";
     $_SESSION['demoImage'] = "../../../assets/images/medals/Medalha_Ouro.png";
     $_SESSION['notaAtividade'] = 10;
 }else if(strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo) == false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo2) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo3) !== false){
-    $_SESSION['resposta'] = "Faltou a operação de soma";
+    $_SESSION['resposta'] = "Faltou a operação de divisão";
     $_SESSION['notaAtividade'] = 8;
-    $_SESSION['demoImage'] = "../../../assets/images/atividades/matematica/somar/demos/soma.png";
+    $_SESSION['demoImage'] = "../../../assets/images/atividades/matematica/divisao/demos/div.png";
 }else if(strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo2) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo3) == false){
     $_SESSION['resposta'] = "Faltou a imprimir a variável na tela";
-    $_SESSION['demoImage'] = "../../../assets/images/atividades/matematica/somar/demos/imprimir.png";
+    $_SESSION['demoImage'] = "../../../assets/images/atividades/matematica/divisao/demos/imprimir.png";
     $nota = 7;
 }else if(strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo2) == false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo3) !== false){
-    $_SESSION['resposta'] = "Faltou guardar a soma na variavel";
-    $_SESSION['demoImage'] = "../../../assets/images/atividades/matematica/somar/demos/soma_variavel.png";
+    $_SESSION['resposta'] = "Faltou guardar a divisão na variavel";
+    $_SESSION['demoImage'] = "../../../assets/images/atividades/matematica/divisao/demos/div_variavel.png";
     $_SESSION['notaAtividade'] = 8;
 }
 else if(strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo2) == false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo3) == false){
-    $_SESSION['resposta'] = "Faltou guardar a soma na variavel e imprimir na tela";
-    $_SESSION['demoImage'] = "../../../assets/images/atividades/matematica/somar/demos/soma_variavel_imprimir.png";
+    $_SESSION['resposta'] = "Faltou guardar a divisão na variavel e imprimir na tela";
+    $_SESSION['demoImage'] = "../../../assets/images/atividades/matematica/divisao/demos/div_variavel_imprimir.png";
     $_SESSION['notaAtividade'] = 6;
 }else if(strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo) == false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo2) == false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo3) !== false){
-    $_SESSION['resposta'] ="Faltou a operação de soma e guardar a soma na variavel";
-    $_SESSION['demoImage'] = "../../../assets/images/atividades/matematica/somar/demos/soma_variavel.png";
+    $_SESSION['resposta'] ="Faltou a operação de divisão e guardar a divisão na variavel";
+    $_SESSION['demoImage'] = "../../../assets/images/atividades/matematica/divisao/demos/div_variavel.png";
     $_SESSION['notaAtividade'] = 6;
 }
 else{
     $_SESSION['resposta'] = "Refaça a atividade";
-    $_SESSION['demoImage'] = "../../../assets/images/atividades/matematica/somar/demos/soma_variavel_imprimir.png";
+    $_SESSION['demoImage'] = "../../../assets/images/atividades/matematica/divisao/demos/soma_variavel_imprimir.png";
     $_SESSION['notaAtividade'] = 0;
 }
 require_once('../../../models/atividades/LancarNotas.php');

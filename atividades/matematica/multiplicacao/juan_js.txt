@@ -1,5 +1,4 @@
 var Multiplica_C3_A7_C3_A3o;
 
 
-Multiplica_C3_A7_C3_A3o = 3 * 3;
-window.alert(Multiplica_C3_A7_C3_A3o);
+Multiplica_C3_A7_C3_A3o = 0;

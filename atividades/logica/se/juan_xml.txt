@@ -1,28 +1,9 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_if" id="I{:9;/g51uU*A:fcF+tk" x="212" y="73">
-    <value name="IF0">
-      <block type="logic_compare" id="@N~MjBLxD5TGOsrWMYOK">
-        <field name="OP">EQ</field>
-        <value name="A">
-          <block type="math_number" id="is#-W`Cj|R.6aL*AbOO}">
-            <field name="NUM">1</field>
-          </block>
-        </value>
-        <value name="B">
-          <block type="math_number" id="CG%+c*6($T,]~a#s`e{/">
-            <field name="NUM">1</field>
-          </block>
-        </value>
+  <block type="text_print" id="j1MFrM@1?{%nO.B{Y1$K" x="103" y="199">
+    <value name="TEXT">
+      <block type="text" id="#@2$F{_PC@wp(w$Z%`em">
+        <field name="TEXT"></field>
       </block>
     </value>
-    <statement name="DO0">
-      <block type="text_print" id="YBpEe4dLs!ZX_N(~2PYN">
-        <value name="TEXT">
-          <block type="math_number" id="w2y3xawd9:R3mT+k3:uT">
-            <field name="NUM">1</field>
-          </block>
-        </value>
-      </block>
-    </statement>
   </block>
 </xml>

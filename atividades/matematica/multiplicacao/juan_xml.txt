@@ -1,32 +1,8 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <variables>
-    <variable type="" id="m[KVI|bW:`UwN?msUQM*">Multiplicação</variable>
+    <variable type="" id="s0/.-`HO#PS!^#QDmFSo">Multiplicação</variable>
   </variables>
-  <block type="variables_set" id="saT~6A.xcN7$c?l2Zk-H" x="188" y="135">
-    <field name="VAR" id="m[KVI|bW:`UwN?msUQM*" variabletype="">Multiplicação</field>
-    <value name="VALUE">
-      <block type="math_arithmetic" id="3Z}3DV+f[Em=YuQ;T9jg">
-        <field name="OP">MULTIPLY</field>
-        <value name="A">
-          <block type="math_number" id="6(CUO$t:OsnkTE*B,;e#">
-            <field name="NUM">3</field>
-          </block>
-        </value>
-        <value name="B">
-          <block type="math_number" id="VjNGT)plaO7`arbVKq}~">
-            <field name="NUM">3</field>
-          </block>
-        </value>
-      </block>
-    </value>
-    <next>
-      <block type="text_print" id="y^F4`p3$^}qgS4%I/b-4">
-        <value name="TEXT">
-          <block type="variables_get" id="fA?PdGe2ABw:kF^-wv]w">
-            <field name="VAR" id="m[KVI|bW:`UwN?msUQM*" variabletype="">Multiplicação</field>
-          </block>
-        </value>
-      </block>
-    </next>
+  <block type="variables_set" id="2Xxm}Wm=[@i`QhwimM*T" x="11" y="185">
+    <field name="VAR" id="s0/.-`HO#PS!^#QDmFSo" variabletype="">Multiplicação</field>
   </block>
 </xml>

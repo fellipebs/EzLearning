@@ -1,29 +1,29 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <variables>
-    <variable type="" id="$A~)0kRn1w7$X_]ylod#">Divisão</variable>
+    <variable type="" id="W^SRQ|8eCus^,sCnDoO#">Divisão</variable>
   </variables>
-  <block type="variables_set" id=")_sd)nQv6)M?YCnL0Ufo" x="157" y="56">
-    <field name="VAR" id="$A~)0kRn1w7$X_]ylod#" variabletype="">Divisão</field>
+  <block type="variables_set" id="3+?m7uSSK`,pBNG]G!4y" x="63" y="189">
+    <field name="VAR" id="W^SRQ|8eCus^,sCnDoO#" variabletype="">Divisão</field>
     <value name="VALUE">
-      <block type="math_arithmetic" id="E!AfzsX)rZyWqM(,niJC">
+      <block type="math_arithmetic" id="-7m?1/P{qo@|W[lTwHJc">
         <field name="OP">DIVIDE</field>
         <value name="A">
-          <block type="math_number" id=".(@=y;8QnPkXA8TI7P`|">
+          <block type="math_number" id="x2g]kk:8sKhH[$WNL.cJ">
             <field name="NUM">4</field>
           </block>
         </value>
         <value name="B">
-          <block type="math_number" id="gwPcj|rXNC~f#0,iO+t+">
+          <block type="math_number" id="oLCeKueVI$H0c*ga{FwF">
             <field name="NUM">2</field>
           </block>
         </value>
       </block>
     </value>
     <next>
-      <block type="text_print" id="U|Ui;2[qo+|5@[1]4Hf/">
+      <block type="text_print" id="1:ofY@`.2%2%m/g6C0n8">
         <value name="TEXT">
-          <block type="variables_get" id="6Z1[JcOMQB7heTCQatqW">
-            <field name="VAR" id="$A~)0kRn1w7$X_]ylod#" variabletype="">Divisão</field>
+          <block type="variables_get" id="q-@}K,m[N[QC9fQ}T~Er">
+            <field name="VAR" id="W^SRQ|8eCus^,sCnDoO#" variabletype="">Divisão</field>
           </block>
         </value>
       </block>

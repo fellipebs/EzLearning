@@ -7,18 +7,20 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-            <h1>Atividade de Lógica uso do se</h1>
-            <p>Esta atividade tem como objetivo te ensinar a usar o se para testar se a condição é verdadeira</p>
-            <br>
-            <h4>Exemplo</h4>
-            <div id="blocosDiv" class="area-demo"></div>
-            <br>
-            <p>O bloco se testa se 1 é = a 1 , apos essa condição ser verdadeira ele imprime na tela verdadeiro</p>
-            <a href="se.php" class="btn btn-success">Iniciar a atividade</a>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h1>Atividade de Lógica uso do se</h1>
+                <p>Esta atividade tem como objetivo te ensinar a usar o se para testar se a condição é verdadeira</p>
+                <br>
+                <h4>Exemplo</h4>
+                <div id="blocosDiv" class="area-demo"></div>
+                <br>
+                <p>O bloco se testa se 1 é = a 1 , apos essa condição ser verdadeira ele imprime na tela verdadeiro</p>
+                <a href="se.php" class="btn btn-success">Iniciar a atividade</a>
+            </div>
+            <div class="col-md-3"></div>
         </div>
-        <div class="col-md-3"></div>
     </div>
 </body>
 </html>

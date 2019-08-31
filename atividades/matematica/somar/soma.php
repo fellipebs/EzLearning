@@ -3,6 +3,7 @@ header("Content-type: text/html; charset=utf-8");
 session_start();
 $_SESSION['atividade_id'] = 1;
 $_SESSION['titulo'] = "Atividade 1 de matemática Soma";
+$_SESSION['arquivo_php'] = "soma.php"; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,6 +66,10 @@ $_SESSION['titulo'] = "Atividade 1 de matemática Soma";
     <!-- modernizr JS
 		============================================ -->
     <script src="../../../assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <title>Soma</title>
 
     <script src="../../../google-blockly/blockly_compressed.js"></script>
@@ -76,7 +81,7 @@ $_SESSION['titulo'] = "Atividade 1 de matemática Soma";
 
 </head>
 <body>
-    <?php require_once('../../../componets/menu-atividade.php')?>
+    <?php require_once('../../../componets/menu-atividade.php');?>
             <br><br><br><br><br>
     <xml id="toolbox" style="display: none">
         <block type="math_number">
@@ -93,13 +98,13 @@ $_SESSION['titulo'] = "Atividade 1 de matemática Soma";
       </xml>
       <br>
             <div id="blocosDiv" class="area-bloco"></div>
+            <input id="nome" style="display: none;"  value="<?php echo $_SESSION['usuario']->usuario;?>">      
       <script type="text/javascript" src="../../js/ler_xml_blockly"></script>
       <script>
         var workspace = Blockly.inject('blocosDiv',
             {media: '../../../google-blockly/media/',
              toolbox: document.getElementById('toolbox'),
              trashcan: true});
-
         salvar = function(){
             var xml = Blockly.Xml.workspaceToDom(workspace);
             var code = Blockly.JavaScript.workspaceToCode(workspace);
@@ -136,3 +141,38 @@ $_SESSION['titulo'] = "Atividade 1 de matemática Soma";
         </script>
 </body>
 </html>
+<?php if(isset($_SESSION['resposta'])): ?>
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Atividade de Soma</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+        <center>
+        <img src="<?php if(isset($_SESSION['demoImage'])){ echo $_SESSION['demoImage'];}?>" alt="" >
+        </center>
+        <br>
+        <?php echo $_SESSION['resposta']; ?>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">Fechar</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+          <?php unset($_SESSION['resposta']);  endif; ?>
+<script>
+        $(document).ready(function(){
+            $("#myModal").modal();
+        });
+</script>
