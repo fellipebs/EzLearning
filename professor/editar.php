@@ -2,8 +2,13 @@
 session_start();
 //require_once('../models/restrito/VerificarSeLogadoAluno1.php');
     require_once ('../models/conexao/conexao.php'); 
-
     require_once("../componets/head.php");
+
+    require_once ('../models/conexao/conexao.php'); 
+    $sql= $con->prepare("SELECT nome,sobrenome FROM professor where usuario_id_professor = ?;");
+    $sql->execute(array($_SESSION['usuario']->id));
+    $rows = $sql->fetchAll(PDO::FETCH_CLASS);
+
 ?>
 
 <body>
@@ -44,8 +49,8 @@ session_start();
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="product-payment-inner-st">
                         <ul id="myTabedu1" class="tab-review-design">
-                            <li class="active"><a href="#description">Edit Basic Information</a></li>
-                            <li><a href="#reviews"> Edit Account Information</a></li>
+                            <li class="active"><a href="#description">Edite Informações básicas</a></li>
+                            <li><a href="#reviews"> Edite Informações da conta</a></li>
                         </ul>
                         <div id="myTabContent" class="tab-content custom-product-edit">
                             <div class="product-tab-list tab-pane fade active in" id="description">
@@ -58,32 +63,22 @@ session_start();
                                                     id="demo1-upload">
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <?php foreach($rows as $aux){ ?>
+                                                           
                                                             <div class="form-group">
-                                                                <input name="number" type="text" class="form-control"
-                                                                    placeholder="Fly Zend" value="<?php echo $_SESSION['aluno']->nome ?>" disabled>
+                                                            <label>Nome</label>
+                                                                <input name="number" type="text" class="form-control"  placeholder="Nome" value="<?= $aux->nome ?>">
                                                             </div>
+                                                            <label>Sobrenome</label>
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="E104, catn-2, UK."
-                                                                    value="<?php echo $_SESSION['aluno']->sobrenome ?>" disabled>
+                                                                <input type="text" class="form-control" placeholder="Sobrenome" value="<?= $aux->sobrenome ?>">
                                                             </div>
-                                                            <div class="form-group">
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="12/10/1993" value="<?php echo date("m-d-Y", strtotime($_SESSION['aluno']->dt_nascimento)); ?>" disabled>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="1213" value="<?php echo $_SESSION['aluno']->responsavel ?>" disabled>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <input type="number" class="form-control"
-                                                                    placeholder="01962067309" value="01962067309">
-                                                            </div>
+                                                            <?php } ?>
                                                            
                                                         </div>
                                                     </div>
                                                                 <button type="submit"
-                                                                    class="btn btn-primary waves-effect waves-light">Submit</button>
+                                                                    class="btn btn-primary waves-effect waves-light">Atualizar</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -114,28 +109,14 @@ session_start();
                                                         </div>
                                                         <div class="form-group">
                                                             <input type="password" class="form-control"
-                                                                placeholder="Senha Atual" name="novaSenha">
+                                                                placeholder="Nova Senha" name="novaSenha">
                                                         </div>
                                                         <div class="form-group">
                                                             <input type="password" class="form-control"
                                                                 placeholder="Confirmar Senha" name="comfirmarSenha">
                                                         </div>
-                                                        <div class="form-group alert-up-pd">
-                                                                <div class="dz-message needsclick download-custom">
-                                                                    <i class="fa fa-download edudropnone"
-                                                                        aria-hidden="true"></i>
-                                                                    <h2 class="edudropnone">Drop image here or click to
-                                                                        upload.</h2>
-                                                                    <p class="edudropnone"><span
-                                                                            class="note needsclick">(This is just a demo
-                                                                            dropzone. Selected image is
-                                                                            <strong>not</strong> actually
-                                                                            uploaded.)</span>
-                                                                    </p>
-                                                                    <input name="imageico" class="hd-pro-img"
-                                                                        type="text" />
-                                                                </div>
-                                                        <button type="submit"  class="btn btn-primary waves-effect waves-light">Submit</button>
+                                                      
+                                                        <button type="submit"  class="btn btn-primary waves-effect waves-light">Atualizar</button>
                                                         </form>                                                   
                                                         </div>
                                                 </div>
