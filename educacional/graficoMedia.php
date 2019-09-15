@@ -57,29 +57,20 @@
                                 <?php //$turma = $_POST['turmaMedia']; ?> 
                                 <?php $atividade = $_POST['atividadeMedia']; ?> 
 
-                        <?php 
-                        $sql= $con->prepare("select * from turma;;");
-                        $sql->execute();
-                        $rows = $sql->fetchAll(PDO::FETCH_CLASS);
+                                <?php 
+                                //Resgatando a média total;
+                                 $sql= $con->prepare("select avg(nota) as mediaTot from nota where atividade_id = ?;");
+                                 $sql->execute(array($atividade));
+                                 $mediaTotal = $sql->fetchAll(PDO::FETCH_CLASS);
+                                 foreach ($mediaTotal as $aux){
+                                     $media = $aux->mediaTot;
+                                 }
+                                ?>
 
-                        foreach($rows as $row){
-                        $sql= $con->prepare("select round(avg(n.nota), 2) as media from nota n inner join aluno a on n.aluno_id = a.id where a.turma_id = ? and atividade_id = ?;");
-                        $sql->execute(array($row->id,$atividade));
-                        $linhas = $sql->fetchAll(PDO::FETCH_CLASS);
-                            foreach($linhas as $sql){
-                                echo $sql->media;
-                                echo "<br>";
-                            }
-
-                        }
-
-                        
-                      
-                        ?>
                                 
 <!-- Terminar de montar o Gráfico, select já retornou os valores desejados. -->
                         
-       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
        <div id="chart_div" style='height: 1000px;'></div>
                                    
         <script>
@@ -88,10 +79,21 @@
 
         function drawMultSeries() {
         var data = google.visualization.arrayToDataTable([    
-        ['Média por aluno em relação a sala', 'Aluno', 'Sala'],
-        <?php
-        foreach($rows as $linhas){
-        echo "['".$linhas->nome."',".$linhas->nota.",".$media."],";
+        ['Média da turma em relação as outras', 'Turma', 'Média total das turmas'],
+
+        <?php 
+ //Resgatando todas as turmas;
+        $sql= $con->prepare("select * from turma;;");
+        $sql->execute();
+        $rows = $sql->fetchAll(PDO::FETCH_CLASS);                
+        foreach($rows as $row){
+        //resgatando a media de cada uma individualmente
+        $sql= $con->prepare("select round(avg(n.nota), 2) as medias, t.nome_turma from nota n inner join aluno a inner join turma t on n.aluno_id = a.id and a.turma_id = t.id where a.turma_id = ? and atividade_id = ?;");
+        $sql->execute(array($row->id,$atividade));
+        $linhas = $sql->fetchAll(PDO::FETCH_CLASS);
+        foreach($linhas as $sql){
+            echo "['".$sql->nome_turma."',".$sql->medias.",".$media."],";           
+        }
         }
         ?>
         
@@ -99,6 +101,7 @@
 
       var options = {
         title: 'Média por aluno em relação a sala',
+        
         chartArea: {width: '70%'},
         hAxis: {
           title: '',
