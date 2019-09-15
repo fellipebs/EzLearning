@@ -7,5 +7,3 @@ if(isset($_POST['Enviar'])){
 require_once('../../../models/atividades/SalvarAtividade.php');
 header('location: multi.php');
 }
-
-?>

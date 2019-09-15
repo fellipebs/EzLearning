@@ -5,41 +5,42 @@ $termo3 = "window.alert(soma)";
 $_SESSION['valorAtividade'] = 10;
 $_SESSION['atividadeId'] = 1;
 //procura determinado termo no arquivo
-if( strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo2) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo3) !== false) {
+if (strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo2) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo3) !== false) {
     $_SESSION['resposta'] = "Parabéns Atividade Feita corretamente, Você Ganhou uma medalha de Ouro";
     $_SESSION['demoImage'] = "../../../assets/images/medals/Medalha_Ouro.png";
     $_SESSION['notaAtividade'] = 10;
-}else if(strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo) == false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo2) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo3) !== false){
+    $_SESSION['medalha'] = "ouro";
+} else if (strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo) == false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo2) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo3) !== false) {
     $_SESSION['resposta'] = "Faltou a operação de soma";
     $_SESSION['notaAtividade'] = 8;
     $_SESSION['demoImage'] = "../../../assets/images/atividades/matematica/somar/demos/soma.png";
-}else if(strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo2) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo3) == false){
+} else if (strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo2) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo3) == false) {
     $_SESSION['resposta'] = "Faltou a imprimir a variável na tela";
     $_SESSION['demoImage'] = "../../../assets/images/atividades/matematica/somar/demos/imprimir.png";
     $nota = 7;
-}else if(strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo2) == false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo3) !== false){
+} else if (strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo2) == false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo3) !== false) {
     $_SESSION['resposta'] = "Faltou guardar a soma na variavel";
     $_SESSION['demoImage'] = "../../../assets/images/atividades/matematica/somar/demos/soma_variavel.png";
     $_SESSION['notaAtividade'] = 8;
-}
-else if(strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo2) == false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo3) == false){
+} else if (strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo2) == false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo3) == false) {
     $_SESSION['resposta'] = "Faltou guardar a soma na variavel e imprimir na tela";
     $_SESSION['demoImage'] = "../../../assets/images/atividades/matematica/somar/demos/soma_variavel_imprimir.png";
     $_SESSION['notaAtividade'] = 6;
-}else if(strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo) == false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo2) == false and strpos(file_get_contents($_SESSION['usuario']->usuario."_js.txt"),$termo3) !== false){
-    $_SESSION['resposta'] ="Faltou a operação de soma e guardar a soma na variavel";
+} else if (strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo) == false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo2) == false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo3) !== false) {
+    $_SESSION['resposta'] = "Faltou a operação de soma e guardar a soma na variavel";
     $_SESSION['demoImage'] = "../../../assets/images/atividades/matematica/somar/demos/soma_variavel.png";
     $_SESSION['notaAtividade'] = 6;
-}
-else{
+} else {
     $_SESSION['resposta'] = "Refaça a atividade";
     $_SESSION['demoImage'] = "../../../assets/images/atividades/matematica/somar/demos/soma_variavel_imprimir.png";
     $_SESSION['notaAtividade'] = 0;
 }
 require_once('../../../models/atividades/LancarNotas.php');
+require_once('../../../models/atividades/LancarMedalhas.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,7 +49,7 @@ require_once('../../../models/atividades/LancarNotas.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -56,8 +57,10 @@ require_once('../../../models/atividades/LancarNotas.php');
     <!-- CSS -->
     <link rel="stylesheet" href="../../../assets/style-atividade.css">
 </head>
+
 <body>
-  
+
 
 </body>
+
 </html>
