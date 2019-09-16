@@ -145,7 +145,7 @@ require_once ('../models/conexao/conexao.php'); ?>
                                     </div>
                                     <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                                         <div class="header-top-menu tabl-d-n">
-                                            <ul class="nav navbar-nav mai-top-nav">
+                                            <!-- <ul class="nav navbar-nav mai-top-nav">
                                                 <li class="nav-item"><a href="#" class="nav-link">Home</a>
                                                 </li>
                                                 <li class="nav-item"><a href="#" class="nav-link">About</a>
@@ -163,7 +163,7 @@ require_once ('../models/conexao/conexao.php'); ?>
                                                 </li>
                                                 <li class="nav-item"><a href="#" class="nav-link">Support</a>
                                                 </li>
-                                            </ul>
+                                            </ul> -->
                                         </div>
                                     </div>
                                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
@@ -292,7 +292,7 @@ require_once ('../models/conexao/conexao.php'); ?>
                                                         </li>
                                                     </ul>
                                                 </li>
-                                                <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-menu"></i></a>
+                                                <!-- <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-menu"></i></a> -->
 
                                                     <div role="menu" class="admintab-wrap menu-setting-wrap menu-setting-wrap-bg dropdown-menu animated zoomIn">
                                                         <ul class="nav nav-tabs custon-set-tab">
@@ -739,7 +739,7 @@ require_once ('../models/conexao/conexao.php'); ?>
                 </div>
             </div>
             <!-- Mobile Menu start -->
-            <div class="mobile-menu-area">
+            <!-- <div class="mobile-menu-area">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -922,4 +922,4 @@ require_once ('../models/conexao/conexao.php'); ?>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
