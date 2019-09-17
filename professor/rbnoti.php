@@ -30,7 +30,7 @@ if(isset($_POST['check'])){
 
     $rows = $sql->fetchAll(PDO::FETCH_CLASS);
     foreach ($rows as $row){
-        $aluno = $row->usuario_id_aluno;
+        $aluno = $row->id;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $stmt = $pdo->prepare('INSERT INTO notificacao (descricao, aluno_id, data, id_enviou) VALUES(:descricao, :aluno_id, NOW(), :id_enviou)');
         $stmt->execute(array(

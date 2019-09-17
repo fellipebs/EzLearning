@@ -79,7 +79,7 @@
                                         <br>
                                   <textarea name="msg" class='form-control' required> </textarea>
                                   <br>
-                                   <input type='submit'>
+                                   <input type='submit' class='btn btn-primary'>
      
                                  </form>
                                 </table>
