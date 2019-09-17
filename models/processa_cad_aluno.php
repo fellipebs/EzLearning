@@ -39,7 +39,7 @@ if($sql->rowCount() > 0){
             
           }  
           
-          header("Location: ../aluno/cadastroAluno.php");
+          header("Location: ../educacional/cadastroAluno.php");
           $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">
           Sucesso, Aluno  atribuido a Turma!
         </div>';
