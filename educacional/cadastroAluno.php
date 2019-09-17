@@ -2,7 +2,7 @@
 <?php
     session_start();
     require_once ('../models/conexao/conexao.php'); 
-    require_once('../models/restrito/VerificarSeLogadoProfessor1.php');
+    require_once('../models/restrito/VerificarSeLogadoAluno1.php');
     require_once("../componets/head.php");
 ?>
 <meta charset="UTF-8">
@@ -28,7 +28,7 @@
                                         <ul class="breadcome-menu">
                                             <li><a href="../#">Home</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Atividades</span>
+                                            <li><span class="bread-blod">Notas</span>
                                             
                                             </li>
                                         </ul>
@@ -48,61 +48,68 @@
                           
                             <div class="asset-inner">
                         
-                            <?php if(isset($_SESSION['msg'])){
-                                        echo $_SESSION['msg'];
-                                        unset($_SESSION['msg']);
-                                    }
-                            ?>
-                            <center><h2>Cadastro de Professor</h2></center>
+                            <center><h2>Cadastro de Aluno:</h2></center>
                             <br>
-                            <form action='../models/processa_cad_professor' method='post'>
-                            
-                      
+                            <form action='../models/processa_cad_aluno.php' method='post'>
+                            <center><div style='width: 1200px;'>
+
+                               
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Nome do Professor:</label>
-                            <input class="form-control" type="text" name="nome" id="nome"  aria-describedby="emailHelp" placeholder="Nome do Professor"><br>
+                            <label for="exampleInputEmail1">Nome do Aluno:</label>
+                            <input class="form-control" type="text" name="nome" id="nome"  aria-describedby="emailHelp" placeholder="Nome do Aluno"><br>
                         </div>
 
-                        <label for="exampleInputEmail1">Sobre Nome do Professor:</label>
-                            <input class="form-control" type="text" name="sobrenome" id="sobrenome"  aria-describedby="emailHelp" placeholder="Sobre nome do Professor"><br>
-                        </div>
-                            
+                                
                         <div class="form-group">
-                            <label for="exampleInputEmail1"> Selecione a Escola do Professor:</label>
-                            <select class="form-control" name="escola_id_Professor" id="escola_id_Professor" aria-describedby="emailHelp" placeholder="Selecione a Escola">
+                            <label for="exampleInputEmail1">Sobre Nome do Aluno:</label>
+                            <input class="form-control" type="text" name="sobrenome" id="sobrenome"  aria-describedby="emailHelp" placeholder="Sobre nome do Aluno"><br>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Data de Nascimento:</label>
+                            <input class="form-control" type="date" name="dt_nascimento" id="dt_nascimento"  aria-describedby="emailHelp" placeholder="Data de Nascimento"><br>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nome do Responsável:</label>
+                            <input class="form-control" type="text" name="responsavel" id="responsavel"  aria-describedby="emailHelp" placeholder="Responsavel do Aluno"><br>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Escolha a Turma do Aluno:</label>
+                            <select  class="form-control" name="turma_id" id="turma_id" aria-describedby="emailHelp" placeholder="Enter email">
                             <?php
-                            $sql = $con->prepare("SELECT * from escola");
+                            $sql = $con->prepare("SELECT * from turma");
                             $sql->execute();
                             $rows = $sql->fetchAll(PDO::FETCH_CLASS);
                             foreach ($rows as $row){
-                                echo "<option value='".$row->Id."'>".$row->nome."</option>";
+                                echo "<option value='".$row->id."'>".$row->nome_turma."</option>";
                             }
                             ?>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1"> Selecione a Usuario do Professor:</label>
-                            <select class="form-control" name="usuario_id_professor" id="usuario_id_professor" aria-describedby="emailHelp" placeholder="Selecione o login do Professor:">
+                            <label for="exampleInputEmail1">Selecione o Usuário do Aluno:</label>
+                            <select  class="form-control" name="usuario_id_aluno" id="usuario_id_aluno" aria-describedby="emailHelp" placeholder="Enter email">
                             <?php
-                            $sql = $con->prepare("SELECT * from usuarios");
+                            $sql = $con->prepare("SELECT * from usuarios WHERE tipo = 0");
                             $sql->execute();
                             $rows = $sql->fetchAll(PDO::FETCH_CLASS);
                             foreach ($rows as $row){
-                                echo "<option value='".$row->id."'>".$row->login."</option>";
+                                echo "<option value='".$row->id."'>".$row->usuario."</option>";
                             }
                             ?>
                             </select>
                         </div>
-          
+
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
-                       
-
                         </form>
                             </div>
                                 </div>
                                 </table>
-                            </div>
+                                <br><br>
+                            <br>
                             <div class="custom-pagination">
 								<ul class="pagination">
 									<!-- <li class="page-item"><a class="page-link" href="../#">Previous</a></li>
@@ -122,8 +129,3 @@
 </body>
 
 </html>
-
-
- 
-
-
