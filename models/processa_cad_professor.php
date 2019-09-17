@@ -17,7 +17,7 @@ $sql = $con->prepare("SELECT * FROM professor WHERE usuario_id_professor = ? and
 $sql->execute( array($escola_id_Professor,$usuario_id_professor));
 if($sql->rowCount() > 0){
     
-  header("Location: ../professor/cadastroProfessor.php");
+  header("Location: ../educacional/cadastroProfessor.php");
     
   $_SESSION ['msg'] = '<div class="alert alert-danger" role="alert">
   Erro, Professor já atrinuido a Escola!
@@ -33,7 +33,7 @@ if($sql->rowCount() > 0){
               ));
          
       
-              header("Location: ../professor/cadastroProfessor.php");
+              header("Location: ../educacional/cadastroProfessor.php");
         }         
         
 
