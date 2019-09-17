@@ -20,7 +20,7 @@ echo "<br>";
 $sql = $con->prepare("SELECT * FROM aluno WHERE turma_id = ? and usuario_id_aluno = ?;");
 $sql->execute( array($turma_id,$usuario_id_aluno));
 if($sql->rowCount() > 0){
-    header("Location: ../aluno/cadastroAluno.php");
+    header("Location: ../educacional/cadastroAluno.php");
     echo '<div class="alert alert-danger" role="alert">
     Erro, Aluno já cadastrado na Turma!
   </div>';
@@ -39,7 +39,7 @@ if($sql->rowCount() > 0){
             
           }  
           
-          header("Location: ../aluno/cadastroAluno.php");
+          header("Location: ../educacional/cadastroAluno.php");
           $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">
           Sucesso, Aluno  atribuido a Turma!
         </div>';
