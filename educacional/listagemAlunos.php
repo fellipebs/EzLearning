@@ -13,7 +13,7 @@
     <?php require_once("../componets/menus.php");?>
     <div class="breadcome-area">
         <div class="container-fluid">
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="breadcome-list single-page-breadcome">
                         <div class="row">
@@ -44,12 +44,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
-                                </div>
+                                    </form> -->
+                                <!-- </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --> 
             </div>
         </div>
     </div>
@@ -65,42 +65,52 @@
                         <div class="asset-inner">
                             <table>
                                 <tr>
-                                    <th>Cdigo</th>
-                                    <th>Foto</th>
+                                    <th>Código</th>
                                     <th>Nome</th>
-                                    <th>Status</th>
                                     <th>Nascimento</th>
                                     <th>Responsavel</th>
                                     <th>Operações</th>
                                 </tr>
                                 <?php foreach ($rows as $row): ?>
+                                <?php $cont = 0 ?>
+                                <form action='editarAluno.php' method='post'>
+                                <input type='hidden' value="<?= $row->id ?>" name='idAluno'>    
                                     <tr>
                                         <td><?= $row->id ?></td>
-                                        <td><img src="../assets/img/product/book-1.jpg" alt="" /></td>
                                         <td><?= $row->nome ?></td>
-                                        <td>
-                                            <button class="pd-setting">Active</button>
-                                        </td>
                                         <td><?= $row->dt_nascimento ?></td>
                                         <td><?= $row->responsavel ?></td>
                                         
                                         <td>
-                                            <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                            <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                            <button data-toggle="tooltip" title="Editar" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                </form>
+                                <script>
+                       function deletar<?php echo $cont ?>() {
+                       var txt;
+                        var r = confirm("Deseja realmente excluir este aluno?");
+                        if (r == true) {
+                            window.location.replace("excluirAluno.php?id=<?=$row->id?>");
+                           alert(txt);
+                        } else {
+                        }
+                        
+                       }
+                           </script>
+                                            <button data-toggle="tooltip" title="Apagar" class="pd-setting-ed" onclick='deletar<?php echo $cont ?>()'><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
-
+                                <?php $cont++ ?>
                             </table>
                         </div>
                         <div class="custom-pagination">
-                            <ul class="pagination">
+                            <!-- <ul class="pagination">
                                 <li class="page-item"><a class="page-link" href="../#">Previous</a></li>
                                 <li class="page-item"><a class="page-link" href="../#">1</a></li>
                                 <li class="page-item"><a class="page-link" href="../#">2</a></li>
                                 <li class="page-item"><a class="page-link" href="../#">3</a></li>
                                 <li class="page-item"><a class="page-link" href="../#">Next</a></li>
-                            </ul>
+                            </ul> -->
                         </div>
                     </div>
                 </div>
