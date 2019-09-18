@@ -12,14 +12,14 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <h1>Atividade de Laços de Repetição uso do Contar</h1>
-                <p>Esta atividade tem como objetivo te ensinar a contar de 5 até 1.</p>
+                <h1>Atividade de Laços de Repetição</h1>
+                <p>Esta atividade tem como objetivo te ensinar escrever na tela 'Olá Mundo' 3 Vezes.</p>
                 <br>
                 <h4>Exemplo</h4>
                 <div id="blocosDiv" class="area-demo"></div>
                 <br>
-                <p>O bloco contar a partir da variável i de 5 até 1 conta de 1 em 1, o proximo bloco imprime o valor da variável i na tela 5 vezes</p>
-                <a href="contar2.php" class="btn btn-success">Iniciar a atividade</a>
+                <p>O bloco repita a patir do valor dado 3, repete a ação de imprimir na tela 'Olá Mundo' 3 vezes</p>
+                <a href="repetir.php" class="btn btn-success">Iniciar a atividade</a>
             </div>
             <div class="col-md-3"></div>
         </div>
@@ -35,7 +35,7 @@
         trashcan: false
     });
 
-    readTextFile("../../demo/demo_contar2.txt");
+    readTextFile("../../demo/demo_repetir.txt");
     var xml = Blockly.Xml.textToDom(allText);
     Blockly.Xml.domToWorkspace(xml, workspace);
 </script>

@@ -1,0 +1,38 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+    <block type="controls_if" id="O#q:36poC-82U1tez.?3"  x="40" y="25">
+    <mutation else="1"></mutation>
+    <value name="IF0">
+      <block type="logic_compare" id="^|f0H.(l]q;Zu/RYy`p^">
+        <field name="OP">EQ</field>
+        <value name="A">
+          <block type="math_number" id="oBF=qGP(a!8cC2a:l=D,">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="math_number" id=";H@FA@.gNOLXm8|3R[5J">
+            <field name="NUM">2</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <statement name="DO0">
+      <block type="text_print" id="|rn?vQp?d`#fPK2^qD,Q">
+        <value name="TEXT">
+          <block type="text" id="Ci)(BI-`d67dA1E|zKEe">
+            <field name="TEXT">1 é igual a 2</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <statement name="ELSE">
+      <block type="text_print" id="?m=|pN$VH{$*NCcKxJWz">
+        <value name="TEXT">
+          <block type="text" id="C+cYxb(L^/h7@PZX|I`4">
+            <field name="TEXT">1 é diferente de 2</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>

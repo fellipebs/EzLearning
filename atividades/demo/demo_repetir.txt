@@ -1,0 +1,18 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="controls_repeat_ext" id="(%+WJMp+,^qP=U}9B-ge" x="50" y="50">
+    <value name="TIMES">
+      <shadow type="math_number" id="uoM@}mFM|UOFI6*]DvjJ">
+        <field name="NUM">3</field>
+      </shadow>
+    </value>
+    <statement name="DO">
+      <block type="text_print" id="do,77mNV]wk40BT?!XYv">
+        <value name="TEXT">
+          <shadow type="text" id="Tt%LBO9t=mQ+`3ej$K)6">
+            <field name="TEXT">Olá Mundo</field>
+          </shadow>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>

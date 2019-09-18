@@ -1,0 +1,35 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable type="" id="!hHsK)lF1_j2tJM:eu[A">i</variable>
+  </variables>
+  <block type="controls_for" id="WZz+uqx7IehD~06z#O8V" x="20" y="60">
+    <field name="VAR" id="!hHsK)lF1_j2tJM:eu[A">i</field>
+    <value name="FROM">
+      <shadow type="math_number" id="7yHTbgJ-:13[6+gt|`;.">
+        <field name="NUM">5</field>
+      </shadow>
+    </value>
+    <value name="TO">
+      <shadow type="math_number" id="3a`SJ6_y%U@]6B%rx.L/">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <value name="BY">
+      <shadow type="math_number" id="BMi3G{}FV2ZZ`8(?=W?[">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <statement name="DO">
+      <block type="text_print" id="3skwDi[]S`rtl~TNc$4U">
+        <value name="TEXT">
+          <shadow type="text" id="C@`,z=C]u6DUH)kN:$ZJ">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="variables_get" id="-!e1QnvnXs3nrbv-U_n4">
+            <field name="VAR" id="!hHsK)lF1_j2tJM:eu[A">i</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>

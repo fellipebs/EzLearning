@@ -1,0 +1,18 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="controls_if" id="A=WQ`IYJn4*$]hf4}H#l" x="231" y="98">
+    <value name="IF0">
+      <block type="logic_compare" id="y`ck3zv*yL*(DKx3C8N^">
+        <field name="OP">EQ</field>
+      </block>
+    </value>
+    <statement name="DO0">
+      <block type="text_print" id="0U4]mdUW6u0Kmt/MAGI/">
+        <value name="TEXT">
+          <block type="text" id="E@l-d;sh0QxiaKiqpB4V">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>
