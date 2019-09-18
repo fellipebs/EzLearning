@@ -1,9 +1,9 @@
 <?php
 header("Content-type: text/html; charset=utf-8");
 session_start();
-$_SESSION['atividade_id'] = 5;
-$_SESSION['titulo'] = "Atividade de contar";
-$_SESSION['arquivo_php'] = "contar.php";
+$_SESSION['atividade_id'] = 6;
+$_SESSION['titulo'] = "Atividade 2 de contar";
+$_SESSION['arquivo_php'] = "contar2.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -93,12 +93,12 @@ $_SESSION['arquivo_php'] = "contar.php";
       <field name="VAR" id="!hHsK)lF1_j2tJM:eu[A">i</field>
       <value name="FROM">
         <shadow type="math_number" id="7yHTbgJ-:13[6+gt|`;.">
-          <field name="NUM">1</field>
+          <field name="NUM">5</field>
         </shadow>
       </value>
       <value name="TO">
         <shadow type="math_number" id="3a`SJ6_y%U@]6B%rx.L/">
-          <field name="NUM">5</field>
+          <field name="NUM">1</field>
         </shadow>
       </value>
       <value name="BY">
