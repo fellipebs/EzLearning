@@ -21,4 +21,4 @@ if ($sql->rowCount() == 0) {
     $sql = $pdo->prepare("UPDATE atividade_aluno SET status = 'Corrigida - Com nota' where aluno_id = ? and atividade_id = ?");
     $sql->execute(array($_SESSION['Aluno']->id, $_SESSION['atividadeId']));
 }
-// header('location: ' . $_SESSION['arquivo_php']);
+header('location: ' . $_SESSION['arquivo_php']);
