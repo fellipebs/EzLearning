@@ -31,12 +31,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <ul class="breadcome-menu">
-                                            <li><a href="../#">Home</a> <span class="bread-slash">/</span>
-                                            </li>
-                                            <li><a href="lancarnotas.php">Lançar Notas</a> <span class="bread-slash">/</span>
-                                            </li>
-                                            <li><a href="lancarnotas.php">Editar Notas</a> <span class="bread-slash">/</span>
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -54,7 +49,7 @@
                           
                             <div class="asset-inner" >
                             <?php $alunoId = $_POST['idAluno']; 
-                            $sql= $con->prepare("select a.nome, a.sobrenome, a.dt_nascimento, a.responsavel, t.nome_turma, a.turma_id from aluno a inner join turma t on a.turma_id = t.id where a.id = ?;");
+                            $sql= $con->prepare("select a.nome, a.sobrenome, a.dt_nascimento, a.responsavel, t.nome_turma, a.turma_id, a.status from aluno a inner join turma t on a.turma_id = t.id where a.id = ?;");
                             $sql->execute(array($alunoId));
                             $rows = $sql->fetchAll(PDO::FETCH_CLASS);
                             
@@ -82,7 +77,22 @@
                                echo "</select>"; 
                                echo "<br>";   
                             }
-                            echo "<button class='btn btn-primary'>Finalizar a edição</button>";
+                            if($row->status == 1){
+                                echo 'O usuário está ativo, para desativá-lo basta escolher a opção "Desativar":';
+                                echo "<select name='status' class='form-control'>";
+                                echo "<option value='1'>Ativar</option>
+                                      <option value='0'>Desativar</option>";
+                                echo "</select>";
+                                
+                            }else{
+                                echo 'O usuário está inativo, para ativá-lo basta escolher a opção "Ativar":';
+                                echo "<select name='status' class='form-control'>";
+                                echo "<option value='0'>Desativar</option>
+                                      <option value='1'>Ativar</option>";
+                                echo "</select>";
+                            }
+
+                            echo "<br><button class='btn btn-primary'>Finalizar a edição</button>";
                             echo "</form>";
                             ?>
                                 </div>
