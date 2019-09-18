@@ -1,7 +1,7 @@
 <?php
     session_start();
     require_once ('../models/conexao/conexao.php'); 
-    $sql= $con->prepare("SELECT id,nome,sobrenome,DATE_FORMAT(dt_nascimento,'%d/%m/%Y')as dt_nascimento,responsavel, usuario_id_aluno FROM aluno; ");
+    $sql= $con->prepare("SELECT id,nome,sobrenome,DATE_FORMAT(dt_nascimento,'%d/%m/%Y')as dt_nascimento,responsavel, usuario_id_aluno, status FROM aluno; ");
     $sql->execute();
     $rows = $sql->fetchAll(PDO::FETCH_CLASS);
 
@@ -69,10 +69,11 @@
                                     <th>Nome</th>
                                     <th>Nascimento</th>
                                     <th>Responsavel</th>
+                                    <th>Status</th>
                                     <th>Operações</th>
                                 </tr>
                                 <?php foreach ($rows as $row): ?>
-                                <?php $cont = 0 ?>
+                               
                                 <form action='editarAluno.php' method='post'>
                                 <input type='hidden' value="<?= $row->id ?>" name='idAluno'>    
                                     <tr>
@@ -80,27 +81,19 @@
                                         <td><?= $row->nome ?></td>
                                         <td><?= $row->dt_nascimento ?></td>
                                         <td><?= $row->responsavel ?></td>
-                                        
+                                        <?php if($row->status == '1'){
+                                            echo "<td>Ativo</td>";
+                                            }else{
+                                            echo "<td>Inativo</td>";
+                                            }?>
                                         <td>
                                             <button data-toggle="tooltip" title="Editar" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                 </form>
-                                <script>
-                       function deletar<?php echo $cont ?>() {
-                       var txt;
-                        var r = confirm("Deseja realmente excluir este aluno?");
-                        if (r == true) {
-                            window.location.replace("excluirAluno.php?id=<?=$row->id?>");
-                           alert(txt);
-                        } else {
-                        }
-                        
-                       }
-                           </script>
-                                            <button data-toggle="tooltip" title="Apagar" class="pd-setting-ed" onclick='deletar<?php echo $cont ?>()'><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                            <!-- <button data-toggle="tooltip" title="Apagar" class="pd-setting-ed" onclick='deletara()'><i class="fa fa-trash-o" aria-hidden="true"></i></button> -->
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
-                                <?php $cont++ ?>
+                                
                             </table>
                         </div>
                         <div class="custom-pagination">

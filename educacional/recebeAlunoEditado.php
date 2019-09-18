@@ -8,16 +8,18 @@ $sobrenome =  $_POST['sobrenome'];
 $dt_nascimento = $_POST['dt_nascimento'];
 $responsavel = $_POST['responsavel'];
 $nome_turma = $_POST['nome_turma'];
+$status = $_POST['status'];
 
 
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-         $stmt = $pdo->prepare('UPDATE aluno set nome = :nome, sobrenome =:sobrenome, dt_nascimento = :dt_nascimento, responsavel = :responsavel, turma_id = :nome_turma WHERE id = :id');
+         $stmt = $pdo->prepare('UPDATE aluno set nome = :nome, sobrenome =:sobrenome, dt_nascimento = :dt_nascimento, responsavel = :responsavel, turma_id = :nome_turma, status = :status WHERE id = :id');
          $stmt->execute(array(
            ':nome' => $nome,
            ':sobrenome' => $sobrenome,
            ':dt_nascimento' => $dt_nascimento,
            ':responsavel' => $responsavel,
            ':nome_turma' => $nome_turma,
+           ':status' => $status,
            ':id' => $id
         ));
 
