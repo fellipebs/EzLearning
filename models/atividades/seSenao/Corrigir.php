@@ -4,6 +4,7 @@ $termo2 = "window.alert('1 é igual a 2');";
 $termo3 = "else";
 $termo4 = "window.alert('1 é diferente de 2');";
 $termo5 = "window.alert(";
+$termo6 = "if";
 $_SESSION['valorAtividade'] = 10;
 $_SESSION['atividadeId'] = 8;
 //procura determinado termo no arquivo
@@ -12,34 +13,18 @@ if (strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo)
     $_SESSION['demoImage'] = "../../../assets/images/medals/Medalha_Ouro.png";
     $_SESSION['notaAtividade'] = 10;
     $_SESSION['medalha'] = "ouro";
-} else if (strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo, $termo3, $termo5) !== false) {
-    $_SESSION['resposta'] = "Parabéns Atividade você entendeu a essência da atividade, Você Ganhou uma medalha de Bronze, escreva os textos corretamente para ganhar uma medalha de ouro";
+} else if (strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo3) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo5) !== false) {
+    $_SESSION['resposta'] = "Parabéns Atividade você entendeu a essência da atividade, Você Ganhou uma medalha de Prata, escreva os textos corretamente para ganhar uma medalha de ouro";
     $_SESSION['demoImage'] = "../../../assets/images/medals/Medalha_Prata.png";
     $_SESSION['notaAtividade'] = 10;
     $_SESSION['medalha'] = "prata";
-} else if (strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo) == false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo2) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo3) !== false) {
-    $_SESSION['resposta'] = "Faltou o uso do Se";
-    $_SESSION['notaAtividade'] = 8;
-    $_SESSION['demoImage'] = "../../../assets/images/atividades/logica/se/demos/se.png";
-} else if (strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo2) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo3) == false) {
-    $_SESSION['resposta'] = "Faltou a imprimir o resultado na tela";
-    $_SESSION['demoImage'] = "../../../assets/images/atividades/logica/se/demos/imprimir.png";
-    $nota = 7;
-} else if (strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo2) == false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo3) !== false) {
-    $_SESSION['resposta'] = "Faltou comparar dois valores";
-    $_SESSION['demoImage'] = "../../../assets/images/atividades/logica/se/demos/comparar.png";
-    $_SESSION['notaAtividade'] = 8;
-} else if (strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo2) == false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo3) == false) {
-    $_SESSION['resposta'] = "Faltou comparar dois valores e imprimir na tela o resultado na tela";
-    $_SESSION['demoImage'] = "../../../assets/images/atividades/logica/se/demos/se_comparar_imprimir.png";
-    $_SESSION['notaAtividade'] = 6;
-} else if (strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo) == false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo2) == false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo3) !== false) {
-    $_SESSION['resposta'] = "Faltou o uso do Se e comparar dois valores";
-    $_SESSION['demoImage'] = "../../../assets/images/atividades/logica/se/demos/se_comparar.png";
+} elseif (strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo6) !== false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo3) === false and strpos(file_get_contents($_SESSION['usuario']->usuario . "_js.txt"), $termo5) === false) {
+    $_SESSION['resposta'] = "Você esqueceu de usar o senão e imprimir na tela";
+    $_SESSION['demoImage'] = "../../../assets/images/atividades/logica/seSenao/demos/seSenao.png";
     $_SESSION['notaAtividade'] = 6;
 } else {
     $_SESSION['resposta'] = "Refaça a atividade";
-    $_SESSION['demoImage'] = "../../../assets/images/atividades/logica/se/demos/se_comparar_imprimir.png";
+    $_SESSION['demoImage'] = "../../../assets/images/atividades/logica/seSenao/demos/seSenao.png";
     $_SESSION['notaAtividade'] = 0;
 }
 require_once('../../../models/atividades/LancarNotas.php');
