@@ -31,6 +31,9 @@
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
                                             <li class="nav-item">
+                                            <a href="../../../aluno">Sair <i class="fas fa-sign-out-alt lg" style="font-size:40px;"></i></a>
+                                            </li>
+                                            <li class="nav-item">
                                                 <form action="salvar.php" method="POST">
                                                     <button onclick="salvar()" class="btn btn-primary">Salvar</button>
                                                     <span onclick="atividade_salva()" class="btn btn-primary">Atividade salva</span>

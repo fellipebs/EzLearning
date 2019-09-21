@@ -8,6 +8,7 @@
     <script src="../../../google-blockly/javascript_compressed.js"></script>
     <script src="../../../google-blockly/blocks_compressed.js"></script>
     <script src="../../../google-blockly/msg/js/pt-br.js"></script>
-    
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <!-- CSS -->
     <link rel="stylesheet" href="../../../assets/style-atividade.css">
