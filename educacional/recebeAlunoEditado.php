@@ -23,6 +23,14 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
            ':id' => $id
         ));
 
+
+ $_SESSION['msg'] = '<div class="alert alert-success" role="alert">
+Aluno editado com sucesso!
+</div>';
+
+       
+    
+  
  header("Location: listagemAlunos.php");
 
 ?>

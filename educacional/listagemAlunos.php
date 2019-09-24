@@ -60,8 +60,12 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="product-status-wrap">
                         <h4>Listagem De Alunos</h4>
-
-
+                        <?php if(isset($_SESSION['msg'])){
+                                        echo $_SESSION['msg'];
+                                        unset($_SESSION['msg']);
+                                    }
+                            
+                            ?>
                         <div class="asset-inner">
                             <table>
                                 <tr>
