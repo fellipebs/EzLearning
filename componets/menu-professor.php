@@ -3,7 +3,7 @@ require_once ('../models/conexao/conexao.php'); ?>
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="../index.html"><img class="main-logo" src="../assets/img/logo/logo.png" alt="" /></a>
+              <img class="main-logo" src="../assets/img/logo/logo.png" alt="" />
                 <strong><a href="../index.html"><img src="../assets/img/logo/logosn.png" alt="" /></a></strong>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
@@ -124,7 +124,7 @@ require_once ('../models/conexao/conexao.php'); ?>
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-pro">
-                        <a href="../index.html"><img class="main-logo" src="../assets/img/logo/logo.png" alt="" /></a>
+                        <img class="main-logo" src="../assets/img/logo/logo.png" alt="" />
                     </div>
                 </div>
             </div>

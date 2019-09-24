@@ -49,7 +49,11 @@
                           
                             <div class="asset-inner">
                                 <table>
-                                
+                                <?php if(isset($_SESSION['msg'])){
+                                    echo $_SESSION['msg'];
+                                    unset($_SESSION['msg']);
+                                }
+                                 ?>
                                    Utilize esta página para enviar notificações aos alunos!
                                    <br><br>
                                    <form  action='rbnoti.php' method='post'>

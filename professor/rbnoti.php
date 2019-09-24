@@ -17,6 +17,9 @@ if(isset($_POST['aluno'])){
            ':id_enviou' => $usu
         ));
     }
+    $_SESSION['msg'] = '<div class="alert alert-success" role="alert">
+Aluno editado com sucesso!
+</div>';
     header("Location: notificacao.php");
 }
 
@@ -39,6 +42,9 @@ if(isset($_POST['check'])){
           ':id_enviou' => $usu
        ));
     }
+    $_SESSION['msg'] = '<div class="alert alert-success" role="alert">
+Notificação enviada com sucesso!
+</div>';
     header("Location: notificacao.php");
 }
 
