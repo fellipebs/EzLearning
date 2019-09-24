@@ -41,7 +41,7 @@ if($sql->rowCount() > 0){
                 ));   
                 $_SESSION['msg'] = '<div class="alert alert-success" role="alert">
     
-                Sucesso, Usuário já cadastrado!
+                Sucesso, Usuário cadastrado!
   </div>';
    
                
