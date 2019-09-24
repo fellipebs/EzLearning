@@ -48,10 +48,17 @@
                           
                             <div class="asset-inner">
                         
-                            <?php if(isset($_SESSION['msg'])){
-                                        echo $_SESSION['msg'];
-                                        unset($_SESSION['msg']);
-                                    }
+                            <?php 
+                            $row = $sql->fetchObject();
+                            if(isset($_SESSION['msg'])){
+                                echo $_SESSION['msg'];
+                                unset($_SESSION['msg']);
+                            }
+                             elseif(isset($_SESSION['msg2'])){
+                                    echo $_SESSION['msg2'];
+                                    unset($_SESSION['msg2']);
+                                   
+                                }             
                             
                             ?>
                             <center><h2>Cadastro de Usuario</h2></center>
