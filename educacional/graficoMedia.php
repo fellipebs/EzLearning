@@ -76,7 +76,7 @@ require_once("../componets/head.php");
                                         ]);
 
                                         var options = {
-                                            title: 'Gráfico da Média por turma em relção a outras turmas:',
+                                            title: 'Gráfico da Média por turma em relação a outras turmas:',
 
                                             chartArea: {
                                                 width: '70%'
