@@ -41,6 +41,9 @@ foreach($rows as $row){
 
   
 }
+$_SESSION['msg'] = '<div class="alert alert-success" role="alert">
+Atividade atribuída com sucesso!
+</div>';
 }
   header("Location: ../professor/lancar_atividade.php");
 

@@ -51,14 +51,19 @@
                             <div class="asset-inner">
                          
                            
-
-                           <?php if(isset($_SESSION['msg'])){
-                            echo $_SESSION['msg'];
-                            unset($_SESSION['msg']);
-                        }
-                ?>
-                           
-                        
+                            <?php 
+                            $row = $sql->fetchObject();
+                            if(isset($_SESSION['msg2'])){
+                                echo $_SESSION['msg2'];
+                                unset($_SESSION['msg2']);
+                            }
+                             elseif(isset($_SESSION['msg'])){
+                                    echo $_SESSION['msg'];
+                                    unset($_SESSION['msg']);
+                                   
+                                }             
+                            
+                            ?>  
                            
                             
                             <center><h2>Cadastro de Turmas</h2></center>
