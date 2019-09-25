@@ -69,11 +69,11 @@
                       
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nome do Professor:</label>
-                            <input class="form-control" type="text" name="nome" id="nome"  aria-describedby="emailHelp" placeholder="Nome do Professor"><br>
+                            <input class="form-control" type="text" name="nome" id="nome"  aria-describedby="emailHelp" placeholder="Nome do Professor" required><br>
                         </div>
 
                         <label for="exampleInputEmail1">Sobrenome do Professor:</label>
-                            <input class="form-control" type="text" name="sobrenome" id="sobrenome"  aria-describedby="emailHelp" placeholder="Sobre nome do Professor"><br>
+                            <input class="form-control" type="text" name="sobrenome" id="sobrenome"  aria-describedby="emailHelp" placeholder="Sobre nome do Professor" required><br>
                         </div>
                             
                         <div class="form-group">
