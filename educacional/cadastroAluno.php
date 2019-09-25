@@ -48,11 +48,19 @@
 
                         <div class="asset-inner">
                         
-                        <?php if(isset($_SESSION['msg'])){
+                        <?php 
+                            $row = $sql->fetchObject();
+                            if(isset($_SESSION['msg2'])){
+                                echo $_SESSION['msg2'];
+                                unset($_SESSION['msg2']);
+                            }
+                             elseif(isset($_SESSION['msg'])){
                                     echo $_SESSION['msg'];
                                     unset($_SESSION['msg']);
-                                }
-                        ?>
+                                   
+                                }            
+                            
+                            ?>
                           
                             <div class="asset-inner">
                         
@@ -61,7 +69,10 @@
                             <form action='../models/processa_cad_aluno.php' method='post'>
                             <center><div style='width: 1200px;'>
 
-                               
+                            <div class="form-group">
+                            <input class="form-control" type="int" name="status" id="status" style="display: none"  aria-describedby="emailHelp" value='1' placeholder="Responsavel do Aluno" disabled><br>
+                        </div>
+
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nome do Aluno:</label>
                             <input class="form-control" type="text" name="nome" id="nome"  aria-describedby="emailHelp" placeholder="Nome do Aluno"><br>
@@ -101,7 +112,7 @@
                             <label for="exampleInputEmail1">Selecione o Usuário do Aluno:</label>
                             <select  class="form-control" name="usuario_id_aluno" id="usuario_id_aluno" aria-describedby="emailHelp" placeholder="Enter email">
                             <?php
-                            $sql = $con->prepare("SELECT * from usuarios WHERE tipo = 0");
+                            $sql = $con->prepare("SELECT * from usuarios WHERE tipo = 0 ");
                             $sql->execute();
                             $rows = $sql->fetchAll(PDO::FETCH_CLASS);
                             foreach ($rows as $row){
@@ -110,6 +121,7 @@
                             ?>
                             </select>
                         </div>
+                       
 
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
                         </form>
