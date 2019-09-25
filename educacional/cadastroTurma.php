@@ -73,7 +73,7 @@
                       
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nome da Turma:</label>
-                            <input class="form-control" type="text" name="nome_turma" id="nome_turma"  aria-describedby="emailHelp" placeholder="Nome da Turma"><br>
+                            <input class="form-control" type="text" name="nome_turma" id="nome_turma"  aria-describedby="emailHelp" placeholder="Nome da Turma" required><br>
                         </div>
                             
                         <div class="form-group">
