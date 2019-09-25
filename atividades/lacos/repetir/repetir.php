@@ -85,6 +85,8 @@ $_SESSION['arquivo_php'] = "repetir.php";
 <body>
   <?php
   require_once("../../../componets/menu-atividade.php"); ?>
+  <div id="blocklyArea"></div>
+  <div id="blocosDiv" style="position: absolute"></div>
   <xml id="toolbox" style="display: none">
     <block type="controls_repeat_ext" id="#a[HXjg-+g0$ujSxT+bB" x="-612" y="-38">
       <value name="TIMES">
@@ -104,60 +106,7 @@ $_SESSION['arquivo_php'] = "repetir.php";
   <textarea style="display: none;" name="codigo_xml" id="xml" cols="30" rows="10"></textarea>
   <textarea style="display: none;" name="codigo_js" id="js" cols="30" rows="10"></textarea>
   </form>
-  <script>
-    var workspace = Blockly.inject('blocosDiv', {
-      media: '../../../google-blockly/media/',
-      toolbox: document.getElementById('toolbox'),
-      trashcan: true
-    });
-
-    salvar = function() {
-      var xml = Blockly.Xml.workspaceToDom(workspace);
-      var code = Blockly.JavaScript.workspaceToCode(workspace);
-      xml_text = Blockly.Xml.domToPrettyText(xml);
-      document.getElementById('xml').innerHTML = xml_text;
-      document.getElementById('js').innerHTML = code;
-      document.cookie = "xml=" + xml_text;
-      alert(cookie_formatado);
-
-    }
-    atividade_salva = function() {
-      var nome = document.getElementById('nome').value;
-      readTextFile(nome + "_xml.txt");
-      var xml = Blockly.Xml.textToDom(allText);
-      Blockly.Xml.domToWorkspace(xml, workspace);
-    };
-
-    executar = function() {
-      Blockly.JavaScript.INFINITE_LOOP_TRAP = '  checkTimeout();\n';
-      var timeouts = 0;
-      var checkTimeout = function() {
-        if (timeouts++ > 1000000) {
-          throw MSG['timeout'];
-        }
-      };
-      var code = Blockly.JavaScript.workspaceToCode(workspace);
-      Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
-      try {
-        eval(code);
-      } catch (e) {
-        alert(MSG['badCode'].replace('%1', e));
-      }
-    };
-
-    function readTextFile(file) {
-      var rawFile = new XMLHttpRequest();
-      rawFile.open("GET", file, false);
-      rawFile.onreadystatechange = function() {
-        if (rawFile.readyState === 4) {
-          if (rawFile.status === 200 || rawFile.status == 0) {
-            allText = rawFile.responseText;
-          }
-        }
-      }
-      rawFile.send(null);
-    }
-  </script>
+  <script src="../../js/config.js"></script>
 </body>
 
 </html>

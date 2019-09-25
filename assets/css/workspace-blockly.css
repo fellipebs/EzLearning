@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background-color: #fff;
+  color: rgb(52, 52, 52);
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+}
+#blocklyArea {
+  height: 85vh;
+}
+#header {
+  height: 10vh;
+  background-color: rgb(52, 52, 52);
+  color: #fff;
+}
+h1 {
+  padding: 10px 0 0 10px;
+  height: 100%;
+  display: inline-block;
+}
+.btn-send {
+  height: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: #fff;
+  font-size: 150%;
+  float: right;
+  text-transform: uppercase;
+}
+.btn-play {
+  position: absolute;
+  z-index: 9999;
+  top: 11%;
+  left: 96%;
+  text-decoration: none;
+  color: rgb(255, 0, 0);
+  font-size: 250%;
+}

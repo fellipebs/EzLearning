@@ -1,32 +1,8 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <variables>
-    <variable type="" id="W^SRQ|8eCus^,sCnDoO#">Divisão</variable>
+    <variable type="" id="HFb7l$9=iwzN_Wrb5vEO">Divisão</variable>
   </variables>
-  <block type="variables_set" id="3+?m7uSSK`,pBNG]G!4y" x="63" y="189">
-    <field name="VAR" id="W^SRQ|8eCus^,sCnDoO#" variabletype="">Divisão</field>
-    <value name="VALUE">
-      <block type="math_arithmetic" id="-7m?1/P{qo@|W[lTwHJc">
-        <field name="OP">DIVIDE</field>
-        <value name="A">
-          <block type="math_number" id="x2g]kk:8sKhH[$WNL.cJ">
-            <field name="NUM">4</field>
-          </block>
-        </value>
-        <value name="B">
-          <block type="math_number" id="oLCeKueVI$H0c*ga{FwF">
-            <field name="NUM">2</field>
-          </block>
-        </value>
-      </block>
-    </value>
-    <next>
-      <block type="text_print" id="1:ofY@`.2%2%m/g6C0n8">
-        <value name="TEXT">
-          <block type="variables_get" id="q-@}K,m[N[QC9fQ}T~Er">
-            <field name="VAR" id="W^SRQ|8eCus^,sCnDoO#" variabletype="">Divisão</field>
-          </block>
-        </value>
-      </block>
-    </next>
+  <block type="variables_set" id="KG/0D-YZuv]/%e`z%9%F" x="351" y="143">
+    <field name="VAR" id="HFb7l$9=iwzN_Wrb5vEO" variabletype="">Divisão</field>
   </block>
 </xml>

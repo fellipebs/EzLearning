@@ -15,7 +15,8 @@ $_SESSION['arquivo_php'] = "soma.php";
 
 <body>
   <?php require_once('../../../componets/menu-atividade.php'); ?>
-  <br><br><br><br><br>
+  <div id="blocklyArea"></div>
+  <div id="blocosDiv" style="position: absolute"></div>
   <xml id="toolbox" style="display: none">
     <block type="math_number">
       <field name="NUM">3</field>
@@ -33,50 +34,9 @@ $_SESSION['arquivo_php'] = "soma.php";
       <field name="VAR">soma</field>
     </block>
   </xml>
-  <br>
-  <div id="blocosDiv" class="area-bloco"></div>
   <input id="nome" style="display: none;" value="<?php echo $_SESSION['usuario']->usuario; ?>">
   <script type="text/javascript" src="../../js/ler_xml_blockly"></script>
-  <script>
-    var workspace = Blockly.inject('blocosDiv', {
-      media: '../../../google-blockly/media/',
-      toolbox: document.getElementById('toolbox'),
-      trashcan: true
-    });
-    salvar = function() {
-      var xml = Blockly.Xml.workspaceToDom(workspace);
-      var code = Blockly.JavaScript.workspaceToCode(workspace);
-      xml_text = Blockly.Xml.domToPrettyText(xml);
-      document.getElementById('xml').innerHTML = xml_text;
-      document.getElementById('js').innerHTML = code;
-      document.cookie = "xml=" + xml_text;
-      alert(cookie_formatado);
-
-    }
-    atividade_salva = function() {
-      var nome = document.getElementById('nome').value;
-      readTextFile(nome + "_xml.txt");
-      var xml = Blockly.Xml.textToDom(allText);
-      Blockly.Xml.domToWorkspace(xml, workspace);
-    };
-
-    executar = function() {
-      Blockly.JavaScript.INFINITE_LOOP_TRAP = '  checkTimeout();\n';
-      var timeouts = 0;
-      var checkTimeout = function() {
-        if (timeouts++ > 1000000) {
-          throw MSG['timeout'];
-        }
-      };
-      var code = Blockly.JavaScript.workspaceToCode(workspace);
-      Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
-      try {
-        eval(code);
-      } catch (e) {
-        alert(MSG['badCode'].replace('%1', e));
-      }
-    };
-  </script>
+  <script src="../../js/config.js"></script>
 </body>
 
 </html>
