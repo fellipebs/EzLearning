@@ -75,23 +75,23 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nome do Aluno:</label>
-                            <input class="form-control" type="text" name="nome" id="nome"  aria-describedby="emailHelp" placeholder="Nome do Aluno"><br>
+                            <input class="form-control" type="text" name="nome" id="nome"  aria-describedby="emailHelp" placeholder="Nome do Aluno" required><br>
                         </div>
 
                                 
                         <div class="form-group">
                             <label for="exampleInputEmail1">SobreNome do Aluno:</label>
-                            <input class="form-control" type="text" name="sobrenome" id="sobrenome"  aria-describedby="emailHelp" placeholder="Sobre nome do Aluno"><br>
+                            <input class="form-control" type="text" name="sobrenome" id="sobrenome"  aria-describedby="emailHelp" placeholder="Sobre nome do Aluno" required><br>
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Data de Nascimento:</label>
-                            <input class="form-control" type="date" name="dt_nascimento" id="dt_nascimento"  aria-describedby="emailHelp" placeholder="Data de Nascimento"><br>
+                            <input class="form-control" type="date" name="dt_nascimento" id="dt_nascimento"  aria-describedby="emailHelp" placeholder="Data de Nascimento" required><br>
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nome do Responsável:</label>
-                            <input class="form-control" type="text" name="responsavel" id="responsavel"  aria-describedby="emailHelp" placeholder="Responsavel do Aluno"><br>
+                            <input class="form-control" type="text" name="responsavel" id="responsavel"  aria-describedby="emailHelp" placeholder="Responsavel do Aluno" required><br>
                         </div>
 
                         <div class="form-group">
