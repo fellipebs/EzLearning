@@ -68,19 +68,19 @@
                       
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nome do Usuario:</label>
-                            <input class="form-control" type="text" name="usuario" id="usuario"  aria-describedby="emailHelp" placeholder="Nome do Usuario"><br>
+                            <input class="form-control" type="text" name="usuario" id="usuario"  aria-describedby="emailHelp" placeholder="Nome do Usuario" required><br>
                         
 
                         <label for="exampleInputEmail1">E-mail:</label>
-                            <input class="form-control" type="texte" name="email" id="email"  aria-describedby="emailHelp" placeholder="Insira seu E-mail"><br>
+                            <input class="form-control" type="texte" name="email" id="email"  aria-describedby="emailHelp" placeholder="Insira seu E-mail" required><br>
                     
 
                         <label for="exampleInputEmail1">Login:</label>
-                            <input class="form-control" type="texte" name="login" id="login"  aria-describedby="emailHelp" placeholder="Insira seu Login"><br>
+                            <input class="form-control" type="texte" name="login" id="login"  aria-describedby="emailHelp" placeholder="Insira seu Login" required><br>
                       
 
                         <label for="exampleInputEmail1">Senha:</label>
-                            <input class="form-control" type="password" name="senha" id="senha"  aria-describedby="emailHelp" placeholder="Insira sua Senha"><br>
+                            <input class="form-control" type="password" name="senha" id="senha"  aria-describedby="emailHelp" placeholder="Insira sua Senha" required><br>
                                     
           
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
