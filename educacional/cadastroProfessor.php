@@ -48,11 +48,20 @@
                           
                             <div class="asset-inner">
                         
-                            <?php if(isset($_SESSION['msg'])){
-                                        echo $_SESSION['msg'];
-                                        unset($_SESSION['msg']);
-                                    }
+                            <?php 
+                            $row = $sql->fetchObject();
+                            if(isset($_SESSION['msg2'])){
+                                echo $_SESSION['msg2'];
+                                unset($_SESSION['msg2']);
+                            }
+                             elseif(isset($_SESSION['msg'])){
+                                    echo $_SESSION['msg'];
+                                    unset($_SESSION['msg']);
+                                   
+                                }             
+                            
                             ?>
+                            
                             <center><h2>Cadastro de Professor</h2></center>
                             <br>
                             <form action='../models/processa_cad_professor' method='post'>
@@ -85,7 +94,7 @@
                             <label for="exampleInputEmail1"> Selecione a Usuario do Professor:</label>
                             <select class="form-control" name="usuario_id_professor" id="usuario_id_professor" aria-describedby="emailHelp" placeholder="Selecione o login do Professor:">
                             <?php
-                            $sql = $con->prepare("SELECT * from usuarios");
+                            $sql = $con->prepare("SELECT * FROM usuarios WHERE tipo = 0");
                             $sql->execute();
                             $rows = $sql->fetchAll(PDO::FETCH_CLASS);
                             foreach ($rows as $row){
