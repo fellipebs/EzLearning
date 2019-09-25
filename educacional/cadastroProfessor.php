@@ -72,7 +72,7 @@
                             <input class="form-control" type="text" name="nome" id="nome"  aria-describedby="emailHelp" placeholder="Nome do Professor"><br>
                         </div>
 
-                        <label for="exampleInputEmail1">SobreNome do Professor:</label>
+                        <label for="exampleInputEmail1">Sobrenome do Professor:</label>
                             <input class="form-control" type="text" name="sobrenome" id="sobrenome"  aria-describedby="emailHelp" placeholder="Sobre nome do Professor"><br>
                         </div>
                             
