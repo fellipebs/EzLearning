@@ -72,13 +72,13 @@
                             <input class="form-control" type="text" name="nome" id="nome"  aria-describedby="emailHelp" placeholder="Nome do Professor" required><br>
                         </div>
 
-                        <label for="exampleInputEmail1">Sobrenome do Professor:</label>
+                        <label for="exampleInputEmail1">Sobre Nome do Professor:</label>
                             <input class="form-control" type="text" name="sobrenome" id="sobrenome"  aria-describedby="emailHelp" placeholder="Sobre nome do Professor" required><br>
                         </div>
                             
                         <div class="form-group">
                             <label for="exampleInputEmail1"> Selecione a Escola do Professor:</label>
-                            <select class="form-control" name="escola_id_Professor" id="escola_id_Professor" aria-describedby="emailHelp" placeholder="Selecione a Escola">
+                            <select class="form-control" name="escola_id_Professor" id="escola_id_Professor" aria-describedby="emailHelp" placeholder="Selecione a Escola" required >
                             <?php
                             $sql = $con->prepare("SELECT * from escola");
                             $sql->execute();
@@ -94,7 +94,7 @@
                             <label for="exampleInputEmail1"> Selecione a Usuario do Professor:</label>
                             <select class="form-control" name="usuario_id_professor" id="usuario_id_professor" aria-describedby="emailHelp" placeholder="Selecione o login do Professor:">
                             <?php
-                            $sql = $con->prepare("SELECT * FROM usuarios WHERE tipo = 0 and status = 1");
+                            $sql = $con->prepare("SELECT * FROM usuarios WHERE tipo = 0 and status = 0");
                             $sql->execute();
                             $rows = $sql->fetchAll(PDO::FETCH_CLASS);
                             foreach ($rows as $row){
