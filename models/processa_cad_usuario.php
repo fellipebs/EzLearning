@@ -29,7 +29,7 @@ if($sql->rowCount() > 0){
 
 }else{
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $pdo->prepare('INSERT INTO usuarios (id, usuario, email, login, senha, foto, tipo) VALUES (NULL, :usuario, :email, :login, :senha, "default.png", "0")');
+    $stmt = $pdo->prepare('INSERT INTO usuarios (id, usuario, email, login, senha, foto, tipo, status) VALUES (NULL, :usuario, :email, :login, :senha, "default.png", "0", "1")');
     $stmt->execute(array(
                    ':usuario' => $usuario,
                    ':email' => $email,
