@@ -67,31 +67,22 @@
                             <center><h2>Cadastro de Aluno:</h2></center>
                             <br>
                             <form action='../models/processa_cad_aluno.php' method='post'>
-                            <center><div style='width: 1200px;'>
-
-                            <div class="form-group">
-                            <input class="form-control" type="int" name="status" id="status" style="display: none"  aria-describedby="emailHelp" value='1' placeholder="Responsavel do Aluno" disabled><br>
-                        </div>
+                          
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Nome do Aluno:</label>
-                            <input class="form-control" type="text" name="nome" id="nome"  aria-describedby="emailHelp" placeholder="Nome do Aluno" required><br>
+                            <label for="exampleInputEmail1">Nome completo do Aluno:</label>
+                            <input class="form-control" type="text" name="nome" id="nome"  aria-describedby="emailHelp" placeholder="Nome do Aluno"><br>
                         </div>
 
-                                
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Sobrenome do Aluno:</label>
-                            <input class="form-control" type="text" name="sobrenome" id="sobrenome"  aria-describedby="emailHelp" placeholder="Sobre nome do Aluno" required><br>
-                        </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Data de Nascimento:</label>
-                            <input class="form-control" type="date" name="dt_nascimento" id="dt_nascimento"  aria-describedby="emailHelp" placeholder="Data de Nascimento" required><br>
+                            <input class="form-control" type="date" name="dt_nascimento" id="dt_nascimento"  aria-describedby="emailHelp" placeholder="Data de Nascimento"><br>
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nome do Responsável:</label>
-                            <input class="form-control" type="text" name="responsavel" id="responsavel"  aria-describedby="emailHelp" placeholder="Responsavel do Aluno" required><br>
+                            <input class="form-control" type="text" name="responsavel" id="responsavel"  aria-describedby="emailHelp" placeholder="Responsavel do Aluno"><br>
                         </div>
 
                         <div class="form-group">
@@ -112,7 +103,7 @@
                             <label for="exampleInputEmail1">Selecione o Usuário do Aluno:</label>
                             <select  class="form-control" name="usuario_id_aluno" id="usuario_id_aluno" aria-describedby="emailHelp" placeholder="Enter email">
                             <?php
-                            $sql = $con->prepare("SELECT * from usuarios WHERE tipo = 0 ");
+                            $sql = $con->prepare("SELECT * from usuarios WHERE tipo = 0 and status = 0");
                             $sql->execute();
                             $rows = $sql->fetchAll(PDO::FETCH_CLASS);
                             foreach ($rows as $row){
@@ -126,7 +117,7 @@
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
                         </form>
                             </div>
-                                </div>
+                               
                                 </table>
                                 <br><br>
                             <br>
