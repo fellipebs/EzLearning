@@ -34,7 +34,7 @@ if($sql->rowCount() > 0){
               ));      
        } 
 
-       $sql = $pdo->prepare("UPDATE usuarios inner join aluno on usuarios.id = :usuario_id_professor set usuarios.tipo = 1 WHERE usuarios.tipo = 0;");
+       $sql = $pdo->prepare("UPDATE usuarios inner join professor on usuarios.id = :usuario_id_professor set usuarios.tipo = 1 WHERE usuarios.tipo = 0;");
        $sql->execute(array(
                             ':usuario_id_professor' => $usuario_id_professor
               )); 
