@@ -80,7 +80,7 @@
 
                                 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">SobreNome do Aluno:</label>
+                            <label for="exampleInputEmail1">Sobrenome do Aluno:</label>
                             <input class="form-control" type="text" name="sobrenome" id="sobrenome"  aria-describedby="emailHelp" placeholder="Sobre nome do Aluno" required><br>
                         </div>
 
