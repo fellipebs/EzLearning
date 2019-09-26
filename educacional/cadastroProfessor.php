@@ -94,7 +94,7 @@
                             <label for="exampleInputEmail1"> Selecione a Usuario do Professor:</label>
                             <select class="form-control" name="usuario_id_professor" id="usuario_id_professor" aria-describedby="emailHelp" placeholder="Selecione o login do Professor:">
                             <?php
-                            $sql = $con->prepare("SELECT * FROM usuarios WHERE tipo = 0");
+                            $sql = $con->prepare("SELECT * FROM usuarios WHERE tipo = 0 and status = 1");
                             $sql->execute();
                             $rows = $sql->fetchAll(PDO::FETCH_CLASS);
                             foreach ($rows as $row){
